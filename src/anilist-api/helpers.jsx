@@ -492,15 +492,26 @@ export const fetchAiringNextWeek = async (perPage = 50) => {
   return allSchedules
 }
 
-
-export const fetchMediaByActualTrending = async (page, perPage) => {
+export const fetchMediaByActualTrendingPerPage = async (page, perPage) => {
   const url = 'https://graphql.anilist.co'
-  const fetchedAnimes = []
+  const fetchedAnimes = {
+    pageInfo: {},
+    medias: []
+  }
 
   const body = {
     query: `
       query ($page: Int, $perPage: Int) {
         Page(page: $page, perPage: $perPage) {
+          
+          pageInfo {
+            currentPage
+            lastPage
+            hasNextPage
+            total
+            perPage
+          }
+          
           media(sort: TRENDING_DESC, type: ANIME, isAdult: false) {
             id
             title {
@@ -545,7 +556,83 @@ export const fetchMediaByActualTrending = async (page, perPage) => {
 
   const data = await res.json()
 
-  fetchedAnimes.push(...data.data.Page.media)
+  fetchedAnimes.medias.push(...data.data.Page.media)
+  fetchedAnimes.pageInfo = {
+    ...data.data.Page.pageInfo
+  }
+  return fetchedAnimes
+}
+
+
+export const fetchMediaByActualTrending = async (page, perPage) => {
+  const url = 'https://graphql.anilist.co'
+  
+  const fetchedAnimes = {
+    pageInfo: {},
+    medias: []
+  }
+
+  const body = {
+    query: `
+      query ($page: Int, $perPage: Int) {
+        Page(page: $page, perPage: $perPage) {
+          
+          pageInfo {
+            currentPage
+            lastPage
+            hasNextPage
+            total
+            perPage
+          }
+
+          media(sort: TRENDING_DESC, type: ANIME, isAdult: false) {
+            id
+            title {
+              romaji
+              english
+              native
+            }
+            coverImage {
+              large
+            }
+            season
+            seasonYear
+            averageScore
+            format
+            episodes
+            studios {
+              edges {
+                isMain
+                node {
+                  id
+                  name
+                  isAnimationStudio
+                }
+              }
+            }
+            genres
+          }
+        }
+      }
+    `,
+    variables: { page, perPage }
+  }
+
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: { 
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify(body)
+  })
+
+  const data = await res.json()
+
+  fetchedAnimes.medias.push(...data.data.Page.media)
+  fetchedAnimes.pageInfo = {
+    ...data.data.Page.pageInfo
+  }
   return fetchedAnimes
 }
 

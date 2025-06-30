@@ -42,7 +42,7 @@ const Search = () => {
                 fetchMediaTop100(1, 10)
               ])
         
-              setTrendingNow(trendingNowData)
+              setTrendingNow(trendingNowData.medias)
               setPopularThisSeason(popularThisSeasonData)
               setUpcoming(upcomingData)
               setAllTimePopular(allTimePopularData)

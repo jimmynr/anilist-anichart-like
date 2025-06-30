@@ -11,6 +11,7 @@ import Media from "../media"
 import Studio from "../studio"
 import MediaPerStudio from "../studio/mediaPerStudio"
 import Search from "../welcome/search"
+import TrendingNow from "../welcome/trendingNow"
 
 import { seasonsCombinations, getCurrentSeason } from '../../anilist-api/constants'
 import AiringSchedule from "../airing/airingSchedule"
@@ -41,6 +42,7 @@ const App = () => {
           <Route path="/" element={ <Navigate to="/search/anime" replace /> } />
           <Route path="/search" element={ <Welcome /> }>
             <Route index path="anime" element={ <Search />} />
+            <Route path="trending-now" element={ <TrendingNow /> } />
           </Route>
           <Route path="/season" element={ <Season /> }>
             { dispalyRoutes }
