@@ -1,0 +1,16 @@
+#navigation a.active {
+    color: #41B1EA;
+    text-decoration: underline;
+}
+
+header {
+    z-index: 1;
+}
+
+.mediaHeader {
+    background-color: rgba(43, 45, 66, 0.5);
+}
+
+.mediaHeaderMouseover {
+    background-color: rgba(43, 45, 66, 1);
+}
