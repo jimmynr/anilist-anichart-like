@@ -174,7 +174,7 @@ const NavBar = () => {
                 </div>               
                 <div className="w-xs flex justify-center">
                     <NavLink 
-                        to='/search'
+                        to='/'
                     >
                         <Logo />
                     </NavLink>

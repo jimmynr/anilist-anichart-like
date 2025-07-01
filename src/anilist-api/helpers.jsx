@@ -587,6 +587,15 @@ export const fetchMediaAllTimePopular = async (page, perPage) => {
     query: `
       query ($page: Int, $perPage: Int) {
         Page(page: $page, perPage: $perPage) {
+          
+          pageInfo {
+            currentPage
+            lastPage
+            hasNextPage
+            total
+            perPage
+          }
+
           media(sort: POPULARITY_DESC, type: ANIME, isAdult: false) {
             id
             title {
@@ -651,6 +660,15 @@ export const fetchMediaTop100 = async (page, perPage) => {
     query: `
       query ($page: Int, $perPage: Int) {
         Page(page: $page, perPage: $perPage) {
+          
+          pageInfo {
+            currentPage
+            lastPage
+            hasNextPage
+            total
+            perPage
+          }
+
           media(sort: SCORE_DESC, type: ANIME, isAdult: false) {
             id
             title {
@@ -718,6 +736,15 @@ export const fetchMediaPopularThisSeason = async (page, perPage, season, seasonY
     query: `
       query ($page: Int, $perPage: Int, $season: MediaSeason, $seasonYear: Int) {
         Page(page: $page, perPage: $perPage) {
+          
+          pageInfo {
+            currentPage
+            lastPage
+            hasNextPage
+            total
+            perPage
+          }
+          
           media(season: $season, seasonYear: $seasonYear, sort: POPULARITY_DESC, type: ANIME, isAdult: false) {
             id
             title {

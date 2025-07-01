@@ -2,16 +2,14 @@ import { useEffect, useState, useCallback } from "react"
 
 import { Link } from "react-router-dom"
 
-import { fetchMediaByActualTrending } from "../../anilist-api/helpers"
-
-import { media_genre_colors, getRandomInt } from "../../anilist-api/constants"
+import { media_genre_colors, getRandomInt, getCurrentSeason, getNextSeason } from "../../anilist-api/constants"
 
 import Loader from "../commonComponents/loader"
 import Title from "../commonComponents/title"
 
 import useInfiniteScroll from 'react-infinite-scroll-hook'
 
-const SearchByFilter = () => {
+const SearchByFilter = ({ title, fetchData, filteredBy }) => {
 
     const [medias, setmedias] =  useState([])
     const [isLoading, setIsLoading] =  useState(true)
@@ -23,22 +21,44 @@ const SearchByFilter = () => {
     const [error, setError] = useState(null)
 
     const loadMore = useCallback(() => {
+
         setLoading(true)
         setError(null)
-    
-        fetchMediaByActualTrending(page, 50)
-        .then(data => {
-            setmedias(prev => [...prev, ...data.medias])
 
+        const currentPage = page
+
+        const handleResult = (data) => {
+            console.log(data)
+            setmedias(prev => [...prev, ...data.medias])
             setPage(prev => prev + 1)
             setHasNextPage(data.pageInfo.hasNextPage)
             setLoading(false)
-        })
-        .catch(err => {
+        }
+
+        const handleError = (err) => {
             setError(err)
             setLoading(false)
-        })
-    }, [page])
+        }
+
+        if (filteredBy === 'ACTUAL_TRENDING' || filteredBy === 'POPULAR_ALL_TIME' || filteredBy === 'TOP_100') {
+            fetchData(currentPage, 50)
+                .then(handleResult)
+                .catch(handleError)
+        }
+
+        if (filteredBy === 'POPULAR_CURRENT_SEASON') {
+            fetchData(currentPage, 50, getCurrentSeason().season, getCurrentSeason().year)
+                .then(handleResult)
+                .catch(handleError)
+        }
+
+        if (filteredBy === 'POPULAR_NEXT_SEASON') {
+            fetchData(currentPage, 50, getNextSeason().season, getNextSeason().year)
+                .then(handleResult)
+                .catch(handleError)
+        } 
+        
+    }, [page, filteredBy, fetchData])
 
     const [infiniteRef] = useInfiniteScroll({
         loading,
@@ -55,12 +75,23 @@ const SearchByFilter = () => {
     // infinite scroll
 
     useEffect(() => {
-        fetchMediaByActualTrending(1, 50)
-        .then(data => setmedias(data.medias))
-        .catch(err => console.log(err.message))
-
-        setPage(prev => prev + 1)
-    }, [])
+        const fetchInitial = async () => {
+            let data
+            if (filteredBy === 'ACTUAL_TRENDING' || filteredBy === 'POPULAR_ALL_TIME' || filteredBy === 'TOP_100') {
+                data = await fetchData(1, 50)
+            } else if (filteredBy === 'POPULAR_CURRENT_SEASON') {
+                data = await fetchData(1, 50, getCurrentSeason().season, getCurrentSeason().year)
+            } else if (filteredBy === 'POPULAR_NEXT_SEASON') {
+                data = await fetchData(1, 50, getNextSeason().season, getNextSeason().year)
+            }
+            if (data) {
+                setmedias(data.medias)
+                setPage(2)
+            }
+        }
+    
+        fetchInitial().catch(err => console.log(err))
+    }, [filteredBy, fetchData])
 
     useEffect(() => {
         if (medias && medias.length > 0) setIsLoading(false)
@@ -68,6 +99,7 @@ const SearchByFilter = () => {
     }, [medias])
 
     const displayMedias = medias => {
+    
         return medias.map((anime, index) => {
             const color = media_genre_colors[getRandomInt(media_genre_colors.length - 1)]
             return <Link
@@ -97,7 +129,7 @@ const SearchByFilter = () => {
             {
                 isLoading ? <Loader header='des tendances actuelles' />
                 : <>
-                    <Title isLink={false} title='Tendances actuelles' />
+                    <Title isLink={false} title={title} />
                     <div className='p-10 md:p-20 lg:p-4 xl:p-10 flex flex-col gap-5 md:gap-5 lg:gap-3 xl:gap-5'>
                         <div className='flex flex-col sm:flex-row md:flex-row lg:flex-row xl:flex-row
                                     sm:flex-wrap md:flex-wrap lg:flex-wrap xl:flex-wrap p-4'>
@@ -106,7 +138,7 @@ const SearchByFilter = () => {
                     </div>
                     {loading && <p className="text-center my-5">Chargement...</p>}
                     {error && <p className="text-center my-5">Erreur : {error.message}</p>}
-                    {hasNextPage && !loading && <div ref={infiniteRef}>Descends pour charger plus</div>}
+                    {hasNextPage && !loading && <div ref={infiniteRef}></div>}
                 </>
             }
         </>
