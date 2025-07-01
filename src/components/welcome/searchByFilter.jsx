@@ -11,9 +11,9 @@ import Title from "../commonComponents/title"
 
 import useInfiniteScroll from 'react-infinite-scroll-hook'
 
-const TrendingNow = () => {
+const SearchByFilter = () => {
 
-    const [trendingNow, setTrendingNow] =  useState([])
+    const [medias, setmedias] =  useState([])
     const [isLoading, setIsLoading] =  useState(true)
 
     // infinite scroll
@@ -28,7 +28,7 @@ const TrendingNow = () => {
     
         fetchMediaByActualTrending(page, 50)
         .then(data => {
-            setTrendingNow(prev => [...prev, ...data.medias])
+            setmedias(prev => [...prev, ...data.medias])
 
             setPage(prev => prev + 1)
             setHasNextPage(data.pageInfo.hasNextPage)
@@ -56,16 +56,16 @@ const TrendingNow = () => {
 
     useEffect(() => {
         fetchMediaByActualTrending(1, 50)
-        .then(data => setTrendingNow(data.medias))
+        .then(data => setmedias(data.medias))
         .catch(err => console.log(err.message))
 
         setPage(prev => prev + 1)
     }, [])
 
     useEffect(() => {
-        if (trendingNow && trendingNow.length > 0) setIsLoading(false)
+        if (medias && medias.length > 0) setIsLoading(false)
         else setIsLoading(true)
-    }, [trendingNow])
+    }, [medias])
 
     const displayMedias = medias => {
         return medias.map((anime, index) => {
@@ -101,7 +101,7 @@ const TrendingNow = () => {
                     <div className='p-10 md:p-20 lg:p-4 xl:p-10 flex flex-col gap-5 md:gap-5 lg:gap-3 xl:gap-5'>
                         <div className='flex flex-col sm:flex-row md:flex-row lg:flex-row xl:flex-row
                                     sm:flex-wrap md:flex-wrap lg:flex-wrap xl:flex-wrap p-4'>
-                            { displayMedias(trendingNow) }
+                            { displayMedias(medias) }
                         </div>
                     </div>
                     {loading && <p className="text-center my-5">Chargement...</p>}
@@ -113,4 +113,4 @@ const TrendingNow = () => {
     )
 }
 
-export default TrendingNow
+export default SearchByFilter

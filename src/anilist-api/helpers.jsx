@@ -1,7 +1,7 @@
 
 
 export const fetchMediaPerSeasonPerYear = async (perPage, season, seasonYear) => {
-    const url = 'https://graphql.anilist.co'
+    // const url = 'https://graphql.anilist.co'
     const fetchedAnimes = []
     let page = 1
     let lastPage = 1
@@ -50,7 +50,9 @@ export const fetchMediaPerSeasonPerYear = async (perPage, season, seasonYear) =>
         variables: { page, perPage, season, seasonYear }
       }
   
-      const res = await fetch(url, {
+      // const res = await fetch(url, {
+      // use of proxy from the file vite.config
+      const res = await fetch('/anilist', {
         method: 'POST',
         headers: { 
             'Content-Type': 'application/json',
@@ -86,7 +88,7 @@ export const filterMedias = (medias, filter) => {
 }
   
 export const fetchMediaPerMediaId = async (mediaId) => {
-  const url = 'https://graphql.anilist.co'
+  // const url = 'https://graphql.anilist.co'
 
   const body = {
     query: `
@@ -166,7 +168,9 @@ export const fetchMediaPerMediaId = async (mediaId) => {
     variables: { id: mediaId }
   }
 
-  const res = await fetch(url, {
+  // const res = await fetch(url, {
+  // use of proxy from the file vite.config
+  const res = await fetch('/anilist', {
     method: 'POST',
     headers: { 
         'Content-Type': 'application/json',
@@ -179,7 +183,7 @@ export const fetchMediaPerMediaId = async (mediaId) => {
 }
 
 export const fetchMediaPerMediaTitle = async (MediaTitle) => {
-  const url = 'https://graphql.anilist.co'
+  // const url = 'https://graphql.anilist.co'
 
   const body = {
     query: `
@@ -260,7 +264,9 @@ export const fetchMediaPerMediaTitle = async (MediaTitle) => {
   }
 
   try{
-      const res = await fetch(url, {
+      // const res = await fetch(url, {
+      // use of proxy from the file vite.config
+      const res = await fetch('/anilist', {
         method: 'POST',
         headers: { 
             'Content-Type': 'application/json',
@@ -298,7 +304,7 @@ export const fetchMediaPerMediaTitle = async (MediaTitle) => {
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms))
 
 export const fetchMediaByStudioId = async (studioId, perPage = 50) => {
-  const url = 'https://graphql.anilist.co'
+  // const url = 'https://graphql.anilist.co'
   let page = 1
   let lastPage = 1
   const fetchedMedia = []
@@ -345,7 +351,9 @@ export const fetchMediaByStudioId = async (studioId, perPage = 50) => {
 
     let data
     try {
-      const res = await fetch(url, {
+      // const res = await fetch(url, {
+      // use of proxy from the file vite.config
+      const res = await fetch('/anilist', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -464,7 +472,9 @@ export const fetchAiringNextWeek = async (perPage = 50) => {
       end
     }
 
-    const response = await fetch('https://graphql.anilist.co', {
+    // const response = await fetch('https://graphql.anilist.co', {
+    // use of proxy from the file vite.config
+    const response = await fetch('/anilist', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -492,80 +502,8 @@ export const fetchAiringNextWeek = async (perPage = 50) => {
   return allSchedules
 }
 
-export const fetchMediaByActualTrendingPerPage = async (page, perPage) => {
-  const url = 'https://graphql.anilist.co'
-  const fetchedAnimes = {
-    pageInfo: {},
-    medias: []
-  }
-
-  const body = {
-    query: `
-      query ($page: Int, $perPage: Int) {
-        Page(page: $page, perPage: $perPage) {
-          
-          pageInfo {
-            currentPage
-            lastPage
-            hasNextPage
-            total
-            perPage
-          }
-          
-          media(sort: TRENDING_DESC, type: ANIME, isAdult: false) {
-            id
-            title {
-              romaji
-              english
-              native
-            }
-            coverImage {
-              large
-            }
-            season
-            seasonYear
-            averageScore
-            format
-            episodes
-            studios {
-              edges {
-                isMain
-                node {
-                  id
-                  name
-                  isAnimationStudio
-                }
-              }
-            }
-            genres
-          }
-        }
-      }
-    `,
-    variables: { page, perPage }
-  }
-
-  const res = await fetch(url, {
-    method: 'POST',
-    headers: { 
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    },
-    body: JSON.stringify(body)
-  })
-
-  const data = await res.json()
-
-  fetchedAnimes.medias.push(...data.data.Page.media)
-  fetchedAnimes.pageInfo = {
-    ...data.data.Page.pageInfo
-  }
-  return fetchedAnimes
-}
-
-
 export const fetchMediaByActualTrending = async (page, perPage) => {
-  const url = 'https://graphql.anilist.co'
+  // const url = 'https://graphql.anilist.co'
   
   const fetchedAnimes = {
     pageInfo: {},
@@ -618,7 +556,9 @@ export const fetchMediaByActualTrending = async (page, perPage) => {
     variables: { page, perPage }
   }
 
-  const res = await fetch(url, {
+  // const res = await fetch(url, {
+  // use of proxy from the file vite.config
+  const res = await fetch('/anilist', {
     method: 'POST',
     headers: { 
       'Content-Type': 'application/json',
@@ -637,8 +577,11 @@ export const fetchMediaByActualTrending = async (page, perPage) => {
 }
 
 export const fetchMediaAllTimePopular = async (page, perPage) => {
-  const url = 'https://graphql.anilist.co'
-  const fetchedAnimes = []
+  // const url = 'https://graphql.anilist.co'
+  const fetchedAnimes = {
+    pageInfo: {},
+    medias: []
+  }
 
   const body = {
     query: `
@@ -677,7 +620,9 @@ export const fetchMediaAllTimePopular = async (page, perPage) => {
     variables: { page, perPage }
   }
 
-  const res = await fetch(url, {
+  // const res = await fetch(url, {
+  // use of proxy from the file vite.config
+  const res = await fetch('/anilist', {
     method: 'POST',
     headers: { 
       'Content-Type': 'application/json',
@@ -688,13 +633,19 @@ export const fetchMediaAllTimePopular = async (page, perPage) => {
 
   const data = await res.json()
 
-  fetchedAnimes.push(...data.data.Page.media)
+  fetchedAnimes.medias.push(...data.data.Page.media)
+  fetchedAnimes.pageInfo = {
+    ...data.data.Page.pageInfo
+  }
   return fetchedAnimes
 }
 
 export const fetchMediaTop100 = async (page, perPage) => {
-  const url = 'https://graphql.anilist.co'
-  const fetchedAnimes = []
+  // const url = 'https://graphql.anilist.co'
+  const fetchedAnimes = {
+    pageInfo: {},
+    medias: []
+  }
 
   const body = {
     query: `
@@ -736,7 +687,9 @@ export const fetchMediaTop100 = async (page, perPage) => {
     variables: { page, perPage }
   }
 
-  const res = await fetch(url, {
+  // const res = await fetch(url, {
+  // use of proxy from the file vite.config
+  const res = await fetch('/anilist', {
     method: 'POST',
     headers: { 
       'Content-Type': 'application/json',
@@ -747,13 +700,19 @@ export const fetchMediaTop100 = async (page, perPage) => {
 
   const data = await res.json()
 
-  fetchedAnimes.push(...data.data.Page.media)
+  fetchedAnimes.medias.push(...data.data.Page.media)
+  fetchedAnimes.pageInfo = {
+    ...data.data.Page.pageInfo
+  }
   return fetchedAnimes
 }
 
 export const fetchMediaPopularThisSeason = async (page, perPage, season, seasonYear) => {
-  const url = 'https://graphql.anilist.co'
-  const fetchedAnimes = []
+  // const url = 'https://graphql.anilist.co'
+  const fetchedAnimes = {
+    pageInfo: {},
+    medias: []
+  }
 
   const body = {
     query: `
@@ -792,7 +751,9 @@ export const fetchMediaPopularThisSeason = async (page, perPage, season, seasonY
     variables: { page, perPage, season, seasonYear }
   }
 
-  const res = await fetch(url, {
+  // const res = await fetch(url, {
+  // use of proxy from the file vite.config
+  const res = await fetch('/anilist', {
     method: 'POST',
     headers: { 
       'Content-Type': 'application/json',
@@ -803,7 +764,10 @@ export const fetchMediaPopularThisSeason = async (page, perPage, season, seasonY
 
   const data = await res.json()
 
-  fetchedAnimes.push(...data.data.Page.media)
+  fetchedAnimes.medias.push(...data.data.Page.media)
+  fetchedAnimes.pageInfo = {
+    ...data.data.Page.pageInfo
+  }
   return fetchedAnimes
 }
 

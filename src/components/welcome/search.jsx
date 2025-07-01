@@ -41,12 +41,13 @@ const Search = () => {
                 fetchMediaAllTimePopular(1, 5),
                 fetchMediaTop100(1, 10)
               ])
+
         
               setTrendingNow(trendingNowData.medias)
-              setPopularThisSeason(popularThisSeasonData)
-              setUpcoming(upcomingData)
-              setAllTimePopular(allTimePopularData)
-              setTop100(top100Data)
+              setPopularThisSeason(popularThisSeasonData.medias)
+              setUpcoming(upcomingData.medias)
+              setAllTimePopular(allTimePopularData.medias)
+              setTop100(top100Data.medias)
               setIsLoading(false)
             } catch (err) {
               console.error("Erreur lors de la récupération des animes :", err.message)
