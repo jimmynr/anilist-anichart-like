@@ -1,9 +1,9 @@
 
 import { useEffect, useState } from "react"
 
-import { Link } from "react-router-dom"
+import { Link, useSearchParams } from "react-router-dom"
 
-import { fetchMediaByActualTrending, fetchMediaPopularThisSeason, fetchMediaAllTimePopular, fetchMediaTop100 } from "../../anilist-api/helpers"
+import { fetchFilteredMedias, fetchMediaByActualTrending, fetchMediaPopularThisSeason, fetchMediaAllTimePopular, fetchMediaTop100 } from "../../anilist-api/helpers"
 
 import { media_genre_colors, getRandomInt, getCurrentSeason, getNextSeason, formatLabels, anime_season_en_fr, media_status_fr } from "../../anilist-api/constants"
 
@@ -16,6 +16,7 @@ import { PiSmileyMehLight } from "react-icons/pi"
 
 const Search = () => {
 
+    const [filteredMedias, setFilteredMedias] = useState([])
     const [trendingNow, setTrendingNow] = useState([])
     const [popularThisSeason, setPopularThisSeason] = useState([])
     const [upcoming, setUpcoming] = useState([])
@@ -23,40 +24,74 @@ const Search = () => {
     const [top100, setTop100] = useState([])
     const [error, setError] = useState(false)
     const [isLoading, setIsLoading] = useState(true)
+    const [filterMode, setFilterMode] = useState(false)
+
+    const [searchParam] = useSearchParams()
 
     useEffect(() => {
-        const fetchAll = async () => {
-        
-            try {
-              const [
-                trendingNowData,
-                popularThisSeasonData,
-                upcomingData,
-                allTimePopularData,
-                top100Data
-              ] = await Promise.all([
-                fetchMediaByActualTrending(1, 5),
-                fetchMediaPopularThisSeason(1, 5, getCurrentSeason().season, getCurrentSeason().year),
-                fetchMediaPopularThisSeason(1, 5, getNextSeason().season, getNextSeason().year),
-                fetchMediaAllTimePopular(1, 5),
-                fetchMediaTop100(1, 10)
-              ])
 
-        
-              setTrendingNow(trendingNowData.medias)
-              setPopularThisSeason(popularThisSeasonData.medias)
-              setUpcoming(upcomingData.medias)
-              setAllTimePopular(allTimePopularData.medias)
-              setTop100(top100Data.medias)
-              setIsLoading(false)
-            } catch (err) {
-              console.error("Erreur lors de la récupération des animes :", err.message)
-              setError(true)
-              setIsLoading(false)
+        const mode = searchParam.get("mode")
+
+        if (mode == "filter") {
+            setFilterMode(true)
+
+            const name = searchParam.get("name")
+
+            const genresParam = searchParam.get("genres")
+            const genres = genresParam && genresParam.split(",")
+
+            const year = searchParam.get("year")
+            const season = searchParam.get("season")
+
+            const formatsParam = searchParam.get("formats")
+            const formats = formatsParam && formatsParam.split(",")
+
+            const status = searchParam.get("status")
+    
+            const fetchData = async () => {
+                const res = await fetchFilteredMedias(1, 10, name, genres, year, season, status, formats)
+    
+                setFilteredMedias(res)
             }
-          }
-        
-        fetchAll()
+    
+            fetchData()
+        } else {
+            setFilterMode(false)
+
+            const fetchAll = async () => {
+            
+                try {
+                  const [
+                    trendingNowData,
+                    popularThisSeasonData,
+                    upcomingData,
+                    allTimePopularData,
+                    top100Data
+                  ] = await Promise.all([
+                    fetchMediaByActualTrending(1, 5),
+                    fetchMediaPopularThisSeason(1, 5, getCurrentSeason().season, getCurrentSeason().year),
+                    fetchMediaPopularThisSeason(1, 5, getNextSeason().season, getNextSeason().year),
+                    fetchMediaAllTimePopular(1, 5),
+                    fetchMediaTop100(1, 10)
+                  ])
+    
+            
+                  setTrendingNow(trendingNowData.medias)
+                  setPopularThisSeason(popularThisSeasonData.medias)
+                  setUpcoming(upcomingData.medias)
+                  setAllTimePopular(allTimePopularData.medias)
+                  setTop100(top100Data.medias)
+                  setIsLoading(false)
+                } catch (err) {
+                  console.error("Erreur lors de la récupération des animes :", err.message)
+                  setError(true)
+                  setIsLoading(false)
+                }
+              }
+            
+            fetchAll()
+        }
+
 
         // fetchMediaByActualTrending(1, 5)
         // .then(setTrendingNow)
@@ -73,19 +108,20 @@ const Search = () => {
         // fetchMediaAllTimePopular(1, 5)
         // .then(setAllTimePopular)
         // .catch(err => console.log(err.message))
-    }, [])
+    }, [searchParam])
 
     useEffect(() => {
-        if (trendingNow && trendingNow.length > 0 
+        if ((trendingNow && trendingNow.length > 0 
             && popularThisSeason && popularThisSeason.length > 0
             && upcoming && upcoming.length > 0
             && allTimePopular && allTimePopular.length > 0
-            && top100 && top100.length > 0) {
+            && top100 && top100.length > 0) ||
+            filteredMedias && filteredMedias.length > 0) {
             setIsLoading(false)
         } else {
             setIsLoading(true)
         }
-    }, [trendingNow, popularThisSeason, upcoming, allTimePopular, top100])
+    }, [trendingNow, popularThisSeason, upcoming, allTimePopular, top100, filteredMedias])
 
     const displayMedias = medias => {
         return medias.map((anime, index) => {
@@ -176,6 +212,18 @@ const Search = () => {
         <>
             {
                 isLoading ? <Loader header='des informations' />
+                : filterMode ?
+                <>
+                    <div className='p-10 md:p-20 lg:p-4 xl:p-10 flex flex-col gap-5 md:gap-5 lg:gap-3 xl:gap-5'>
+                        <div className='flex flex-col sm:flex-row md:flex-row lg:flex-row xl:flex-row
+                                    sm:flex-wrap md:flex-wrap lg:flex-wrap xl:flex-wrap p-4'>
+                            { displayMedias(filteredMedias) }
+                        </div>
+                    </div>
+                    {/* {loading && <p className="text-center my-5">Chargement...</p>}
+                    {error && <p className="text-center my-5">Erreur : {error.message}</p>}
+                    {hasNextPage && !loading && <div ref={infiniteRef}></div>} */}
+                </>
                 : <>
                     <div className='p-10 md:p-20 lg:p-4 xl:p-10 flex flex-col gap-5 md:gap-5 lg:gap-3 xl:gap-5'>
                         <div className="flex justify-between">

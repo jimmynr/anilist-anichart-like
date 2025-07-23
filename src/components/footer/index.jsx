@@ -19,7 +19,7 @@ const Footer = () => {
                     </p>
                 </div>
             </div>
-            <p className='text-center font-bold'>&copy; neməsɪs</p>
+            <p className='text-center font-bold'>&copy; neməsɪs 2025</p>
         </footer>
     )
 }

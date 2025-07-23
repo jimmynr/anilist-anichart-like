@@ -1,8 +1,8 @@
+import { sortOptions } from '../../anilist-api/constantsUtil'
+
 import { Tooltip } from 'react-tooltip'
 
 import { useState, useEffect, useRef } from 'react'
-
-import { sortOptions } from '../../anilist-api/constants'
 
 const Sort = ({ sortMediasBy }) => {
 
@@ -14,38 +14,36 @@ const Sort = ({ sortMediasBy }) => {
     // clic outside and close select
     useEffect(() => {
         const handleClickOutside = (event) => {
-          // Si on clique en dehors de la div référencée, on ferme
           if (selectRef.current && !selectRef.current.contains(event.target)) {
             setHideSelect(true);
           }
         };
     
-        // Ajouter l'écouteur
         document.addEventListener("mousedown", handleClickOutside);
     
-        // Nettoyer l'écouteur quand le composant est démonté
         return () => {
           document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
 
-    const handleSelect = (id) => {
+    const handleSelect = (id, option) => {
         setIsSelected(id)
 
-        sortMediasBy(id)
+        sortMediasBy(option)
 
         setHideSelect(true)
     }
 
-    const displaySortOptions = sortOptions.map((otpion, index) => {
+    const displaySortOptions = sortOptions.map((option, index) => {
         return (
             <div 
                 key={index}
-                className={ `hover:text-white hover:bg-[#41B1EA] py-1 px-10 cursor-pointer ${ isSelected === index ? 'text-[#41B1EA]' : '' }` }
+                className={ `hover:text-white hover:bg-[#41B1EA] py-1 px-10 cursor-pointer 
+                ${ isSelected === index ? 'text-[#41B1EA]' : '' }` }
                 onClick={() => {
-                    handleSelect(index)
+                    handleSelect(index, option)
                 }}
-            >{ otpion }</div>
+            >{ option }</div>
         )
     })
 
@@ -72,7 +70,7 @@ const Sort = ({ sortMediasBy }) => {
             </svg>
             <Tooltip
                 anchorSelect='#sortIcon'
-                content='Trier'
+                content='Sort anime'
                 place='right-end'
             />
 
@@ -83,30 +81,6 @@ const Sort = ({ sortMediasBy }) => {
                         ref={selectRef}
                     >
                         { displaySortOptions }
-                        {/* <div 
-                            className='hover:text-white hover:bg-[#41B1EA] py-1 px-10 cursor-pointer'
-                            onClick={e => {
-                                sortMediasBy(e, mediasArray, 'TITLE_ROMAJI', selectRef.current)
-                            }}
-                        >Titre</div>
-                        <div 
-                            className='hover:text-white hover:bg-[#41B1EA] text-[#41B1EA] py-1 px-10 cursor-pointer'
-                            onClick={e => {
-                                sortMediasBy(e, mediasArray, 'POPULARITY_DESC', selectRef.current)
-                            }}
-                        >Popularité</div>
-                        <div 
-                            className='hover:text-white hover:bg-[#41B1EA] py-1 px-10 cursor-pointer'
-                            onClick={e => {
-                                sortMediasBy(e, mediasArray, 'STUDIO', selectRef.current)
-                            }}
-                        >Studio</div>
-                        <div 
-                            className='hover:text-white hover:bg-[#41B1EA] py-1 px-10 cursor-pointer'
-                            onClick={e => {
-                                sortMediasBy(e, mediasArray, 'START_DATE_DESC', selectRef.current)
-                            }}
-                        >Date</div> */}
                     </div>
                 </div>
             }            

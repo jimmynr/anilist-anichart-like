@@ -1,16 +1,18 @@
+import { useOutletContext } from 'react-router-dom'
+
+import { getMainStudioName } from '../../anilist-api/fonctionsUtil'
+
 import { fetchMediaPerSeasonPerYear, filterMedias } from '../../anilist-api/helpers'
 
-import { anime_season_en_fr, media_status_fr, media_genre_colors, getRandomInt, formatDateFr, getMainStudioName } from '../../anilist-api/constants'
+import { anime_season_en_fr, media_status_fr, media_genre_colors, getRandomInt, formatDateFr } from '../../anilist-api/constants'
 
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { useLocation, Link } from 'react-router-dom'
 
 import Title from '../commonComponents/title'
 
 import './index.css'
-import Sort from '../commonComponents/sortIcon'
-import Search from '../commonComponents/searchIcon'
 import Loader from '../commonComponents/loader'
 
 import { PiSmileyLight } from "react-icons/pi"
@@ -18,6 +20,49 @@ import { PiSmileySadLight } from "react-icons/pi"
 import { PiSmileyMehLight } from "react-icons/pi"
 
 const Period = ({ season, year }) => {
+
+    const { sortCriteria } = useOutletContext()
+
+    /* Sort medias */
+    useEffect(() => {
+        const sortMediasBy = (criteria) => {
+            let sortedMedias = []
+            switch (criteria) {
+                case "Title":
+                    sortedMedias = [...medias].sort((a, b) => a.title.romaji.localeCompare(b.title.romaji))
+                    setMedias(sortedMedias)
+                    break
+                case "Popularity":
+                    sortedMedias = [...medias].sort((a, b) => (b.popularity || 0) - (a.popularity || 0))
+                    setMedias(sortedMedias)
+                    break
+                case "Studio":
+                    sortedMedias = [...medias].sort((a, b) => {                
+                        return getMainStudioName(a).join(', ').localeCompare(getMainStudioName(b).join(', '))
+                      })
+                    
+                    setMedias(sortedMedias)
+                    break
+                case "Date":
+                    sortedMedias = [...medias].sort((a, b) =>
+                        new Date(b.startDate.year, b.startDate.month || 0, b.startDate.day || 1) -
+                        new Date(a.startDate.year, a.startDate.month || 0, a.startDate.day || 1)
+                    )
+                    setMedias(sortedMedias)
+                    break
+                case "Score":
+                    sortedMedias = [...medias].sort((a, b) => (b.averageScore || 0) - (a.averageScore || 0))
+                    setMedias(sortedMedias)
+                    break
+                default:
+                    break;
+            }
+        }
+
+        sortMediasBy(sortCriteria)
+
+    }, [sortCriteria])
+    /* Sort medias */
 
     const [medias, setMedias] = useState([])
     const [isLoading, setIsLoading] = useState(true)
@@ -55,39 +100,7 @@ const Period = ({ season, year }) => {
         }
     }, [location.pathname])
 
-    const sortMediasBy = (criteria) => {
-        let sortedMedias = []
-        switch (criteria) {
-            case 0:
-                sortedMedias = [...medias].sort((a, b) => a.title.romaji.localeCompare(b.title.romaji))
-                setMedias(sortedMedias)
-                break
-            case 1:
-                sortedMedias = [...medias].sort((a, b) => (b.popularity || 0) - (a.popularity || 0))
-                setMedias(sortedMedias)
-                break
-            case 2:
-                sortedMedias = [...medias].sort((a, b) => {                
-                    return getMainStudioName(a).join(', ').localeCompare(getMainStudioName(b).join(', '))
-                  })
-                
-                setMedias(sortedMedias)
-                break
-            case 3:
-                sortedMedias = [...medias].sort((a, b) =>
-                    new Date(b.startDate.year, b.startDate.month || 0, b.startDate.day || 1) -
-                    new Date(a.startDate.year, a.startDate.month || 0, a.startDate.day || 1)
-                )
-                setMedias(sortedMedias)
-                break
-            case 4:
-                sortedMedias = [...medias].sort((a, b) => (b.averageScore || 0) - (a.averageScore || 0))
-                setMedias(sortedMedias)
-                break
-            default:
-                break;
-        }
-    }
+    
 
     const displayMedias = format => {
         return filterMedias(medias, format).map(media => {
@@ -213,7 +226,7 @@ const Period = ({ season, year }) => {
                     className='text-[#6e859e] text-center font-bold mt-10'
                 >Aucune information pour l'instant pour la saison: { `${anime_season_en_fr[season]} ${year}` }</div>
                 : <>
-                    <div className='m-2 px-10 py-2 bg-[#41B1EA] font-bold rounded-md flex justify-between items-center'>
+                    {/* <div className='m-2 px-10 py-2 bg-[#41B1EA] font-bold rounded-md flex justify-between items-center'>
                         <div className='flex flex-row gap-5'>
                             <Search />
                             <Sort sortMediasBy={sortMediasBy} />
@@ -221,7 +234,7 @@ const Period = ({ season, year }) => {
                         <div className='text-xs text-white'>
                             { `${anime_season_en_fr[season]} ${year}` }
                         </div>
-                    </div>
+                    </div> */}
                     <div className='p-10 md:p-20 lg:p-4 xl:p-10 flex flex-col gap-5 md:gap-5 lg:gap-3 xl:gap-5'>
                         {
                             medias.some(media => media.format === 'TV') && (<>
@@ -263,4 +276,4 @@ const Period = ({ season, year }) => {
     )
 }
 
-export default Period
+export default React.memo(Period)

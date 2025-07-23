@@ -4,8 +4,8 @@ import Summer from "../components/commonComponents/summerIcon";
 import Winter from "../components/commonComponents/winterIcon";
 
 // seasons
-const anime_seasons_en = ['WINTER', 'SPRING', 'SUMMER', 'FALL']
-const anime_seasons_fr = ['Hiver', 'Printemps', 'Eté', 'Automne']
+export const anime_seasons_en = ['WINTER', 'SPRING', 'SUMMER', 'FALL']
+export const anime_seasons_fr = ['Hiver', 'Printemps', 'Eté', 'Automne']
 
 // => array[season_en] = season_fr
 export const anime_season_en_fr = {}
