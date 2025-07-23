@@ -2,12 +2,15 @@ import { nextIcon, previousIcon } from '../commonComponents/icons'
 
 import Sort from '../commonComponents/sort'
 
-import { Outlet, Link, useNavigate, useLocation } from 'react-router-dom'
+import { Outlet, Link, useLocation } from 'react-router-dom'
 
 import { seasonsCombination, seasonsEn, yearsCollection } from '../../anilist-api/constantsUtil'
-import { getCurrentSeason, setIcon } from '../../anilist-api/fonctionsUtil'
+import { setIcon } from '../../anilist-api/fonctionsUtil'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
+
+import { Tooltip } from 'react-tooltip'
+
 
 const Season = () => {
 
@@ -59,17 +62,26 @@ const Season = () => {
             { 
                 currentSeasonLinks.map((link, index) => {
                     const isCurrentSeason = link.season === currentSeason.season.toUpperCase()
-                    return <Link
-                            key={index}
-                            to={`/season/${link.season.toLowerCase()}/${link.year}`}
-                            className={`flex items-center gap-1
-                            ${isCurrentSeason && !resetNavStyle ? "text-[#2B2D42]" : "text-white hover:text-[#2B2D42]"}`}
-                            onClick={() => navigateToNewSeason(link)}
+                    return <>
+                        <Link
+                                key={index}
+                                to={`/season/${link.season.toLowerCase()}/${link.year}`}
+                                id={link.season.toLocaleLowerCase()}
+                                className={`flex items-center gap-1
+                                ${isCurrentSeason && !resetNavStyle ? "text-[#2B2D42]" : "text-white hover:text-[#2B2D42]"}`}
+                                onClick={() => navigateToNewSeason(link)}
                         >
                             <div>{ setIcon(link.season) }</div>
                             { isCurrentSeason && !resetNavStyle && <div className='text-xs capitalize'>{seasonsEn[index].toLocaleLowerCase()}</div> }
-                
                         </Link>
+                    
+                        <Tooltip
+                            anchorSelect={`#${link.season.toLocaleLowerCase()}`}
+                            content={link.season.toLocaleLowerCase()}
+                            place='bottom-end'
+                            className='capitalize'
+                        />
+                    </>
                     }
                 )
             }            
@@ -86,31 +98,6 @@ const Season = () => {
         setSortCriteria(criteria)
     }
     /* Navigation to switch season and year */
-
-    /* Manage behavior after the user clicked the previous button */
-    // const usePreviousPath = () => {
-    //     const prevPathRef = useRef(null)
-      
-    //     useEffect(() => {
-    //         prevPathRef.current = location.pathname
-    //     }, [location.pathname])
-      
-    //     return prevPathRef.current
-    // }
-
-    // const previousPath = usePreviousPath()
-
-    // // reset the navigation bar so that it does not display the year of the previous page
-    // useEffect(() => {
-    //     if (
-    //         location.pathname.startsWith('/season') &&
-    //         previousPath &&
-    //         !previousPath.startsWith('/season')
-    //     ) {
-    //         setCurrentSeason(getCurrentSeason().year)
-    //     } 
-    // }, [location.pathname, previousPath])
-    /* Manage behavior after the user clicked the previous button */
 
     return(
         <>        
