@@ -1,63 +1,23 @@
 @import "tailwindcss";
 
 /* loader */
+
+/* HTML: <div class="loader"></div> */
 .loader {
-    color: #BCBEDC;
-    font-size: 15px;
-    width: 1em;
-    height: 1em;
-    border-radius: 50%;
-    position: relative;
-    text-indent: -9999em;
-    animation: mulShdSpin 1.3s infinite linear;
-    transform: translateZ(0);
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 30px;
+  display: inline-grid;
 }
-  
-@keyframes mulShdSpin {
-    0%,
-    100% {
-      box-shadow: 0 -3em 0 0.2em, 
-      2em -2em 0 0em, 3em 0 0 -1em, 
-      2em 2em 0 -1em, 0 3em 0 -1em, 
-      -2em 2em 0 -1em, -3em 0 0 -1em, 
-      -2em -2em 0 0;
-    }
-    12.5% {
-      box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 
-      3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, 
-      -2em 2em 0 -1em, -3em 0 0 -1em, 
-      -2em -2em 0 -1em;
-    }
-    25% {
-      box-shadow: 0 -3em 0 -0.5em, 
-      2em -2em 0 0, 3em 0 0 0.2em, 
-      2em 2em 0 0, 0 3em 0 -1em, 
-      -2em 2em 0 -1em, -3em 0 0 -1em, 
-      -2em -2em 0 -1em;
-    }
-    37.5% {
-      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
-       3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, 
-       -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
-    }
-    50% {
-      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
-       3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, 
-       -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
-    }
-    62.5% {
-      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
-       3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, 
-       -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
-    }
-    75% {
-      box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 
-      3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, 
-      -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
-    }
-    87.5% {
-      box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 
-      3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, 
-      -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
-    }
+.loader:before,
+.loader:after {
+  content:"Loading...";
+  grid-area: 1/1;
+  mask:linear-gradient(90deg,#000 50%,#0000 0) 0 50%/2ch 100%;
+  animation: l11 1s infinite cubic-bezier(0.5,220,0.5,-220);
 }
+.loader:after {
+  mask-position:1ch 50%;
+  --s:-1;
+}
+@keyframes l11 {100%{transform: translateY(calc(var(--s,1)*0.1%));}}

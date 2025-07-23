@@ -1,7 +1,7 @@
-import Fall from "../components/commonComponents/fallIcon";
-import Spring from "../components/commonComponents/springIcon";
-import Summer from "../components/commonComponents/summerIcon";
-import Winter from "../components/commonComponents/winterIcon";
+// import Fall from "../components/commonComponents/fallIcon";
+// import Spring from "../components/commonComponents/springIcon";
+// import Summer from "../components/commonComponents/summerIcon";
+// import Winter from "../components/commonComponents/winterIcon";
 
 // seasons
 export const anime_seasons_en = ['WINTER', 'SPRING', 'SUMMER', 'FALL']
@@ -66,20 +66,20 @@ export const getRandomInt = max => {
 }
 
 // => component of season's icon
-export const setIcon = (season) => {
-  switch (season) {
-    case 'WINTER':
-      return <Winter />
-    case 'SPRING':
-      return <Spring />
-    case 'SUMMER':
-      return <Summer />
-    case 'FALL':
-      return <Fall />
-    default:
-      break;
-  }
-}
+// export const setIcon = (season) => {
+//   switch (season) {
+//     case 'WINTER':
+//       return <Winter />
+//     case 'SPRING':
+//       return <Spring />
+//     case 'SUMMER':
+//       return <Summer />
+//     case 'FALL':
+//       return <Fall />
+//     default:
+//       break;
+//   }
+// }
 
 // => array of sort options
 export const sortOptions = ['Titre', 'Popularité', 'Studio', 'Date', 'Note']

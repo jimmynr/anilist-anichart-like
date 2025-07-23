@@ -1,11 +1,10 @@
 
-const Loader = ({ header }) => {
+const Loader = () => {
     return(
         <>
-            <div className='flex justify-center mt-30'>
+            <div className='flex justify-center mt-30 text-[#6e859e]'>
                 <span className='loader'></span>
             </div>
-            <div className="text-center mt-20 text-[#6e859e]">Récupération {header}...</div>
         </>
     )
 }
