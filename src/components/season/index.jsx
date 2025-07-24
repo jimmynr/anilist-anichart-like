@@ -62,9 +62,8 @@ const Season = () => {
             { 
                 currentSeasonLinks.map((link, index) => {
                     const isCurrentSeason = link.season === currentSeason.season.toUpperCase()
-                    return <>
+                    return <div key={index}>
                         <Link
-                                key={index}
                                 to={`/season/${link.season.toLowerCase()}/${link.year}`}
                                 id={link.season.toLocaleLowerCase()}
                                 className={`flex items-center gap-1
@@ -74,14 +73,13 @@ const Season = () => {
                             <div>{ setIcon(link.season) }</div>
                             { isCurrentSeason && !resetNavStyle && <div className='text-xs capitalize'>{seasonsEn[index].toLocaleLowerCase()}</div> }
                         </Link>
-                    
                         <Tooltip
                             anchorSelect={`#${link.season.toLocaleLowerCase()}`}
                             content={link.season.toLocaleLowerCase()}
                             place='bottom-end'
                             className='capitalize'
-                        />
-                    </>
+                        />                    
+                    </div>
                     }
                 )
             }            

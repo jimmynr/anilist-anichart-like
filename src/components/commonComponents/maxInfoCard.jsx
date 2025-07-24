@@ -6,6 +6,8 @@ import { highScoreIcon, averageScoreIcon, lowScoreIcon } from "./icons"
 
 import { Link } from "react-router-dom"
 
+import { useMemo } from "react"
+
 const MaxInfoCard = ({ media }) => {
 
     const studios = getMainStudioName(media).join(", ")
@@ -20,7 +22,7 @@ const MaxInfoCard = ({ media }) => {
     : media.status === 'FINISHED' ? formatDateEn(media.startDate)
     : ''
 
-    const color = colorsCollection[getRandomInt(colorsCollection.length - 1)]
+    const color = useMemo(() => (colorsCollection[getRandomInt(colorsCollection.length - 1)]), [])
 
     const episodes = media.status === 'NOT_YET_RELEASED' && media.nextAiringEpisode ? `Ep ${ media.nextAiringEpisode?.episode || '?' } airing in`
     : media.status === 'RELEASING' && media.nextAiringEpisode ? `Ep ${ media.nextAiringEpisode?.episode || '?' }/${ media.episodes || '?' } airing in`
@@ -28,8 +30,7 @@ const MaxInfoCard = ({ media }) => {
     : ''
 
     return (
-        <div 
-            key={media.id} 
+        <div
             className='w-full md:w-full lg:w-1/2 xl:w-1/3'
         >            
             <div className='flex h-64 max-h-64 m-4 rounded-md'>

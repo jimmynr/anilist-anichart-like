@@ -2,7 +2,7 @@ import { useOutletContext } from 'react-router-dom'
 
 import { getMainStudioName, filterMedias } from '../../anilist-api/fonctionsUtil'
 
-import { fetchMediaPerSeasonPerYear } from '../../anilist-api/helpers'
+import { fetchMedias } from '../../anilist-api/api'
 
 import React, { useState, useEffect } from 'react'
 
@@ -76,7 +76,7 @@ const Period = ({ season, year }) => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const result = await fetchMediaPerSeasonPerYear(50, season, year)
+            const result = await fetchMedias(1, 50, undefined, undefined, undefined, year ,season, undefined, undefined, true)
 
             if(result.length === 0) setIsEmpty(true)
 
@@ -123,7 +123,7 @@ const Period = ({ season, year }) => {
                         }
                         {
                             medias.some(media => media.format === 'TV_SHORT') && (<>
-                                <Title title='TV SHORT' />
+                                <Title title='TV Short' />
                                 <div className='flex flex-wrap'>
                                     { displayMedias('TV_SHORT') }
                                 </div>
@@ -131,7 +131,7 @@ const Period = ({ season, year }) => {
                         }
                         {
                             medias.some(media => media.format === 'MOVIE') && (<>
-                                <Title title='FILM' />
+                                <Title title='Movie' />
                                 <div className='flex flex-wrap'>
                                     { displayMedias('MOVIE') }
                                 </div>
@@ -139,7 +139,7 @@ const Period = ({ season, year }) => {
                         }
                         {
                             medias.some(media => media.format === 'OVA' || media.format === 'ONA' || media.format === 'SPECIAL') && (<>
-                                <Title title='OVA/ONA/SPECIAL' />
+                                <Title title='OVA/ONA/Special' />
                                 <div className='flex flex-wrap'>
                                     { displayMedias() }
                                 </div>

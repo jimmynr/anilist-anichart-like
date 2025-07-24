@@ -19,12 +19,12 @@ const ErrorPage = () => {
                 </div>
                 <div className="w-full flex flex-col justify-center items-center text-[#BCBEDC]">
                     <div className="text-center text-9xl font-bold">404</div>
-                    <div>Oups, la page que vous cherchez n'existe pas !</div>
+                    <div>Oops! The page you're looking for doesn't exist.</div>
                     <button 
                         className='mt-5 bg-[#2B2D42] font-bold px-5 py-2 rounded-lg border border-[#2B2D42]
                         hover:text-white hover:bg-gray-700 cursor-pointer'
                         onClick={goToHome}
-                    >Revenir vers l'accueil</button>
+                    >Go back to the homepage</button>
                 </div>        
             </div>
         </section>

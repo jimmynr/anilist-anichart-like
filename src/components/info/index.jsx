@@ -7,6 +7,8 @@ const Info = () => {
         <ul>
             <li>https://react-icons.github.io/react-icons/</li>
             <li>https://motion.dev/docs/react</li>
+            <li>https://css-loaders.com/</li>
+            <li>https://www.npmjs.com/package/react-tooltip</li>
         </ul>
         </div>
     )
