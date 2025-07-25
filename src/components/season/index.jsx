@@ -7,12 +7,20 @@ import { Outlet, Link, useLocation } from 'react-router-dom'
 import { seasonsCombination, seasonsEn, yearsCollection } from '../../anilist-api/constantsUtil'
 import { setIcon } from '../../anilist-api/fonctionsUtil'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 
 import { Tooltip } from 'react-tooltip'
 
+import { navContext } from '../../context/navigationContext'
+
+import { motion, AnimatePresence } from "motion/react"
+
+import { useMediaQuery } from 'react-responsive'
 
 const Season = () => {
+    /* Screen size for mobile */
+    const isMobile = useMediaQuery({ maxWidth: 720 })
+    /* Screen size for mobile */
 
     const location = useLocation()
 
@@ -30,6 +38,12 @@ const Season = () => {
     const [resetNavStyle, setResetNavStyle] = useState(false)
     const [sortCriteria, setSortCriteria] = useState("Popularity")
     /* States */
+
+    /* Context */
+    // behavior while scrolling and toggle button menu being clicked
+    const navCtxt = useContext(navContext)
+    const { showNavbar, isHidden } = navCtxt
+    /* Context */
 
     /* Add style to the active navigation according to the url */
     useEffect(() => {
@@ -97,16 +111,36 @@ const Season = () => {
     }
     /* Navigation to switch season and year */
 
+    const navTopStyle = {
+        top: isMobile && isHidden ? "3.75rem" 
+        : isMobile && !isHidden ? "6.25rem"
+        : "3.75rem" 
+    }
+
     return(
-        <>        
-            <div className='m-2 px-5 md:px-10 lg:px-10 xl:px-10 py-2 bg-[#41B1EA] font-bold rounded-md 
-            flex justify-between items-center'>
-                <div className='flex items-center gap-2 text-[#2B2D42]'>
-                    <Sort sortMediasBy={sortMediasBy} />
-                    <p className='text-xs'>{sortCriteria}</p>
-                </div>
-                <div className='flex items-center gap-2'>{displaySeasonsNavigation()}</div>
-            </div>
+        <>  
+            <AnimatePresence>
+                { showNavbar &&       
+                    <motion.div 
+                        key="navigationBar"
+                        initial={{ marginLeft: "100%", opacity: 0, ...navTopStyle }}
+                        animate={{ marginLeft: "8px", opacity: 1, ...navTopStyle }}
+                        exit={{ marginLeft: "100%", opacity: 0, ...navTopStyle }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="my-2 px-5 md:px-10 lg:px-10 xl:px-10 py-2 bg-[#41B1EA] font-bold rounded-md flex justify-between items-center fixed w-full md:top-15 lg:top-15 xl:top-15 z-10"
+                        style={navTopStyle}
+                    >
+                        <div className='flex items-center gap-2 text-[#2B2D42]'>
+                            <Sort sortMediasBy={sortMediasBy} />
+                            <p className='text-xs'>{sortCriteria}</p>
+                        </div>
+                        
+                            <div                                 
+                                className='flex items-center gap-2'
+                            >{displaySeasonsNavigation()}</div> 
+                    </motion.div>
+                }
+            </AnimatePresence>
 
             <Outlet context={{ sortCriteria }} />
         </>
