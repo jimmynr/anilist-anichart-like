@@ -21,3 +21,20 @@
   --s:-1;
 }
 @keyframes l11 {100%{transform: translateY(calc(var(--s,1)*0.1%));}}
+
+/* Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+.custom-scrollbar:hover::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 100, 0.5);
+}
+
+.custom-scrollbar::-webkit-scrollbar-button {
+  display: none;
+}

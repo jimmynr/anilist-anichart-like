@@ -38,3 +38,60 @@ export const statusCollection = {
     }
 }
 /* Media's card*/
+
+/* Home dropdowns'options */
+const genreCollection = [
+  "Action",
+  "Adventure",
+  "Comedy",
+  "Drama",
+  "Ecchi",
+  "Fantasy",
+  "Horror",
+  "Mahou Shoujo",
+  "Mecha",
+  "Music",
+  "Mystery",
+  "Psychological",
+  "Romance",
+  "Sci-Fi",
+  "Slice of Life",
+  "Sports",
+  "Supernatural",
+  "Thriller"
+]
+
+export const genreOptions = genreCollection.map(genre => ({
+  value: genre.toUpperCase(),
+  label: genre
+}))
+
+export const formatsOptions = [
+  { value: "TV", label: "TV" },
+  { value: "MOVIE", label: "Movie" },
+  { value: "TV_SHORT", label: "TV Short" },
+  { value: "SPECIAL", label: "Special" },
+  { value: "OVA", label: "OVA" },
+  { value: "ONA", label: "ONA" },
+  { value: "MUSIC", label: "Music" }
+]
+
+export const yearOptions = yearsCollection.map(year => ({
+  value: year,
+  label: year.toString()
+}))
+
+export const seasonOptions = seasonsEn.map(season => ({
+  value: season,
+  label: season[0].toLocaleLowerCase() + season.slice(1).toLocaleLowerCase()
+}))
+
+
+export const statusOptions = [
+  { value: "FINISHED", label: "Finished" },
+  { value: "RELEASING", label: "Releasing" },
+  { value: "NOT_YET_RELEASED", label: "Not Yet Released" },
+  { value: "CANCELLED", label: "Cancelled" }
+]
+
+/* Home dropdowns'options */

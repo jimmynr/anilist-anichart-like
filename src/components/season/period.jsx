@@ -10,7 +10,6 @@ import { useLocation } from 'react-router-dom'
 
 import Title from '../commonComponents/title'
 
-import './index.css'
 import Loader from '../commonComponents/loader'
 
 import MaxInfoCard from '../commonComponents/maxInfoCard'

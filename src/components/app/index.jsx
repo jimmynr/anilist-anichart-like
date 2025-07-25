@@ -41,7 +41,7 @@ const App = () => {
       <NavigationContext>
         <Router>
           <NavBar />
-          <div className="bg-[#EDF1F5] min-h-lvh pt-30">
+          <div className="bg-[#EDF1F5] flex-grow pt-30">
             <Routes>
               <Route path="/" element={ <Navigate to="/search/anime" replace /> } />
               <Route path="/search" element={ <Welcome /> }>

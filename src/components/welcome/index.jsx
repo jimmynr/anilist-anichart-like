@@ -1,45 +1,22 @@
 import { Outlet, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
 
+import { searchIcon, navigationCloseIcon, drowpDownIcon, checkedIcon } from "../commonComponents/icons"
+
+import FilterDropdown from "../commonComponents/filterDropdown"
+
+import { genreOptions, yearOptions, seasonOptions, formatsOptions, statusOptions } from "../../anilist-api/constantsUtil"
+
 import { IoIosClose } from "react-icons/io"
 import { IoIosSearch } from "react-icons/io"
 import { IoIosArrowDown } from "react-icons/io"
 
 import { anime_years, anime_seasons_en } from "../../anilist-api/constants"
+import Label from "../commonComponents/label"
 
-const Welcome = () => {    
-
-    const formats = [
-        "TV",
-        "MOVIE",
-        "TV_SHORT",
-        "SPECIAL",
-        "OVA",
-        "ONA",
-        "MUSIC"
-      ]
-
-    const genres = [
-        "Action",
-        "Adventure",
-        "Comedy",
-        "Drama",
-        "Ecchi",
-        "Fantasy",
-        "Horror",
-        "Mahou Shoujo",
-        "Mecha",
-        "Music",
-        "Mystery",
-        "Psychological",
-        "Romance",
-        "Sci-Fi",
-        "Slice of Life",
-        "Sports",
-        "Supernatural",
-        "Thriller"
-      ]
-
+const Welcome = () => {  
+    
+    /* States */
     const [filters, setFilters] = useState({
         name: "",
         genres: [],
@@ -49,12 +26,38 @@ const Welcome = () => {
         status: ""
     })
 
-    const statuses = [
-        "FINISHED",       
-        "RELEASING",      
-        "NOT_YET_RELEASED", 
-        "CANCELLED"       
-    ]
+    // const [hideGenres, setHideGenres] = useState(true)
+    /* States */
+
+    /* Display dropdowns'options */
+    // const displayGenres = genresCollection.map((genre, index) => {
+    //     return <div 
+    //         key={index} 
+    //         className="text-sm p-2 font-semibold cursor-pointer hover:text-white hover:bg-[#2B2D42] hover:rounded-md
+    //         flex justify-between items-center"
+    //         onClick={() =>
+    //             setFilters(prev => {
+    //             const alreadySelected = prev.genres.includes(genre)
+    //             const newGenres = alreadySelected
+    //                 ? prev.genres.filter(g => g !== genre)
+    //                 : [...prev.genres, genre]
+            
+    //             return {
+    //                 ...prev,
+    //                 genres: newGenres
+    //             }
+    //             })
+    //         }
+    //     >
+    //         {genre}
+    //         {filters.genres.includes(genre) && <div>{checkedIcon}</div>}
+    //     </div>
+    // })
+
+    /* Display dropdowns'options */
+    
+
+
       
 
     const navigateTo = useNavigate()
@@ -98,271 +101,53 @@ const Welcome = () => {
             queryParams.append("mode", "filter")
             navigateTo(`/search/anime?${queryParams.toString()}`, { replace: true })
         }
+
+        console.log(filters)
     }, [filters])
 
     return(
-        <div className='bg-[#EDF1F5] flex-grow text-[#6e859e]'>
-
-            <div className="p-10 md:p-20 lg:p-4 xl:p-10 flex flex-row gap-5 md:gap-5 lg:gap-3 xl:gap-5">
+        <div className='bg-[#EDF1F5] text-[#6e859e] flex flex-col items-center w-full'>
+            <div className="flex flex-col w-3/4">
                 <div>
-                    <div>Rechercher</div>
-                    <div className="relative">
-                        <IoIosSearch 
-                            className="text-xl text-[#6e859e] absolute top-1/2 -translate-y-2/3 lg:-translate-y-1/2 left-1
-                            hover:border hover:rounded-sm"
-                        />
+                    <div className="relative w-full">
+                        <div
+                            className="*:text-[#6e859e] absolute top-1/2 -translate-y-2/3 lg:-translate-y-1/2 left-3"
+                        >{searchIcon}</div>
                         <input
                             type="text"
-                            className="text-[#6e859e] bg-white px-10 rounded-sm w-full h-8 mb-2 lg:mb-0"
+                            className="text-[#6e859e] bg-white px-10 rounded-sm w-full h-10 mb-2 lg:mb-0 shadow-lg"
+                            placeholder="Search..."
                             value={filters.name}
                             onChange={e => setFilters(prev => ({...prev, name: e.target.value}))}
                         />
-                        <IoIosClose
-                            className="text-xl text-[#6e859e] absolute top-1/2 -translate-y-2/3 lg:-translate-y-1/2 right-1
+                        <div
+                            className="text-xl text-[#6e859e] absolute top-1/2 -translate-y-2/3 lg:-translate-y-1/2 right-3
                             hover:border hover:rounded-sm"
                             onClick={() => setFilters(prev => ({...prev, name: ""}))}
-                        />
+                        >{navigationCloseIcon}</div>
                     </div>
                 </div>
-                <div className="relative">
-                    <div>Genres</div>
-                    <div className="relative">
-                        <input
-                            type="text"
-                            className="text-[#6e859e] bg-white pl-2 pr-10 rounded-sm w-full h-8 mb-2 lg:mb-0"
-                            // onChange={e => setFilters(prev => ({...prev, genres: e.target.value}))}
-                        />
-                        { filters.genres && filters.genres.length === 0 && <IoIosArrowDown 
-                                className="text-xl text-[#6e859e] absolute top-1/2 -translate-y-2/3 lg:-translate-y-1/2 right-1
-                                hover:border hover:rounded-sm"
-                            />
-                        }
-                        
-                        { filters.genres && filters.genres.length > 0 &&
-                            <IoIosClose
-                                className="text-xl text-[#6e859e] absolute top-1/2 -translate-y-2/3 lg:-translate-y-1/2 right-1
-                                hover:border hover:rounded-sm"
-                                onClick={() => setFilters(prev => ({...prev, genres: []}))}
-                            />
-                        }           
-                    </div>
-                    <div className="absolute mt-2 p-2 rounded-sm w-full bg-white">
-                        {
-                            genres.map((genre, index) => {
-                                return <div 
-                                key={index} 
-                                onClick={() =>
-                                    setFilters(prev => {
-                                      const alreadySelected = prev.genres.includes(genre)
-                                      const newGenres = alreadySelected
-                                        ? prev.genres.filter(g => g !== genre)
-                                        : [...prev.genres, genre]
-                                  
-                                      return {
-                                        ...prev,
-                                        genres: newGenres
-                                      }
-                                    })
-                                  }
-                                >{genre}</div>
-                            })
-                        }
-                    </div>
-                </div>
-                <div className="relative">
-                    <div>Année</div>
-                    <div className="relative">
-                        <input
-                            type="text"
-                            className="text-[#6e859e] bg-white pl-2 pr-10 rounded-sm w-full h-8 mb-2 lg:mb-0"
-                            // onChange={e => setFilters(prev => ({...prev, year: e.target.value}))}
-                        />
-                        { filters.year === "" && <IoIosArrowDown 
-                                className="text-xl text-[#6e859e] absolute top-1/2 -translate-y-2/3 lg:-translate-y-1/2 right-1
-                                hover:border hover:rounded-sm"
-                            />
-                        }
-                        
-                        { filters.year !== "" &&
-                            <IoIosClose
-                                className="text-xl text-[#6e859e] absolute top-1/2 -translate-y-2/3 lg:-translate-y-1/2 right-1
-                                hover:border hover:rounded-sm"
-                                onClick={() => setFilters(prev => ({...prev, year: prev.season !== "" ? new Date().getFullYear() : ""}))}
-                            />
-                        } 
-                    </div>
-                    <div className="absolute mt-2 p-2 rounded-sm w-full bg-white">
-                        {
-                            anime_years.map((year, index) => {
-                                return <div 
-                                key={index} 
-                                onClick={() =>
-                                    setFilters(prev => ({...prev, year}))
-                                  }
-                                >{year}</div>
-                            })
-                        }
-                    </div>
 
-                </div>
-                <div className="relative">
-                    <div>Saison</div>
-                    <div className="relative">
-                        <input
-                            type="text"
-                            className="text-[#6e859e] bg-white pl-2 pr-10 rounded-sm w-full h-8 mb-2 lg:mb-0"
-                            // onChange={e => setFilters(prev => ({...prev, season: e.target.value}))}
-                        />
-                        { filters.season === "" && <IoIosArrowDown 
-                                className="text-xl text-[#6e859e] absolute top-1/2 -translate-y-2/3 lg:-translate-y-1/2 right-1
-                                hover:border hover:rounded-sm"
-                            />
-                        }
-                        
-                        { filters.season !== "" &&
-                            <IoIosClose
-                                className="text-xl text-[#6e859e] absolute top-1/2 -translate-y-2/3 lg:-translate-y-1/2 right-1
-                                hover:border hover:rounded-sm"
-                                onClick={() => setFilters(prev => ({...prev, season: ""}))}
-                            />
-                        } 
+                <div className="flex justify-between gap-5 pt-2">
+                    <div className="relative w-[170px]">
+                        <Label name="Year" />
+                        <FilterDropdown state={filters} setState={setFilters} property="year" collection={yearOptions} allowsManyChoices={false} />
                     </div>
-                    <div className="absolute mt-2 p-2 rounded-sm w-full bg-white">
-                        {
-                            anime_seasons_en.map((season, index) => {
-                                return <div 
-                                key={index} 
-                                onClick={() =>
-                                    setFilters(prev => ({...prev, season, year: prev.year === "" && new Date().getFullYear() }))
-                                  }
-                                >{season}</div>
-                            })
-                        }
+                    <div className="relative w-[170px]">
+                        <Label name="Season" />
+                        <FilterDropdown state={filters} setState={setFilters} property="season" collection={seasonOptions} allowsManyChoices={false} />
                     </div>
-                </div>
-                <div className="relative">
-                    <div>Format</div>
-                    <div className="relative">
-                        <input
-                            type="text"
-                            className="text-[#6e859e] bg-white pl-2 pr-10 rounded-sm w-full h-8 mb-2 lg:mb-0"
-                            // onChange={e => setFilters(prev => ({...prev, formats: e.target.value}))}
-                        />
-                        { filters.formats && filters.formats.length === 0 && <IoIosArrowDown 
-                                className="text-xl text-[#6e859e] absolute top-1/2 -translate-y-2/3 lg:-translate-y-1/2 right-1
-                                hover:border hover:rounded-sm"
-                            />
-                        }
-                        
-                        { filters.formats && filters.formats.length > 0 &&
-                            <IoIosClose
-                                className="text-xl text-[#6e859e] absolute top-1/2 -translate-y-2/3 lg:-translate-y-1/2 right-1
-                                hover:border hover:rounded-sm"
-                                onClick={() => setFilters(prev => ({...prev, formats: []}))}
-                            />
-                        }           
+                    <div className="relative w-[170px]">
+                        <Label name="Genres" />
+                        <FilterDropdown state={filters} setState={setFilters} property="genres" collection={genreOptions} allowsManyChoices={true} />
                     </div>
-                    <div className="absolute mt-2 p-2 rounded-sm w-full bg-white">
-                        {
-                            formats.map((format, index) => {
-                                return <div 
-                                key={index} 
-                                onClick={() =>
-                                    setFilters(prev => {
-                                      const alreadySelected = prev.formats.includes(format)
-                                      const newFormats = alreadySelected
-                                        ? prev.formats.filter(f => f !== format)
-                                        : [...prev.formats, format]
-                                  
-                                      return {
-                                        ...prev,
-                                        formats: newFormats
-                                      }
-                                    })
-                                  }
-                                >{format}</div>
-                            })
-                        }
+                    <div className="relative w-[170px]">
+                        <Label name="Format" />
+                        <FilterDropdown state={filters} setState={setFilters} property="formats" collection={formatsOptions} allowsManyChoices={true} />
                     </div>
-                </div>
-                {/* <div className="relative">
-                    <div>Studio</div>
-                    <div className="relative">
-                        <input
-                            type="text"
-                            className="text-[#6e859e] bg-white pl-2 pr-10 rounded-sm w-full h-8 mb-2 lg:mb-0"
-                            // onChange={e => setFilters(prev => ({...prev, studios: e.target.value}))}
-                        />
-                        { filters.studios && filters.studios.length === 0 && <IoIosArrowDown 
-                                className="text-xl text-[#6e859e] absolute top-1/2 -translate-y-2/3 lg:-translate-y-1/2 right-1
-                                hover:border hover:rounded-sm"
-                            />
-                        }
-                        
-                        { filters.studios && filters.studios.length > 0 &&
-                            <IoIosClose
-                                className="text-xl text-[#6e859e] absolute top-1/2 -translate-y-2/3 lg:-translate-y-1/2 right-1
-                                hover:border hover:rounded-sm"
-                                onClick={() => setFilters(prev => ({...prev, studios: []}))}
-                            />
-                        }           
-                    </div>
-                    <div className="absolute mt-2 p-2 rounded-sm w-full bg-white">
-                        {
-                            animationStudios && animationStudios.map((studio, index) => {
-                                return <div 
-                                key={index} 
-                                onClick={() =>
-                                    setFilters(prev => {
-                                      const alreadySelected = prev.studios.includes(studio)
-                                      const newStudios = alreadySelected
-                                        ? prev.studios.filter(s => s !== studio)
-                                        : [...prev.studios, studio]
-                                  
-                                      return {
-                                        ...prev,
-                                        studios: newStudios
-                                      }
-                                    })
-                                  }
-                                >{studio}</div>
-                            })
-                        }
-                    </div>
-                </div> */}
-                <div className="relative">
-                    <div>Statut</div>
-                    <div className="relative">
-                        <input
-                            type="text"
-                            className="text-[#6e859e] bg-white pl-2 pr-10 rounded-sm w-full h-8 mb-2 lg:mb-0"
-                            // onChange={e => setFilters(prev => ({...prev, status: e.target.value}))}
-                        />
-                        { filters.status === "" && <IoIosArrowDown 
-                                className="text-xl text-[#6e859e] absolute top-1/2 -translate-y-2/3 lg:-translate-y-1/2 right-1
-                                hover:border hover:rounded-sm"
-                            />
-                        }
-                        
-                        { filters.status !== "" &&
-                            <IoIosClose
-                                className="text-xl text-[#6e859e] absolute top-1/2 -translate-y-2/3 lg:-translate-y-1/2 right-1
-                                hover:border hover:rounded-sm"
-                                onClick={() => setFilters(prev => ({...prev, status: ""}))}
-                            />
-                        } 
-                    </div>
-                    <div className="absolute mt-2 p-2 rounded-sm w-full bg-white">
-                        {
-                            statuses.map((status, index) => {
-                                return <div 
-                                key={index} 
-                                onClick={() =>
-                                    setFilters(prev => ({...prev, status}))
-                                  }
-                                >{status}</div>
-                            })
-                        }
+                    <div className="relative w-[170px]">
+                        <Label name="Status" />
+                        <FilterDropdown state={filters} setState={setFilters} property="status" collection={statusOptions} allowsManyChoices={false} />
                     </div>
                 </div>
             </div>
