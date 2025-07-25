@@ -1,10 +1,10 @@
-import { getAllMalAnimes, getAllMalStudios, anime_years, media_genre_colors, getRandomInt } from '../../anilist-api/constants'
+import { getAllMalAnimes, getAllMalStudios, anime_years, media_genre_colors, getRandomInt } from '../anilist-api/constants'
 
 import { useParams, Link } from "react-router-dom"
 
 import { useEffect, useState } from "react"
 
-import Title from '../commonComponents/title'
+import Title from '../components/commonComponents/title'
 
 const MediaPerStudio = () => {
 

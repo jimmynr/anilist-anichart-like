@@ -95,3 +95,32 @@ export const filterMedias = (medias, filter) => {
   }
 }
 /* Media's card */
+
+/* Fetching home's data */
+// => next season
+export const getNextSeason = () => {
+    const currentMonth = new Date().getMonth()
+    const currentYear = new Date().getFullYear()
+    if(currentMonth >= 0 && currentMonth <= 2) {
+      return {
+        season: 'SPRING',
+        year: currentYear
+      }
+    } else if(currentMonth >= 3 && currentMonth <= 5) {
+      return {
+        season: 'SUMMER',
+        year: currentYear
+      }
+    } else if(currentMonth >= 6 && currentMonth <= 8) {
+      return {
+        season: 'FALL',
+        year: currentYear
+      }
+    } else {
+      return {
+        season: 'WINTER',
+        year: currentYear
+      }
+    }
+}
+/* Fetching home's data */

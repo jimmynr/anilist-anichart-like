@@ -14,6 +14,8 @@ import Loader from '../commonComponents/loader'
 
 import MaxInfoCard from '../commonComponents/maxInfoCard'
 
+import Alert from '../commonComponents/alert'
+
 const Period = ({ season, year }) => {
 
     const { sortCriteria } = useOutletContext()
@@ -75,7 +77,7 @@ const Period = ({ season, year }) => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const result = await fetchMedias(1, 50, undefined, undefined, undefined, year ,season, undefined, undefined, true)
+            const result = await fetchMedias(1, 50, undefined, undefined, undefined, year ,season, undefined, undefined, ["POPULARITY_DESC"], true)
 
             if(result.length === 0) setIsEmpty(true)
 
@@ -107,9 +109,7 @@ const Period = ({ season, year }) => {
         <>
             {
                 isLoading ? <Loader />
-                : isEmpty ? <div
-                    class="m-2 px-5 md:px-10 lg:px-10 xl:px-10 py-2 text-sm text-[#6e859e] font-bold rounded-md shadow-md"
-                >No anime available for this season yet.</div>
+                : isEmpty ? <Alert message="No anime available for this season yet." />
                 : <>
                     <div className='p-10 flex flex-col gap-5 md:gap-5 lg:gap-3 xl:gap-5'>
                         {

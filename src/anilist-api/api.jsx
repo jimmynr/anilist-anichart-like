@@ -1,4 +1,4 @@
-export const fetchMedias = async (page, perPage, mediaId, name, genres, year, season, status, formats, getAllPages = true) => {
+export const fetchMedias = async (page, perPage, mediaId, name, genres, year, season, status, formats, sort, getAllPages = true) => {
     // const url = 'https://graphql.anilist.co'
     const fetchedAnimes = []
 
@@ -17,6 +17,7 @@ export const fetchMedias = async (page, perPage, mediaId, name, genres, year, se
                     $season: MediaSeason, 
                     $status_in: [MediaStatus], 
                     $format_in: [MediaFormat]
+                    $sort: [MediaSort]
                 ){
                     Page(page: $page, perPage: $perPage) {
                         pageInfo {
@@ -34,7 +35,7 @@ export const fetchMedias = async (page, perPage, mediaId, name, genres, year, se
                             season: $season,
                             status_in: $status_in,
                             format_in: $format_in,
-                            sort: POPULARITY_DESC
+                            sort: $sort
                         ) {
                             id
                             title { romaji english native }
@@ -46,7 +47,7 @@ export const fetchMedias = async (page, perPage, mediaId, name, genres, year, se
                             seasonYear
                             episodes
                             trailer { id site thumbnail }
-                            coverImage { large extraLarge }
+                            coverImage { medium large extraLarge }
                             bannerImage
                             genres
                             averageScore
@@ -75,7 +76,8 @@ export const fetchMedias = async (page, perPage, mediaId, name, genres, year, se
                 seasonYear: year || undefined,
                 season: season || undefined,
                 status_in: status?.length ? status : undefined,
-                format_in: formats?.length ? formats : undefined
+                format_in: formats?.length ? formats : undefined,
+                sort: sort
             }
         }
     

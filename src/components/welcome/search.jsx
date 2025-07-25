@@ -3,9 +3,15 @@ import { useEffect, useState } from "react"
 
 import { Link, useSearchParams } from "react-router-dom"
 
+import { fetchMedias } from "../../anilist-api/api"
+
+import { getCurrentSeason, getNextSeason } from "../../anilist-api/fonctionsUtil"
+
+import { useMediaQuery } from 'react-responsive'
+
 import { fetchFilteredMedias, fetchMediaByActualTrending, fetchMediaPopularThisSeason, fetchMediaAllTimePopular, fetchMediaTop100 } from "../../anilist-api/helpers"
 
-import { media_genre_colors, getRandomInt, getCurrentSeason, getNextSeason, formatLabels, anime_season_en_fr, media_status_fr } from "../../anilist-api/constants"
+import { media_genre_colors, getRandomInt, formatLabels, anime_season_en_fr, media_status_fr } from "../../anilist-api/constants"
 
 import Loader from "../commonComponents/loader"
 import Title from "../commonComponents/title"
@@ -13,18 +19,27 @@ import Title from "../commonComponents/title"
 import { PiSmileyLight } from "react-icons/pi"
 import { PiSmileySadLight } from "react-icons/pi"
 import { PiSmileyMehLight } from "react-icons/pi"
+import MinInfoCard from "../commonComponents/minInfoCard"
 
 const Search = () => {
+    /* Screen size for mobile */
+    const isMobile = useMediaQuery({ maxWidth: 640 })
+    const isTablet = useMediaQuery({ maxWidth: 768 })
+    const isLarge = useMediaQuery({ maxWidth: 1024 })
+    const isExtraLarge = useMediaQuery({ maxWidth: 1280 })
+    /* Screen size for mobile */
 
-    const [filteredMedias, setFilteredMedias] = useState([])
+    /* states */
     const [trendingNow, setTrendingNow] = useState([])
     const [popularThisSeason, setPopularThisSeason] = useState([])
     const [upcoming, setUpcoming] = useState([])
     const [allTimePopular, setAllTimePopular] = useState([])
     const [top100, setTop100] = useState([])
-    const [error, setError] = useState(false)
-    const [isLoading, setIsLoading] = useState(true)
     const [filterMode, setFilterMode] = useState(false)
+    
+    const [isLoading, setIsLoading] = useState(true)
+    /* states */
+    const [filteredMedias, setFilteredMedias] = useState([])
 
     const [searchParam] = useSearchParams()
 
@@ -32,7 +47,7 @@ const Search = () => {
 
         const mode = searchParam.get("mode")
 
-        if (mode == "filter") {
+        if (mode === "filter") {
             setFilterMode(true)
 
             const name = searchParam.get("name")
@@ -68,47 +83,36 @@ const Search = () => {
                     allTimePopularData,
                     top100Data
                   ] = await Promise.all([
-                    fetchMediaByActualTrending(1, 5),
-                    fetchMediaPopularThisSeason(1, 5, getCurrentSeason().season, getCurrentSeason().year),
-                    fetchMediaPopularThisSeason(1, 5, getNextSeason().season, getNextSeason().year),
-                    fetchMediaAllTimePopular(1, 5),
-                    fetchMediaTop100(1, 10)
+                    fetchMedias(1, 5, undefined, undefined, undefined, undefined, undefined
+                    , undefined, undefined, ["TRENDING_DESC"], false),
+                    fetchMedias(1, 5, undefined, undefined, undefined, getCurrentSeason().year , getCurrentSeason().season
+                    ,undefined, undefined, ["POPULARITY_DESC"], false),
+                    fetchMedias(1, 5, undefined, undefined, undefined, getNextSeason().year , getNextSeason().season
+                    ,undefined, undefined, ["POPULARITY_DESC"], false),
+                    fetchMedias(1, 5, undefined, undefined, undefined, undefined , undefined
+                    ,undefined, undefined, ["POPULARITY_DESC"], false),
+                    fetchMedias(1, 5, undefined, undefined, undefined, undefined , undefined
+                    ,undefined, undefined, ["SCORE_DESC"], false)
                   ])
     
             
-                  setTrendingNow(trendingNowData.medias)
-                  setPopularThisSeason(popularThisSeasonData.medias)
-                  setUpcoming(upcomingData.medias)
-                  setAllTimePopular(allTimePopularData.medias)
-                  setTop100(top100Data.medias)
+                  setTrendingNow(trendingNowData)
+                  setPopularThisSeason(popularThisSeasonData)
+                  setUpcoming(upcomingData)
+                  setAllTimePopular(allTimePopularData)
+                  setTop100(top100Data)
+
                   setIsLoading(false)
                 } catch (err) {
                   console.error("Erreur lors de la récupération des animes :", err.message)
-                  setError(true)
+                  
                   setIsLoading(false)
                 }
               }
             
             fetchAll()
         }
-
-
-        // fetchMediaByActualTrending(1, 5)
-        // .then(setTrendingNow)
-        // .catch(err => console.log(err.message))
-
-        // fetchMediaPopularThisSeason(1, 5, getCurrentSeason().season, getCurrentSeason().year)
-        // .then(setPopularThisSeason)
-        // .catch(err => console.log(err.message))
-
-        // fetchMediaPopularThisSeason(1, 5, getNextSeason().season, getNextSeason().year)
-        // .then(setUpcoming)
-        // .catch(err => console.log(err.message))
-
-        // fetchMediaAllTimePopular(1, 5)
-        // .then(setAllTimePopular)
-        // .catch(err => console.log(err.message))
-    }, [searchParam])
+    }, [])
 
     useEffect(() => {
         if ((trendingNow && trendingNow.length > 0 
@@ -124,29 +128,22 @@ const Search = () => {
     }, [trendingNow, popularThisSeason, upcoming, allTimePopular, top100, filteredMedias])
 
     const displayMedias = medias => {
-        return medias.map((anime, index) => {
-            const color = media_genre_colors[getRandomInt(media_genre_colors.length - 1)]
-            return <Link
-                    to={`/media/${ anime.id }/${anime.title.romaji}`}
-                    key={index}
-                    className='w-1 sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 my-4'
-                >
-                    <div className='w-48 h-60'>
-                        <img
-                            src={anime.coverImage.large}
-                            alt="Image de couverture"
-                            width={185}
-                            className='rounded-md max-h-60'
-                        />
-                    </div>
-                    <div
-                        className='text-sm w-48 font-semibold'
-                        onMouseEnter={e => e.target.style.color = color}
-                        onMouseLeave={e => e.target.style.color = '#6e859e'}
-                    >{ anime.title.romaji }</div>
-                </Link>
-        })
-    } 
+        const ref = medias
+        let showMedias = []
+        if (isMobile || isTablet) showMedias = ref.slice(0, 3)
+        else if (isLarge) showMedias = ref.slice(0, 4)
+        else showMedias = medias
+
+        return <div className="mt-10">
+            <div className="flex justify-between items-end">
+                <Title title='Trending now' isLink={true} path='/search/trending-now' />
+                <Link to='/search/trending-now' className="text-xs">View All</Link>
+            </div>
+            <div className="flex justify-between gap-x-10 mt-2">
+                { showMedias.map((anime, index) => (<MinInfoCard key={index} media={anime} />)) }
+            </div>
+        </div>
+    }
 
     const displayTop100 = top100.map((media, index) => {
 
@@ -211,7 +208,7 @@ const Search = () => {
     return(
         <>
             {
-                isLoading ? <Loader header='des informations' />
+                isLoading ? <Loader />
                 : filterMode ?
                 <>
                     <div className='p-10 md:p-20 lg:p-4 xl:p-10 flex flex-col gap-5 md:gap-5 lg:gap-3 xl:gap-5'>
@@ -225,48 +222,14 @@ const Search = () => {
                     {hasNextPage && !loading && <div ref={infiniteRef}></div>} */}
                 </>
                 : <>
-                    <div className='p-10 md:p-20 lg:p-4 xl:p-10 flex flex-col gap-5 md:gap-5 lg:gap-3 xl:gap-5'>
-                        <div className="flex justify-between">
-                            <Title title='Tendances actuelles' isLink={true} path='/search/trending-now' />
-                            <Link to='/search/trending-now' className="mr-30">Voir tout</Link>
-                        </div>
-                        <div className='flex flex-col sm:flex-row md:flex-row lg:flex-row xl:flex-row
-                                    sm:flex-wrap md:flex-wrap lg:flex-wrap xl:flex-wrap p-4'>
-                            { displayMedias(trendingNow) }
-                        </div>
-                    </div>
+                    <div className="flex flex-col w-3/4">
+                        { displayMedias(trendingNow) }
 
-                    <div className='p-10 md:p-20 lg:p-4 xl:p-10 flex flex-col gap-5 md:gap-5 lg:gap-3 xl:gap-5'>
-                        <div className="flex justify-between">
-                            <Title title='Populaires cette saison' isLink={true} path='/search/popular-this-season' />
-                            <Link to='/search/popular-this-season' className="mr-30">Voir tout</Link>
-                        </div>
-                        <div className='flex flex-col sm:flex-row md:flex-row lg:flex-row xl:flex-row
-                                    sm:flex-wrap md:flex-wrap lg:flex-wrap xl:flex-wrap p-4'>
-                            { displayMedias(popularThisSeason) }
-                        </div>
-                    </div>
+                        { displayMedias(popularThisSeason) }
 
-                    <div className='p-10 md:p-20 lg:p-4 xl:p-10 flex flex-col gap-5 md:gap-5 lg:gap-3 xl:gap-5'>
-                        <div className="flex justify-between">
-                            <Title title='Tendances à venir' isLink={true} path='/search/upcoming' />
-                            <Link to='/search/upcoming' className="mr-30">Voir tout</Link>
-                        </div>
-                        <div className='flex flex-col sm:flex-row md:flex-row lg:flex-row xl:flex-row
-                                    sm:flex-wrap md:flex-wrap lg:flex-wrap xl:flex-wrap p-4'>
-                            { displayMedias(upcoming) }
-                        </div>
-                    </div>
+                        { displayMedias(upcoming) }
 
-                    <div className='p-10 md:p-20 lg:p-4 xl:p-10 flex flex-col gap-5 md:gap-5 lg:gap-3 xl:gap-5'>
-                        <div className="flex justify-between">
-                            <Title title='Top populaire - Tous les temps' isLink={true} path='/search/all-time-popular' />
-                            <Link to='/search/all-time-popular' className="mr-30">Voir tout</Link>
-                        </div>
-                        <div className='flex flex-col sm:flex-row md:flex-row lg:flex-row xl:flex-row
-                                    sm:flex-wrap md:flex-wrap lg:flex-wrap xl:flex-wrap p-4'>
-                            { displayMedias(allTimePopular) }
-                        </div>
+                        { displayMedias(allTimePopular) }
                     </div>
 
                     <div className='p-10 md:p-20 lg:p-4 xl:p-10 flex flex-col gap-5 md:gap-5 lg:gap-3 xl:gap-5'>

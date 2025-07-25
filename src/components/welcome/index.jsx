@@ -1,17 +1,12 @@
 import { Outlet, useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
 
-import { searchIcon, navigationCloseIcon, drowpDownIcon, checkedIcon } from "../commonComponents/icons"
+import { searchIcon, navigationCloseIcon } from "../commonComponents/icons"
 
 import FilterDropdown from "../commonComponents/filterDropdown"
 
 import { genreOptions, yearOptions, seasonOptions, formatsOptions, statusOptions } from "../../anilist-api/constantsUtil"
 
-import { IoIosClose } from "react-icons/io"
-import { IoIosSearch } from "react-icons/io"
-import { IoIosArrowDown } from "react-icons/io"
-
-import { anime_years, anime_seasons_en } from "../../anilist-api/constants"
 import Label from "../commonComponents/label"
 
 const Welcome = () => {  
@@ -25,61 +20,16 @@ const Welcome = () => {
         formats: [],
         status: ""
     })
-
-    // const [hideGenres, setHideGenres] = useState(true)
     /* States */
 
-    /* Display dropdowns'options */
-    // const displayGenres = genresCollection.map((genre, index) => {
-    //     return <div 
-    //         key={index} 
-    //         className="text-sm p-2 font-semibold cursor-pointer hover:text-white hover:bg-[#2B2D42] hover:rounded-md
-    //         flex justify-between items-center"
-    //         onClick={() =>
-    //             setFilters(prev => {
-    //             const alreadySelected = prev.genres.includes(genre)
-    //             const newGenres = alreadySelected
-    //                 ? prev.genres.filter(g => g !== genre)
-    //                 : [...prev.genres, genre]
-            
-    //             return {
-    //                 ...prev,
-    //                 genres: newGenres
-    //             }
-    //             })
-    //         }
-    //     >
-    //         {genre}
-    //         {filters.genres.includes(genre) && <div>{checkedIcon}</div>}
-    //     </div>
-    // })
-
-    /* Display dropdowns'options */
-    
-
-
-      
-
     const navigateTo = useNavigate()
-
-    // const [animationStudios, setAnimationStudios] = useState([])
-
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         const result = await fetchAllStudios()
-    //         console.log(result)
-    //         setAnimationStudios(result.filter(r => r.isAnimationStudio).map(r => r.name))
-    //     }
-
-    //     fetchData()
-    // }, [])
 
     useEffect(() => {
         const queryParams = new URLSearchParams();
 
         const { name, genres, year, season, formats, status } = filters
 
-        if (name) queryParams.append("name", name) 
+        if (name) queryParams.append("name", name.trim()) 
         else queryParams.delete("name")
 
         if (genres && genres.length > 0) queryParams.append("genres", genres.join(","))
@@ -101,8 +51,6 @@ const Welcome = () => {
             queryParams.append("mode", "filter")
             navigateTo(`/search/anime?${queryParams.toString()}`, { replace: true })
         }
-
-        console.log(filters)
     }, [filters])
 
     return(
