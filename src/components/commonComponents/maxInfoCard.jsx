@@ -16,9 +16,12 @@ const MaxInfoCard = ({ media }) => {
             ? new DOMParser().parseFromString(media.description, 'text/html').body.textContent || ''
             : ''
 
+    const days = media.nextAiringEpisode && Math.floor(media.nextAiringEpisode.timeUntilAiring / 86400)
+    const hours = media.nextAiringEpisode && Math.floor((media.nextAiringEpisode?.timeUntilAiring % 86400) / 3600)
+    const minutes = media.nextAiringEpisode && Math.floor((media.nextAiringEpisode?.timeUntilAiring % 3600) / 60)
+
     const releaseDate = ['NOT_YET_RELEASED', 'RELEASING'].includes(media.status) && media.nextAiringEpisode 
-    ? `${ Math.floor(media.nextAiringEpisode?.timeUntilAiring / 86400) }d ${ Math.floor((media.nextAiringEpisode?.timeUntilAiring % 86400) / 3600) }h 
-    ${ Math.floor((media.nextAiringEpisode?.timeUntilAiring % 3600) / 60)}min`
+    ? `${ days !== 0 ? days + "d " : "" }${ hours !== 0 ? hours + "h " : "" }${ minutes !== 0 ? minutes + "min " : ""}`
     : media.status === 'FINISHED' ? formatDateEn(media.startDate)
     : ''
 

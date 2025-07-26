@@ -123,4 +123,8 @@ export const getNextSeason = () => {
       }
     }
 }
+
+export const capitalize = str => {
+  return str[0].toUpperCase() + str.slice(1).toLowerCase()
+}
 /* Fetching home's data */

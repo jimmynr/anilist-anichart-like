@@ -63,6 +63,7 @@ export const fetchMedias = async (page, perPage, mediaId, name, genres, year, se
                                 }
                             }
                             nextAiringEpisode { airingAt timeUntilAiring episode }
+                            duration
                         }
                     }
                 }

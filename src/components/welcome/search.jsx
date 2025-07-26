@@ -9,7 +9,7 @@ import { getCurrentSeason, getNextSeason } from "../../anilist-api/fonctionsUtil
 
 import { useMediaQuery } from 'react-responsive'
 
-import { fetchFilteredMedias, fetchMediaByActualTrending, fetchMediaPopularThisSeason, fetchMediaAllTimePopular, fetchMediaTop100 } from "../../anilist-api/helpers"
+import { fetchFilteredMedias } from "../../anilist-api/helpers"
 
 import { media_genre_colors, getRandomInt, formatLabels, anime_season_en_fr, media_status_fr } from "../../anilist-api/constants"
 
@@ -26,7 +26,6 @@ const Search = () => {
     const isMobile = useMediaQuery({ maxWidth: 640 })
     const isTablet = useMediaQuery({ maxWidth: 768 })
     const isLarge = useMediaQuery({ maxWidth: 1024 })
-    const isExtraLarge = useMediaQuery({ maxWidth: 1280 })
     /* Screen size for mobile */
 
     /* states */
@@ -127,7 +126,7 @@ const Search = () => {
         }
     }, [trendingNow, popularThisSeason, upcoming, allTimePopular, top100, filteredMedias])
 
-    const displayMedias = medias => {
+    const displayResponsiveMedias = (medias, title, path) => {
         const ref = medias
         let showMedias = []
         if (isMobile || isTablet) showMedias = ref.slice(0, 3)
@@ -135,10 +134,12 @@ const Search = () => {
         else showMedias = medias
 
         return <div className="mt-10">
-            <div className="flex justify-between items-end">
-                <Title title='Trending now' isLink={true} path='/search/trending-now' />
-                <Link to='/search/trending-now' className="text-xs">View All</Link>
-            </div>
+            {
+                !filterMode && <div className="flex justify-between items-end">
+                    <Title title={title} isLink={true} path={path} />
+                    <Link to={path} className="text-xs">View All</Link>
+                </div>
+            }
             <div className="flex justify-between gap-x-10 mt-2">
                 { showMedias.map((anime, index) => (<MinInfoCard key={index} media={anime} />)) }
             </div>
@@ -214,7 +215,7 @@ const Search = () => {
                     <div className='p-10 md:p-20 lg:p-4 xl:p-10 flex flex-col gap-5 md:gap-5 lg:gap-3 xl:gap-5'>
                         <div className='flex flex-col sm:flex-row md:flex-row lg:flex-row xl:flex-row
                                     sm:flex-wrap md:flex-wrap lg:flex-wrap xl:flex-wrap p-4'>
-                            { displayMedias(filteredMedias) }
+                            { displayResponsiveMedias(filteredMedias, "", "") }
                         </div>
                     </div>
                     {/* {loading && <p className="text-center my-5">Chargement...</p>}
@@ -223,13 +224,15 @@ const Search = () => {
                 </>
                 : <>
                     <div className="flex flex-col w-3/4">
-                        { displayMedias(trendingNow) }
+                        { displayResponsiveMedias(trendingNow, "Trending now", "/search/trending-now") }
 
-                        { displayMedias(popularThisSeason) }
+                        { displayResponsiveMedias(popularThisSeason, "Popular this season", "/search/popular-this-season") }
 
-                        { displayMedias(upcoming) }
+                        { displayResponsiveMedias(upcoming, "Upcoming next season", "/search/upcoming") }
 
-                        { displayMedias(allTimePopular) }
+                        { displayResponsiveMedias(allTimePopular, "All time popular", "/search/all-time-popular") }
+
+                        { displayResponsiveMedias(top100, "Top 100 Anime", "/search/top-100") }
                     </div>
 
                     <div className='p-10 md:p-20 lg:p-4 xl:p-10 flex flex-col gap-5 md:gap-5 lg:gap-3 xl:gap-5'>
