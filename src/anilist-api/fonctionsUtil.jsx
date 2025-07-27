@@ -94,6 +94,40 @@ export const filterMedias = (medias, filter) => {
       return medias.filter(media => media.format === 'SPECIAL' || media.format === 'OVA' || media.format === 'ONA') 
   }
 }
+
+export const customMediaInfos = media => {
+  if (media.format === "MOVIE" && media.duration !== null) {
+    const hours = Math.floor(media.duration / 60);
+    const mins = media.duration % 60;
+
+    if (hours > 0 && mins > 0) {
+        return ` ~ ${hours} hours, ${mins} minutes`;
+    } else if (hours > 0) {
+      return ` ~ ${hours} hours`;
+    } else {
+      return ` ~ ${mins} minutes`;
+    }
+  } else if (media.format !== "MOVIE" && media.episodes !== null){
+    return ` ~ ${media.episodes} episodes`
+  } else return null
+}
+
+export const customAiringTimeText = media => {
+  const days = media.nextAiringEpisode && Math.floor(media.nextAiringEpisode.timeUntilAiring / (60 * 60 * 24))
+  const hours = media.nextAiringEpisode && Math.floor((media.nextAiringEpisode.timeUntilAiring % (60 * 60 * 24)) / (60 * 60))
+  const minutes = media.nextAiringEpisode && Math.floor((media.nextAiringEpisode.timeUntilAiring % (60 * 60)) / 60)
+
+  if (days || hours || minutes) {
+    if (days > 0 || hours > 0) {
+        const parts = []
+        if (days > 0) parts.push(`${days} day${days > 1 ? 's' : ''}`)
+        if (hours > 0) parts.push(`${hours} hour${hours > 1 ? 's' : ''}`)
+        return parts.join(' and ')
+    } else {
+        return `${minutes} minute${minutes > 1 ? 's' : ''}`
+    }
+  }
+}
 /* Media's card */
 
 /* Fetching home's data */

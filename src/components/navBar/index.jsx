@@ -49,7 +49,7 @@ const NavBar = () => {
     /* info/doc button */
 
     /* Main navigation links */
-    const navigation = <div className='flex flex-col w-full'>
+    const navigation = <div id="navigation" className='flex flex-col w-full'>
         <div className='flex justify-center text-[#BCBEDC] font-bold text-sm'>
             <NavLink to='/search/anime' className='px-4 py-2 hover:text-white hover:bg-gray-700 hover:rounded-md'>Search</NavLink>
             <NavLink to={`/season/${getCurrentSeason().season.toLocaleLowerCase()}/${getCurrentSeason().year}`} className='px-4 py-2 hover:text-white hover:bg-gray-700 hover:rounded-md'>Season</NavLink>

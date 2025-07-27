@@ -54,10 +54,10 @@ const Welcome = () => {
     }, [filters])
 
     return(
-        <div className='bg-[#EDF1F5] text-[#6e859e] flex flex-col items-center w-full'>
-            <div className="flex flex-col w-3/4">
+        <div className='bg-[#EDF1F5] text-[#6e859e] flex flex-col items-center'>
+            <div className="flex flex-col mx-auto px-2 w-full sm:w-[calc(100vw-10%)] md:w-[calc(100vw-5%)] lg:w-3/4 xl:w-3/4">
                 <div>
-                    <div className="relative w-full">
+                    <div className="relative">
                         <div
                             className="*:text-[#6e859e] absolute top-1/2 -translate-y-2/3 lg:-translate-y-1/2 left-3"
                         >{searchIcon}</div>

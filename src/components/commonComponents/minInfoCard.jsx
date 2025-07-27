@@ -1,4 +1,4 @@
-import { getRandomInt, getMainStudioName, capitalize } from "../../anilist-api/fonctionsUtil"
+import { getRandomInt, getMainStudioName, capitalize, customMediaInfos, customAiringTimeText } from "../../anilist-api/fonctionsUtil"
 
 import { colorsCollection, formatsOptions } from "../../anilist-api/constantsUtil"
 
@@ -12,76 +12,53 @@ import Label from "../commonComponents/label"
 
 import { lowScoreIcon, averageScoreIcon, highScoreIcon } from "./icons"
 
-const MinInfoCard = ({ media }) => {
+const MinInfoCard = ({ media, rank = null }) => {
 
     const color = useMemo(() => (colorsCollection[getRandomInt(colorsCollection.length - 1)]), [])
-    
-    const days = media.nextAiringEpisode && Math.floor(media.nextAiringEpisode.timeUntilAiring / (60 * 60 * 24))
-    const hours = media.nextAiringEpisode && Math.floor((media.nextAiringEpisode.timeUntilAiring % (60 * 60 * 24)) / (60 * 60))
-    const minutes = media.nextAiringEpisode && Math.floor((media.nextAiringEpisode.timeUntilAiring % (60 * 60)) / 60)
 
-    let timeText = "";
-
-    if (days || hours || minutes) {
-        if (days > 0 || hours > 0) {
-            const parts = []
-            if (days > 0) parts.push(`${days} day${days > 1 ? 's' : ''}`)
-            if (hours > 0) parts.push(`${hours} hour${hours > 1 ? 's' : ''}`)
-            timeText = parts.join(' and ')
-        } else {
-            timeText = `${minutes} minute${minutes > 1 ? 's' : ''}`
-        }
-    }
+    let timeText = customAiringTimeText(media)
 
     const format = formatsOptions.filter(f => f.value === media.format)[0].label === "TV" 
     ? "TV Show" : formatsOptions.filter(f => f.value === media.format)[0].label
 
-    let moreInfo = ""
-
-    if (media.format === "MOVIE" && media.duration !== null) {
-        const hours = Math.floor(media.duration / 60);
-        const mins = media.duration % 60;
-
-        if (hours > 0 && mins > 0) {
-            moreInfo = ` ~ ${hours} hours, ${mins} minutes`;
-        } else if (hours > 0) {
-            moreInfo = ` ~ ${hours} hours`;
-        } else {
-            moreInfo = ` ~ ${mins} minutes`;
-        }
-    } else if (media.format !== "MOVIE" && media.episodes !== null){
-        moreInfo = ` ~ ${media.episodes} episodes`
-    }
+    let moreInfo = customMediaInfos(media)
 
     return (
         <>
-            <Link
-                to={`/media/${ media.id }/${media.title.romaji}`}
-                className="mt-2 w-1/2 h-fit"
-                data-tooltip-id={`media${media.id}`}
-            >
-                {/* ASPECT-RATIO */}
-                <div
-                    className="w-full aspect-[34/48] rounded-lg"
-                    style={{
-                        backgroundImage: `url(${media.coverImage.large})`,
-                        backgroundRepeat: "no-repeat",
-                        backgroundPosition: "center",
-                        backgroundSize: "cover"
-                    }}
-                ></div>
-                <div
-                    className='text-sm font-semibold w-full'
-                    onMouseEnter={e => e.target.style.color = color}
-                    onMouseLeave={e => e.target.style.color = '#6e859e'}
-                >{ media.title.romaji }</div>
-            </Link>
+            <div className="w-1/3 p-1 sm:w-1/3 sm:p-1 md:w-1/4 md:p-2 lg:w-1/5 lg:p-2 mt-3">
+                <Link
+                    to={`/media/${ media.id }/${media.title.romaji}`}
+                    className="mt-2 w-full h-fit relative"
+                    data-tooltip-id={`media${media.id}`}
+                >
+                    { rank !== null && <div
+                        className="absolute -top-2 -left-1.5 md:-top-3 md:-left-3 lg:-top-3 lg:-left-3 
+                        font-bold text-white p-2 size-10 rounded-full flex justify-center items-center"
+                        style={{ backgroundColor: color }}
+                    ><span className="text-xs">#</span><span className="text-lg">{rank}</span></div> }
+                    {/* ASPECT-RATIO */}
+                    <div
+                        className="w-full aspect-[34/48] rounded-lg"
+                        style={{
+                            backgroundImage: `url(${media.coverImage.large})`,
+                            backgroundRepeat: "no-repeat",
+                            backgroundPosition: "center",
+                            backgroundSize: "cover"
+                        }}
+                    ></div>
+                    <div
+                        className='text-sm font-semibold w-full'
+                        onMouseEnter={e => e.target.style.color = color}
+                        onMouseLeave={e => e.target.style.color = '#6e859e'}
+                    >{ media.title.romaji }</div>
+                </Link>
+            </div>
             <Tooltip
                 id={`media${media.id}`}
                 place='right-start'
-                style={{ color: "#BCBEDC", borderRadius: "5px" }}
+                style={{ color: "#BCBEDC", borderRadius: "5px", zIndex: 1 }}
                 opacity="1"
-                className="min-w-[300px] max-w-[300px] min-h-[200px] max-h-[200px] relative"
+                className="min-w-[310px] max-w-[310px] min-h-[200px] max-h-[200px] relative"
             >
                 <div className="flex items-center justify-between">
                     {
