@@ -1,64 +1,102 @@
-import { useEffect, useState, useCallback } from "react"
+import { useEffect, useState, useCallback, useRef } from "react"
 
-import { Link } from "react-router-dom"
+import MinInfoCard from "../commonComponents/displays/minInfoCard"
 
-import { media_genre_colors, getRandomInt, getCurrentSeason, getNextSeason } from "../../anilist-api/constants"
+import { fetchMediasWithPageInfo } from "../../anilist-api/api"
 
-import Loader from "../commonComponents/loader"
-import Title from "../commonComponents/title"
+import { getCurrentSeason, getNextSeason } from "../../anilist-api/fonctionsUtil"
+
+import MinCardsLoader from "../commonComponents/loaders/minCardsLoader"
+import SingleMinCardsLoader from "../commonComponents/loaders/singleMinCardLoader"
+import Title from "../commonComponents/headers/title"
 
 import useInfiniteScroll from 'react-infinite-scroll-hook'
+import Alert from "../commonComponents/alert"
 
-const SearchByFilter = ({ title, fetchData, filteredBy }) => {
+const SearchByFilter = ({ title, filteredBy }) => {
 
-    const [medias, setmedias] =  useState([])
+    /* Ref for loader */
+    //state 
+    const [missingCards, setMissingCards] = useState(0)
+
+    const containerRef = useRef(null)
+    const cardRef = useRef(null)
+    /* Ref for loader */
+
+    /* main states */
+    const [medias, setMedias] =  useState([])
+    // main loader
     const [isLoading, setIsLoading] =  useState(true)
+    /* main states */
 
-    // infinite scroll
+    useEffect(() => {    
+        fetchData()
+        .catch(handleError)
+    }, [])
+
+    /* infinite scroll states */
     const [page, setPage] = useState(1)
     const [hasNextPage, setHasNextPage] = useState(true)
+    // infinite scroll loader
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
+    /* infinite scroll states */
+
+    /* fetch Medias per filter */   
+
+    const handleError = (err) => {
+        setError(err)
+        setLoading(false)
+    }
+
+    const fetchData = async (page) => {
+        let data = []
+        switch (filteredBy) {
+            case "ACTUAL_TRENDING":
+                data = await fetchMediasWithPageInfo(page, 50, undefined, undefined, undefined, undefined, undefined
+                    , undefined, undefined, ["TRENDING_DESC"], false)
+                break;
+            case "POPULAR_CURRENT_SEASON":
+                data = await fetchMediasWithPageInfo(page, 50, undefined, undefined, undefined, getCurrentSeason().year , getCurrentSeason().season
+                ,undefined, undefined, ["POPULARITY_DESC"], false)
+                break;
+            case "POPULAR_NEXT_SEASON":
+                data = await fetchMediasWithPageInfo(page, 50, undefined, undefined, undefined, getNextSeason().year , getNextSeason().season
+                ,undefined, undefined, ["POPULARITY_DESC"], false)
+                break;
+            case "POPULAR_ALL_TIME":
+                data = await fetchMediasWithPageInfo(page, 50, undefined, undefined, undefined, undefined , undefined
+                    ,undefined, undefined, ["POPULARITY_DESC"], false)
+                break;
+            case "TOP_100":
+                data = await fetchMediasWithPageInfo(page, 50, undefined, undefined, undefined, undefined , undefined
+                    ,undefined, undefined, ["SCORE_DESC"], false)
+                break;
+        
+            default:
+                break;
+        }
+        
+        if (page === 1) {
+            setMedias(data.medias)
+        } else {
+            setMedias(prev => [...prev, ...data.medias])
+            setHasNextPage(data.pageInfo.hasNextPage)
+            setLoading(false)
+        }
+        setPage(prev => prev + 1)
+    }
+    /* fetch Medias per filter */
 
     const loadMore = useCallback(() => {
 
         setLoading(true)
         setError(null)
 
-        const currentPage = page
-
-        const handleResult = (data) => {
-            console.log(data)
-            setmedias(prev => [...prev, ...data.medias])
-            setPage(prev => prev + 1)
-            setHasNextPage(data.pageInfo.hasNextPage)
-            setLoading(false)
-        }
-
-        const handleError = (err) => {
-            setError(err)
-            setLoading(false)
-        }
-
-        if (filteredBy === 'ACTUAL_TRENDING' || filteredBy === 'POPULAR_ALL_TIME' || filteredBy === 'TOP_100') {
-            fetchData(currentPage, 50)
-                .then(handleResult)
-                .catch(handleError)
-        }
-
-        if (filteredBy === 'POPULAR_CURRENT_SEASON') {
-            fetchData(currentPage, 50, getCurrentSeason().season, getCurrentSeason().year)
-                .then(handleResult)
-                .catch(handleError)
-        }
-
-        if (filteredBy === 'POPULAR_NEXT_SEASON') {
-            fetchData(currentPage, 50, getNextSeason().season, getNextSeason().year)
-                .then(handleResult)
-                .catch(handleError)
-        } 
+        fetchData(page)
+        .catch(handleError)
         
-    }, [page, filteredBy, fetchData])
+    }, [page])
 
     const [infiniteRef] = useInfiniteScroll({
         loading,
@@ -72,74 +110,61 @@ const SearchByFilter = ({ title, fetchData, filteredBy }) => {
         // visible, instead of becoming fully visible on the screen.
         rootMargin: '0px 0px 400px 0px',
     })
-    // infinite scroll
+    /* infinite scroll */
 
-    useEffect(() => {
-        const fetchInitial = async () => {
-            let data
-            if (filteredBy === 'ACTUAL_TRENDING' || filteredBy === 'POPULAR_ALL_TIME' || filteredBy === 'TOP_100') {
-                data = await fetchData(1, 50)
-            } else if (filteredBy === 'POPULAR_CURRENT_SEASON') {
-                data = await fetchData(1, 50, getCurrentSeason().season, getCurrentSeason().year)
-            } else if (filteredBy === 'POPULAR_NEXT_SEASON') {
-                data = await fetchData(1, 50, getNextSeason().season, getNextSeason().year)
-            }
-            if (data) {
-                setmedias(data.medias)
-                setPage(2)
-            }
-        }
-    
-        fetchInitial().catch(err => console.log(err))
-    }, [filteredBy, fetchData])
-
+    /* Setting loader if needed */
     useEffect(() => {
         if (medias && medias.length > 0) setIsLoading(false)
         else setIsLoading(true)
     }, [medias])
+    /* Setting loader if needed */
 
-    const displayMedias = medias => {
-    
-        return medias.map((anime, index) => {
-            const color = media_genre_colors[getRandomInt(media_genre_colors.length - 1)]
-            return <Link
-                    to={`/media/${ anime.id }/${anime.title.romaji}`}
-                    key={index}
-                    className='w-1 sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 my-4'
-                >
-                    <div className='w-48 h-60'>
-                        <img
-                            src={anime.coverImage.large}
-                            alt="Image de couverture"
-                            width={185}
-                            className='rounded-md max-h-60'
-                        />
-                    </div>
-                    <div
-                        className='text-sm w-48 font-semibold'
-                        onMouseEnter={e => e.target.style.color = color}
-                        onMouseLeave={e => e.target.style.color = '#6e859e'}
-                    >{ anime.title.romaji }</div>
-                </Link>
-        })
-    } 
+    /* Display medias' cards */
+    const displayMedias = (medias, withRanking = false) => {
+
+        return <div className="mt-10">
+            <div className="flex flex-wrap justify-start">
+                { 
+                    medias.map((anime, index) => {
+
+                        const rank = withRanking && index < 100 ? index + 1 : null
+                        return <MinInfoCard ref={cardRef} key={index} media={anime} rank={rank} />
+                    }) 
+                }
+
+                {
+                    loading && missingCards !== 0 && Array.from({ length: missingCards })
+                    .map((_, index) => (<SingleMinCardsLoader key={index} />))
+                }
+            </div>
+        </div>
+    }
+    /* Display medias' cards */
+
+    useEffect(() => {
+        const totalCards = medias.length
+
+        const containerWidth = containerRef.current?.getBoundingClientRect().width
+        const cardWidth = cardRef.current?.getBoundingClientRect().width
+        const cardsPerRow = Math.floor(containerWidth / cardWidth)
+
+        const cardsOnLastRow = totalCards % cardsPerRow
+        setMissingCards(cardsPerRow - cardsOnLastRow)
+    }, [loading])
 
     return(
         <>
             {
-                isLoading ? <Loader header='des tendances actuelles' />
-                : <>
-                    <Title isLink={false} title={title} />
-                    <div className='p-10 md:p-20 lg:p-4 xl:p-10 flex flex-col gap-5 md:gap-5 lg:gap-3 xl:gap-5'>
-                        <div className='flex flex-col sm:flex-row md:flex-row lg:flex-row xl:flex-row
-                                    sm:flex-wrap md:flex-wrap lg:flex-wrap xl:flex-wrap p-4'>
-                            { displayMedias(medias) }
-                        </div>
-                    </div>
-                    {loading && <p className="text-center my-5">Chargement...</p>}
-                    {error && <p className="text-center my-5">Erreur : {error.message}</p>}
+                isLoading ? <MinCardsLoader />
+                : <div 
+                    ref={containerRef}
+                    className="flex flex-col mx-auto mt-10 w-full sm:w-[calc(100vw-10%)] md:w-[calc(100vw-5%)] lg:w-3/4 xl:w-3/4">
+                    <Title title={title} />
+                    { filteredBy === "TOP_100" ? displayMedias(medias, true) : displayMedias(medias) }
+                    {loading && <MinCardsLoader main = {false} />}
+                    {error && <Alert message={error.message} />}
                     {hasNextPage && !loading && <div ref={infiniteRef}></div>}
-                </>
+                </div>
             }
         </>
     )

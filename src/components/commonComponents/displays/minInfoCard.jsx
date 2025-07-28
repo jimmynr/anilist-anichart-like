@@ -1,18 +1,18 @@
-import { getRandomInt, getMainStudioName, capitalize, customMediaInfos, customAiringTimeText } from "../../anilist-api/fonctionsUtil"
+import { getRandomInt, getMainStudioName, capitalize, customMediaInfos, customAiringTimeText } from "../../../anilist-api/fonctionsUtil"
 
-import { colorsCollection, formatsOptions } from "../../anilist-api/constantsUtil"
+import { colorsCollection, formatsOptions } from "../../../anilist-api/constantsUtil"
 
 import { Link } from "react-router-dom"
 
-import { useMemo } from "react"
+import { useMemo, forwardRef } from "react"
 
 import { Tooltip } from "react-tooltip"
 
-import Label from "../commonComponents/label"
+import Label from "../headers/label"
 
-import { lowScoreIcon, averageScoreIcon, highScoreIcon } from "./icons"
+import { lowScoreIcon, averageScoreIcon, highScoreIcon } from "../icons"
 
-const MinInfoCard = ({ media, rank = null }) => {
+const MinInfoCard = forwardRef(({media, rank = null}, ref) => {
 
     const color = useMemo(() => (colorsCollection[getRandomInt(colorsCollection.length - 1)]), [])
 
@@ -23,9 +23,13 @@ const MinInfoCard = ({ media, rank = null }) => {
 
     let moreInfo = customMediaInfos(media)
 
+    const desc = media.description
+            ? new DOMParser().parseFromString(media.description, 'text/html').body.textContent || ''
+            : ''
+
     return (
         <>
-            <div className="w-1/3 p-1 sm:w-1/3 sm:p-1 md:w-1/4 md:p-2 lg:w-1/5 lg:p-2 mt-3">
+            <div ref={ref} className="w-1/3 p-1 sm:w-1/3 sm:p-1 md:w-1/4 md:p-2 lg:w-1/5 lg:p-2 mt-3">
                 <Link
                     to={`/media/${ media.id }/${media.title.romaji}`}
                     className="mt-2 w-full h-fit relative"
@@ -64,11 +68,11 @@ const MinInfoCard = ({ media, rank = null }) => {
                     {
                         media.nextAiringEpisode !== null 
                         ? <div className="font-semibold text-xs">
-                            Ep {media.nextAiringEpisode.episode} airing in {timeText}
+                            Ep {media.nextAiringEpisode?.episode} airing in {timeText}
                         </div>
                         : media.season !== null && media.seasonYear !== null 
                         ? <Label size="xs" name={`${capitalize(media.season)} ${media.seasonYear}`} />
-                        : <div></div>                        
+                        : <div className="text-xs w-2/3 overflow-y-auto max-h-20 custom-scrollbar">{desc}</div>                        
                     }
                     
                     {
@@ -107,6 +111,6 @@ const MinInfoCard = ({ media, rank = null }) => {
             </Tooltip>
         </>
     )
-}
+})
 
 export default MinInfoCard

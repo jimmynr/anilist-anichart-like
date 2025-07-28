@@ -6,8 +6,8 @@ import { useParams, Link } from "react-router-dom"
 
 import { useEffect, useRef, useState } from "react"
 
-import Title from '../commonComponents/title'
-import Loader from '../commonComponents/loader'
+import Title from '../commonComponents/headers/title'
+import Loader from '../commonComponents/loaders/loader'
 
 const MediaPerStudio = () => {
 

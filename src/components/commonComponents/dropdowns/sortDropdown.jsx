@@ -1,4 +1,4 @@
-import { sortOptions } from '../../anilist-api/constantsUtil'
+import { sortOptions } from '../../../anilist-api/constantsUtil'
 
 import { Tooltip } from 'react-tooltip'
 

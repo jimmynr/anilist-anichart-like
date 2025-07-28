@@ -1,8 +1,8 @@
-import { getMainStudioName, formatDateEn, getRandomInt } from "../../anilist-api/fonctionsUtil"
+import { getMainStudioName, formatDateEn, getRandomInt } from "../../../anilist-api/fonctionsUtil"
 
-import { colorsCollection, statusCollection } from "../../anilist-api/constantsUtil"
+import { colorsCollection, statusCollection } from "../../../anilist-api/constantsUtil"
 
-import { highScoreIcon, averageScoreIcon, lowScoreIcon } from "./icons"
+import { highScoreIcon, averageScoreIcon, lowScoreIcon } from "../icons"
 
 import { Link } from "react-router-dom"
 

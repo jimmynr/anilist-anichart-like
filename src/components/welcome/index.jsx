@@ -3,11 +3,11 @@ import { useEffect, useState } from "react"
 
 import { searchIcon, navigationCloseIcon } from "../commonComponents/icons"
 
-import FilterDropdown from "../commonComponents/filterDropdown"
+import FilterDropdown from "../commonComponents/dropdowns/filterDropdown"
 
 import { genreOptions, yearOptions, seasonOptions, formatsOptions, statusOptions } from "../../anilist-api/constantsUtil"
 
-import Label from "../commonComponents/label"
+import Label from "../commonComponents/headers/label"
 
 const Welcome = () => {  
     
@@ -91,7 +91,12 @@ const Welcome = () => {
                     </div>
                     <div className="relative w-[170px]">
                         <Label name="Format" />
-                        <FilterDropdown state={filters} setState={setFilters} property="formats" collection={formatsOptions} allowsManyChoices={true} />
+                        <FilterDropdown 
+                            state={filters} 
+                            setState={setFilters} 
+                            property="formats" 
+                            collection={formatsOptions.filter(f => f.value !== null)} 
+                            allowsManyChoices={true} />
                     </div>
                     <div className="relative w-[170px]">
                         <Label name="Status" />

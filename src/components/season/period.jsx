@@ -8,11 +8,11 @@ import React, { useState, useEffect } from 'react'
 
 import { useLocation } from 'react-router-dom'
 
-import Title from '../commonComponents/title'
+import Title from '../commonComponents/headers/title'
 
-import Loader from '../commonComponents/loader'
+import Loader from '../commonComponents/loaders/loader'
 
-import MaxInfoCard from '../commonComponents/maxInfoCard'
+import MaxInfoCard from '../commonComponents/displays/maxInfoCard'
 
 import Alert from '../commonComponents/alert'
 

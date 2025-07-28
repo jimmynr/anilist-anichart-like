@@ -11,18 +11,19 @@ import { useMediaQuery } from 'react-responsive'
 
 import { fetchFilteredMedias } from "../../anilist-api/helpers"
 
-import Loader from "../commonComponents/loader"
-import Title from "../commonComponents/title"
+import MinCardsLoader from "../commonComponents/loaders/minCardsLoader"
+import Title from "../commonComponents/headers/title"
 
-import MinInfoCard from "../commonComponents/minInfoCard"
-import AvgInfoCard from "../commonComponents/avgInfoCard"
+import MinInfoCard from "../commonComponents/displays/minInfoCard"
+import AvgInfoCard from "../commonComponents/displays/avgInfoCard"
 
 const Search = () => {
-    /* Screen size for mobile */
+    /* Screen size */
     const isMobile = useMediaQuery({ maxWidth: 640 })
     const isTablet = useMediaQuery({ maxWidth: 768 })
     const isLarge = useMediaQuery({ maxWidth: 1024 })
-    /* Screen size for mobile */
+    const isXLarge = useMediaQuery({ minWidth: 1024 })
+    /* Screen size */
 
     /* states */
     const [trendingNow, setTrendingNow] = useState([])
@@ -171,7 +172,7 @@ const Search = () => {
     return(
         <>
             {
-                isLoading ? <Loader />
+                isLoading ? <MinCardsLoader />
                 : filterMode ?
                 <>
                     <div className='p-10 md:p-20 lg:p-4 xl:p-10 flex flex-col gap-5 md:gap-5 lg:gap-3 xl:gap-5'>
@@ -184,21 +185,19 @@ const Search = () => {
                     {error && <p className="text-center my-5">Erreur : {error.message}</p>}
                     {hasNextPage && !loading && <div ref={infiniteRef}></div>} */}
                 </>
-                : <>
-                    <div className="flex flex-col mx-auto w-full sm:w-[calc(100vw-10%)] md:w-[calc(100vw-5%)] lg:w-3/4 xl:w-3/4">
-                        { displayMedias(displayResponsiveMedias(trendingNow), "Trending now", "/search/trending-now") }
+                : <div className="flex flex-col mx-auto w-full sm:w-[calc(100vw-10%)] md:w-[calc(100vw-5%)] lg:w-3/4 xl:w-3/4">
+                    
+                    { displayMedias(displayResponsiveMedias(trendingNow), "Trending now", "/search/trending-now") }
 
-                        { displayMedias(displayResponsiveMedias(popularThisSeason), "Popular this season", "/search/popular-this-season") }
+                    { displayMedias(displayResponsiveMedias(popularThisSeason), "Popular this season", "/search/popular-this-season") }
 
-                        { displayMedias(displayResponsiveMedias(upcoming), "Upcoming next season", "/search/upcoming") }
+                    { displayMedias(displayResponsiveMedias(upcoming), "Upcoming next season", "/search/upcoming") }
 
-                        { displayMedias(displayResponsiveMedias(allTimePopular), "All time popular", "/search/all-time-popular") }
+                    { displayMedias(displayResponsiveMedias(allTimePopular), "All time popular", "/search/all-time-popular") }
 
-                        {/* { displayMedias(top100, "Top 100 Anime", "/search/top-100", true) } */}
-
-                        { displayTop100() }
-                    </div>
-                </>
+                    { isXLarge ? displayTop100(true) : displayMedias(top100, "Top 100 Anime", "/search/top-100", true)  }
+                    
+                </div>
             }
         </>
     )

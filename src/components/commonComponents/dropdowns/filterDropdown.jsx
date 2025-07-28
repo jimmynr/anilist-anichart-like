@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from "react"
 
-import { navigationCloseIcon, drowpDownIcon, checkedIcon } from "../commonComponents/icons"
+import { navigationCloseIcon, drowpDownIcon, checkedIcon } from "../icons"
 
 const FilterDropdown = ({ state, setState, property, collection, allowsManyChoices }) => {
     const [open, setOpen] = useState(false)

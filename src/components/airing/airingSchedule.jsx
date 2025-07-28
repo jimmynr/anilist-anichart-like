@@ -7,8 +7,8 @@ import { fetchAiringNextWeek } from "../../anilist-api/helpers"
 
 import { getMainStudioName, media_genre_colors, getRandomInt } from "../../anilist-api/constants"
 
-import Loader from "../commonComponents/loader"
-import Title from "../commonComponents/title"
+import Loader from "../commonComponents/loaders/loader"
+import Title from "../commonComponents/headers/title"
 
 import { PiSmileyLight } from "react-icons/pi"
 import { PiSmileySadLight } from "react-icons/pi"

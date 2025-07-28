@@ -13,7 +13,7 @@ import BannerImg from '../../images/BannerImg.jpg'
 import '../season/index.css'
 
 import { FaHeart } from "react-icons/fa"
-import Loader from "../commonComponents/loader"
+import Loader from "../commonComponents/loaders/loader"
 
 const Media = () => {
 

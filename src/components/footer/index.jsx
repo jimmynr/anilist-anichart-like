@@ -7,7 +7,7 @@ const Footer = () => {
         <footer className="bg-[#11161D] px-25 py-10 text-[#BCBEDC]">
             <div className='flex flex-row justify-between mb-6'>
                 <div className='flex flex-row gap-4'>
-                    <span className='underline font-bold'>Thème : </span>
+                    <span className='underline font-bold'>Theme : </span>
                     <DarkMode />
                 </div>
                 <div className="flex flex-col gap-6">

@@ -1,6 +1,6 @@
 import { nextIcon, previousIcon } from '../commonComponents/icons'
 
-import Sort from '../commonComponents/sort'
+import Sort from '../commonComponents/dropdowns/sortDropdown'
 
 import { Outlet, Link, useLocation } from 'react-router-dom'
 

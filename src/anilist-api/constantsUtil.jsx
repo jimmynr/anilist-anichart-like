@@ -73,7 +73,8 @@ export const formatsOptions = [
   { value: "SPECIAL", label: "Special" },
   { value: "OVA", label: "OVA" },
   { value: "ONA", label: "ONA" },
-  { value: "MUSIC", label: "Music" }
+  { value: "MUSIC", label: "Music" },
+  { value: null, label: "" }
 ]
 
 export const yearOptions = yearsCollection.map(year => ({

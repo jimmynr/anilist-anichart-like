@@ -41,16 +41,16 @@ const App = () => {
       <NavigationContext>
         <Router>
           <NavBar />
-          <div className="bg-[#EDF1F5] flex-grow pt-30">
+          <div className="bg-[#EDF1F5] flex-grow py-30">
             <Routes>
               <Route path="/" element={ <Navigate to="/search/anime" replace /> } />
               <Route path="/search" element={ <Welcome /> }>
                 <Route index path="anime" element={ <Search />} />
-                <Route path="trending-now" element={ <SearchByFilter title='Tendances actuelles' fetchData={fetchMediaByActualTrending} filteredBy='ACTUAL_TRENDING' /> } />
-                <Route path="popular-this-season" element={ <SearchByFilter title='Populaires cette saison' fetchData={fetchMediaPopularThisSeason} filteredBy='POPULAR_CURRENT_SEASON' /> } />
-                <Route path="upcoming" element={ <SearchByFilter title='Tendances à venir' fetchData={fetchMediaPopularThisSeason} filteredBy='POPULAR_NEXT_SEASON' /> } />
-                <Route path="all-time-popular" element={ <SearchByFilter title='Top populaire - Tous les temps' fetchData={fetchMediaAllTimePopular} filteredBy='POPULAR_ALL_TIME' /> } />
-                <Route path="top-100" element={ <SearchByFilter title='Top 100' fetchData={fetchMediaTop100} filteredBy='TOP_100' /> } />
+                <Route path="trending-now" element={ <SearchByFilter title="Trending now" filteredBy='ACTUAL_TRENDING' /> } />
+                <Route path="popular-this-season" element={ <SearchByFilter title="Popular this season" filteredBy='POPULAR_CURRENT_SEASON' /> } />
+                <Route path="upcoming" element={ <SearchByFilter title="Upcoming next season" filteredBy='POPULAR_NEXT_SEASON' /> } />
+                <Route path="all-time-popular" element={ <SearchByFilter title="All time popular" filteredBy='POPULAR_ALL_TIME' /> } />
+                <Route path="top-100" element={ <SearchByFilter title="Top 100 Anime" filteredBy='TOP_100' /> } />
               </Route>
               <Route path="/season" element={ <Season /> }>
                 { dispalyRoutes }

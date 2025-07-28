@@ -8,7 +8,7 @@ import { IoIosClose } from "react-icons/io"
 import { Link } from "react-router-dom"
 
 import { HashLink } from 'react-router-hash-link'
-import Loader from "../commonComponents/loader"
+import Loader from "../commonComponents/loaders/loader"
 
 const Studio = () => {
 
