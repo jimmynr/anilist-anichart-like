@@ -43,6 +43,7 @@ export const fetchMedias = async (page, perPage, mediaId, name, genres, year, se
                             status
                             description(asHtml: false)
                             startDate { year month day }
+                            endDate { year month day }
                             season
                             seasonYear
                             episodes
@@ -64,6 +65,45 @@ export const fetchMedias = async (page, perPage, mediaId, name, genres, year, se
                             }
                             nextAiringEpisode { airingAt timeUntilAiring episode }
                             duration
+                            streamingEpisodes { title url site thumbnail }
+                            characters(sort: [ROLE, RELEVANCE]) {
+                              edges {
+                                role 
+                                node {
+                                  id
+                                  name {
+                                    full
+                                    native
+                                  }
+                                  image {
+                                    large
+                                    medium
+                                  }
+                                  description
+                                }
+                                voiceActors(language: JAPANESE) {
+                                  id
+                                  name {
+                                    full
+                                    native
+                                  }
+                                  image {
+                                    large
+                                    medium
+                                  }
+                                }
+                              }
+                            }
+                            rankings {
+                              id
+                              rank
+                              type         
+                              format       
+                              year         
+                              season       
+                              allTime      
+                              context      
+                            }
                         }
                     }
                 }

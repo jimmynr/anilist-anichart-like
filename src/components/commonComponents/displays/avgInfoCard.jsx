@@ -48,7 +48,7 @@ const AvgInfoCard = ({ media, rank = null }) => {
                 <div className="flex items-center flex-wrap md:ml-4 mt-2 md:mt-0 font-semibold text-sm w-full md:w-3/5 lg:1/2 md:text-center">
                     {
                         media.averageScore && <div
-                            className='flex gap-1 items-center mr-2 md:mr-0 md:w-1/5'
+                            className='flex gap-1 mr-2 md:mr-0 md:w-1/5'
                         >
                             <span className="text-xl">{
                                 media.averageScore >= 75 ? highScoreIcon
@@ -58,17 +58,17 @@ const AvgInfoCard = ({ media, rank = null }) => {
                             <span className="text-[#6e859e]">{ media.averageScore } %</span>
                         </div>
                     }
-                    <div className="flex gap-x-2 md:flex-col items-center mr-2 md:mr-0 md:w-2/5 text-[#6e859e]">
+                    <div className="flex gap-x-2 md:flex-col mr-2 md:mr-0 md:w-2/5 text-[#6e859e]">
                         <div>{ format }</div>
                         <div>{moreInfo !== null && moreInfo.slice(3)}</div>
                     </div>
                     {
-                        media.nextAiringEpisode !== null ? <div className="flex gap-x-2 md:flex-col items-center mr-2 md:mr-0 md:w-2/5 text-[#6e859e]">
+                        media.nextAiringEpisode !== null ? <div className="flex gap-x-2 md:flex-col mr-2 md:mr-0 md:w-2/5 text-[#6e859e]">
                             <div>Airing</div>
                             <div>Ep {media.nextAiringEpisode.episode} in {timeText}</div>
                         </div>
                         : media.season !== null && media.seasonYear !== null ?
-                        <div className="flex gap-x-2 md:flex-col items-center mr-2 md:mr-0 md:w-2/5 text-[#6e859e]">
+                        <div className="flex gap-x-2 md:flex-col mr-2 md:mr-0 md:w-2/5 text-[#6e859e]">
                             <div className="capitalize">{ media.season.toLowerCase() } { media.seasonYear }</div>
                             <div 
                                 style={{ color: `${ statusCollection[media.status].color }` }}

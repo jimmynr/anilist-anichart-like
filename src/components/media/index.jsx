@@ -1,10 +1,14 @@
 import { useParams, Link } from "react-router-dom"
+
 import { useState, useEffect } from "react"
+
 import ReactPlayer from 'react-player'
+
+import { fetchMedias } from "../../anilist-api/api"
 
 import { fetchMediaPerMediaId, fetchMediaPerMediaTitle } from "../../anilist-api/helpers"
 
-import { formatLabels, formatDateFr, anime_season_en_fr, getMainStudioName, getTrailerUrl, getRoleLabel } from "../../anilist-api/constants"
+import { formatLabels, anime_season_en_fr, getRoleLabel } from "../../anilist-api/constants"
 
 import { useMediaQuery } from 'react-responsive'
 
@@ -13,23 +17,37 @@ import BannerImg from '../../images/BannerImg.jpg'
 import '../season/index.css'
 
 import { FaHeart } from "react-icons/fa"
+
 import Loader from "../commonComponents/loaders/loader"
+
+import Alert from "../commonComponents/alert"
+
+import { formatDateEn, getTrailerUrl, getMainStudioName } from "../../anilist-api/fonctionsUtil"
+
+import { formatsOptions, statusOptions } from "../../anilist-api/constantsUtil"
 
 const Media = () => {
 
+    /* URL param */
     const pathParam = useParams()
+    /* URL param */
+
+    /* States */
     const [media, setMedia] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
     const [navTo, setNavTo] = useState('BO')
     const [error, setError] = useState(false)
+    /* States */
 
+    /* Screen size/media querie */
     const isMobile = useMediaQuery({ maxWidth: 950 })
     const isTablet = useMediaQuery({ maxWidth: 1024 })
+    /* Screen size/media querie */
 
     useEffect(() => {
         const fetchData = async () => {
-            const result = await fetchMediaPerMediaId(pathParam.mediaId)
-            setMedia(result.data.Media)
+            const result = await fetchMedias(1, 1, pathParam.mediaId, undefined, undefined, undefined, undefined, undefined, undefined, undefined, false)
+            setMedia(result[0])
         }
 
         fetchData()
@@ -45,7 +63,7 @@ const Media = () => {
     }, [media, error])
  
     const displayBO = (media) => {
-        return navTo === 'BO' ? (getTrailerUrl(media.trailer) === null ? <div>Aucune bande annonce trouvée</div>
+        return navTo === 'BO' ? (getTrailerUrl(media.trailer) === null ? <Alert message="No trailer found" />
         : <ReactPlayer 
             url={getTrailerUrl(media.trailer)}
             controls={true} 
@@ -53,15 +71,15 @@ const Media = () => {
     }
 
     const displayEpisodes = (media) => {
-        return navTo === 'EPISODES' ? media.streamingEpisodes.length === 0 ? <div>Aucun épisode trouvé</div> 
+        return navTo === 'EPISODES' ? media.streamingEpisodes.length === 0 ? <Alert message="No episodes found" />
         : media.streamingEpisodes.map((ep, index) => {
             return <Link 
                         key={index} 
                         to={ep.url} 
                         target="_blank"
-                        className="relative max-w-[228px] block"
+                        className="relative max-w-[228px] block h-fit"
                     >
-                    <img src={ep.thumbnail} alt="Miniature de l'épisode" width={228} height={100} />
+                    <img src={ep.thumbnail} alt="Episode thumbnail" width={228} height={100} />
                     <span 
                         className="absolute bottom-0 overflow-x-auto text-white text-xs w-full p-1"
                         style={{ backgroundColor: 'rgba(43, 45, 66, 0.5)'}}
@@ -71,7 +89,7 @@ const Media = () => {
     }
 
     const displayCharacters = media => {
-        return navTo === 'CHARACTERS' ? media.characters.edges.length === 0 ? <div>Aucune information trouvée sur les personnages</div> 
+        return navTo === 'CHARACTERS' ? media.characters.edges.length === 0 ? <Alert message="No information found about the characters" /> 
         : media.characters.edges.map((chara, index) => {
 
             return <div key={index} className="flex flex-row justify-between bg-white w-screen lg:min-w-1/2 mr-4">
@@ -91,8 +109,8 @@ const Media = () => {
                             className="text-sm font-bold"
                         >{chara.node.name.full}</div>
                         <div
-                            className="text-xs"
-                        >{getRoleLabel(chara.role)}</div>
+                            className="text-xs capitalize"
+                        >{chara.role.toLowerCase()}</div>
                     </div>
                 </div>
                 {
@@ -126,7 +144,7 @@ const Media = () => {
                         <span className="font-bold">
                             {`#${media.rankings.filter(ranking => ranking.allTime && ranking.type === 'RATED')[0].rank}`}
                         </span>                                    
-                        &nbsp;les mieux notés de tous les temps
+                        &nbsp;highest rated of all time
                     </div>
             }
 
@@ -136,7 +154,7 @@ const Media = () => {
                         <span className="font-bold">
                             {`#${media.rankings.filter(ranking => ranking.allTime && ranking.type === 'POPULAR')[0].rank}`}
                         </span>                                    
-                        &nbsp;les plus populaires de tous les temps
+                        &nbsp;most popular of all time
                     </div>
             }  
 
@@ -144,34 +162,38 @@ const Media = () => {
              overflow-x-scroll lg:overflow-x-auto">
                 <div>
                     <div className="text-sm font-bold">Format</div>
-                    <div className="text-xs mb-2">{formatLabels[media.format]}</div>
+                    <div className="text-xs mb-2">{formatsOptions.filter(f => f.value === media.format)[0].label}</div>
                 </div>
                 <div>
                     <div className="text-sm font-bold">Episodes</div>
                     <div className="text-xs mb-2">{media.episodes || '?'}</div>
                 </div>
                 <div>
-                    <div className="text-sm font-bold">Durée d'un épisode</div>
+                    <div className="text-sm font-bold">Episode Duration</div>
                     <div className="text-xs mb-2">{media.duration || '?'} min</div>
                 </div>
                 <div>
-                    <div className="text-sm font-bold">Date de début</div>
-                    <div className="text-xs mb-2">{formatDateFr(media.startDate) !== null ? formatDateFr(media.startDate) : '?'}</div>
+                    <div className="text-sm font-bold">Status</div>
+                    <div className="text-xs mb-2">{statusOptions.filter(s => s.value === media.status)[0].label}</div>
                 </div>
                 <div>
-                    <div className="text-sm font-bold">Date de fin</div>
-                    <div className="text-xs mb-2">{formatDateFr(media.endDate) !== null ? formatDateFr(media.endDate) : '?'}</div>
+                    <div className="text-sm font-bold">Start Date</div>
+                    <div className="text-xs mb-2">{formatDateEn(media.startDate) !== null ? formatDateEn(media.startDate) : '?'}</div>
                 </div>
                 <div>
-                    <div className="text-sm font-bold">Saison</div>
-                    <div className="text-xs mb-2">{anime_season_en_fr[media.season]} {media.seasonYear}</div>
+                    <div className="text-sm font-bold">End Date</div>
+                    <div className="text-xs mb-2">{formatDateEn(media.endDate) !== null ? formatDateEn(media.endDate) : '?'}</div>
                 </div>
                 <div>
-                    <div className="text-sm font-bold">Note moyenne</div>
+                    <div className="text-sm font-bold">Season</div>
+                    <div className="text-xs mb-2 capitalize">{media.season.toLowerCase()} {media.seasonYear}</div>
+                </div>
+                <div>
+                    <div className="text-sm font-bold">Average Score</div>
                     <div className="text-xs mb-2">{media.averageScore || '?'} %</div>
                 </div>
                 <div>
-                    <div className="text-sm font-bold">Popularité</div>
+                    <div className="text-sm font-bold">Popularity</div>
                     <div className="text-xs mb-2">{media.popularity}</div>
                 </div>
                 <div>
@@ -207,15 +229,13 @@ const Media = () => {
         </div>
     }
 
-    return (
-        <div className="flex-grow">
-            {console.log(media)}
+    return ( 
+        <>
             {
-                isLoading ? <Loader header={`des informations sur ${pathParam.mediaName}`} />
-                : error ? <div className="m-10 text-center text-[#6e859e]">
-                    Aucune information trouvée pour {pathParam.mediaName}
-                </div>
+                isLoading ? <Loader />
+                : error ? <Alert message={`No information found for ${pathParam.mediaName}`} />
                 : <>
+                    { console.log(media) }
                     {
                         media.bannerImage !== null 
                         ? <div 
@@ -233,19 +253,19 @@ const Media = () => {
                             lg:flex-col items-end lg:items-center px-5">
                                 <img 
                                     src={isMobile || isTablet ? media.coverImage.medium : media.coverImage.large} 
-                                    alt="Image de couverture"  
+                                    alt="Cover image"  
                                     className={coverImageSize}
                                 />
-                                <div className="flex gap-2 w-full lg:w-[215px]">
+                                {/* <div className="flex gap-2 w-full lg:w-[215px]">
                                     <button
                                             className="bg-[#41B1EA] text-white px-6 py-2 rounded-sm my-2 cursor-pointer flex-1"
-                                        >Ajouter à ma liste</button>
+                                        >Add to my list</button>
                                     <button
                                          className="text-red-500 text-3xl rounded-sm cursor-pointer"
                                     >
                                         <FaHeart />
                                     </button>
-                                </div>
+                                </div> */}
                             </div>
                             <div className="w-full lg:w-2/3 flex items-end">
                                 <div className="flex flex-col">
@@ -263,9 +283,9 @@ const Media = () => {
                                     </div>
                                     {(isMobile || isTablet) && displayMediaDetails(media)}
                                     <div className="flex flex-row gap-10 lg:gap-20 mx-5 py-4 text-sm">
-                                        <Link onClick={() => setNavTo('BO')}>Bande annonce</Link>
+                                        <Link onClick={() => setNavTo('BO')}>Trailer</Link>
                                         <Link onClick={() => setNavTo('EPISODES')}>Episodes</Link>
-                                        <Link onClick={() => setNavTo('CHARACTERS')}>Personnages</Link>
+                                        <Link onClick={() => setNavTo('CHARACTERS')}>Characters</Link>
                                     </div>
                                 </div>
                             </div>
@@ -274,7 +294,7 @@ const Media = () => {
                             <div className="w-1/3 flex flex-col items-center">                               
                                 {!isMobile && !isTablet && displayMediaDetails(media)}
                             </div>
-                            <div className="w-screen lg:w-2/3 flex justify-center lg:justify-start flex-wrap gap-10 px-5 lg:px-0">
+                            <div className="w-screen h-fit lg:w-2/3 flex flex-wrap gap-10 px-5 lg:px-0">
                                 {displayBO(media)} 
                                 {displayEpisodes(media)}
                                 {displayCharacters(media)}
@@ -282,9 +302,8 @@ const Media = () => {
                         </div>
                     </div>
                 </>
-            }
-            
-        </div>
+            }            
+        </>
     )
 }
 

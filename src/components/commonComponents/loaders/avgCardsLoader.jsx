@@ -7,7 +7,7 @@ const AvgCardsLoader = ({ main = true }) => {
     const displayCards =  Array.from({ length: 6 }).map((_, index) => {
         const display = index % 3 !== 0
 
-        return <div className="media--isloading flex items-center w-full mt-3 bg-white rounded-md p-2">
+        return <div key={index} className="media--isloading flex items-center w-full mt-3 bg-white rounded-md p-2">
             <div className="loading-image w-16 h-24 md:w-18 md:h-26"></div>
             <div className="flex flex-col md:flex-row md:gap-x-4 px-4 w-full">
                 <div className="flex flex-col gap-y-2 md:gap-y-4 w-full md:w-2/5 lg:1/2">
@@ -51,7 +51,7 @@ const AvgCardsLoader = ({ main = true }) => {
                 { displayCards }
             </div>
         </PageWrapper>
-        : <div className="flex flex-col mx-auto mt-10 w-full">
+        : <div className="flex flex-col mx-auto w-full">
             <div className="flex flex-wrap justify-start">
                 { displayCards }
             </div>

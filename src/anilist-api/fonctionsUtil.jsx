@@ -77,6 +77,7 @@ export const formatDateEn = (date) => {
     : date.year
 }
 
+
 // => random number
 export const getRandomInt = max => {
   return Math.floor(Math.random() * max);
@@ -187,3 +188,19 @@ export const fetchAllStudios = async () => {
     return []
   }
 }
+
+/* Media's page */
+// => url of trailer video
+export const getTrailerUrl = (trailer) => {
+  if (!trailer || !trailer.id) return null
+
+  switch (trailer.site.toLowerCase()) {
+    case "youtube":
+      return `https://www.youtube.com/watch?v=${trailer.id}`
+    case "dailymotion":
+      return `https://www.dailymotion.com/video/${trailer.id}`
+    default:
+      return null
+  }
+}
+/* Media's page */

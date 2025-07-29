@@ -1,7 +1,5 @@
 import { useEffect, useState, useCallback, useRef, useContext } from "react"
 
-import MinInfoCard from "../commonComponents/displays/minInfoCard"
-
 import { fetchMediasWithPageInfo } from "../../anilist-api/api"
 
 import { getCurrentSeason, getNextSeason, fillMissingCards } from "../../anilist-api/fonctionsUtil"
@@ -23,9 +21,6 @@ import { displayContext } from "../../context/displayContext"
 const SearchByFilter = ({ title, filteredBy }) => {
     /* Context */
     const { type, setType } = useContext(displayContext)
-    useEffect(() => {
-        setType("MIN")
-    }, [])
     /* Context */
 
     /* Ref for loader */
@@ -43,6 +38,8 @@ const SearchByFilter = ({ title, filteredBy }) => {
     /* main states */
 
     useEffect(() => {    
+        setType("MIN")
+
         fetchData(page)
         .catch(handleError)
     }, [])
@@ -96,6 +93,8 @@ const SearchByFilter = ({ title, filteredBy }) => {
             setMedias(prev => [...prev, ...data.medias])
             setHasNextPage(data.pageInfo.hasNextPage)
             setLoading(false)
+        
+            console.log("Type reçu via contexte :", type)
         }
         setPage(prev => prev + 1)
     }
@@ -109,8 +108,7 @@ const SearchByFilter = ({ title, filteredBy }) => {
 
         fetchData(page)
         .catch(handleError) 
-        
-        console.log(type)
+
     }, [page])
 
     const [infiniteRef] = useInfiniteScroll({

@@ -11,9 +11,9 @@ const CardsLoaderView = ({ main }) => {
 
     const { type } = useContext(displayContext)
 
-    return type === "MIN" ? <MinCardsLoader main={main} />
-        : type === "MAX" ? <MaxCardsLoader main={main} />
-        : <AvgCardsLoader main={main} />
+    if (type === "MIN") return <MinCardsLoader main={main} />
+    if (type === "AVG") return <AvgCardsLoader main={main} />
+    if (type === "MAX") return <MaxCardsLoader main={main} />
 }
 
 export default CardsLoaderView
