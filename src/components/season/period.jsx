@@ -4,17 +4,22 @@ import { getMainStudioName, filterMedias } from '../../anilist-api/fonctionsUtil
 
 import { fetchMedias } from '../../anilist-api/api'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext, useRef } from 'react'
 
 import { useLocation } from 'react-router-dom'
 
 import Title from '../commonComponents/headers/title'
 
-import Loader from '../commonComponents/loaders/loader'
+import CardsLoaderView from '../commonComponents/loaders/viewCardsLoader'
 
-import MaxInfoCard from '../commonComponents/displays/maxInfoCard'
+import CardsView from '../commonComponents/displays/viewInfoCard'
 
 import Alert from '../commonComponents/alert'
+
+import PageWrapper from '../commonComponents/displays/wrapper'
+import { displayContext } from '../../context/displayContext'
+
+import ViewModes from '../commonComponents/displays/view'
 
 const Period = ({ season, year }) => {
 
@@ -69,7 +74,7 @@ const Period = ({ season, year }) => {
 
     /* display medias' cards per format */
     const displayMedias = format => {
-        return filterMedias(medias, format).map(media => <MaxInfoCard key={media.id} media={media} />)
+        return filterMedias(medias, format).map(media => <CardsView key={media.id} media={media} />)
     }
     /* display medias' cards per format */
 
@@ -105,47 +110,58 @@ const Period = ({ season, year }) => {
         }
     }, [location.pathname])
 
+    const { type, setType } = useContext(displayContext)
+
+    const viewModeRef = useRef(null)
+
+    useEffect(() => {
+        viewModeRef.current === null ? setType("MAX") : setType(viewModeRef.current)
+    }, [])
+
+    useEffect(() => {
+        viewModeRef.current = type
+    }, [type])
+
     return(
         <>
             {
-                isLoading ? <Loader />
+                isLoading ? <CardsLoaderView main={true} />
                 : isEmpty ? <Alert message="No anime available for this season yet." />
-                : <>
-                    <div className='p-10 flex flex-col gap-5 md:gap-5 lg:gap-3 xl:gap-5'>
-                        {
-                            medias.some(media => media.format === 'TV') && (<>
-                                <Title title='TV' />
-                                <div className='flex flex-wrap'>
-                                    { displayMedias('TV') }
-                                </div>
-                            </>)
-                        }
-                        {
-                            medias.some(media => media.format === 'TV_SHORT') && (<>
-                                <Title title='TV Short' />
-                                <div className='flex flex-wrap'>
-                                    { displayMedias('TV_SHORT') }
-                                </div>
-                            </>)
-                        }
-                        {
-                            medias.some(media => media.format === 'MOVIE') && (<>
-                                <Title title='Movie' />
-                                <div className='flex flex-wrap'>
-                                    { displayMedias('MOVIE') }
-                                </div>
-                            </>)
-                        }
-                        {
-                            medias.some(media => media.format === 'OVA' || media.format === 'ONA' || media.format === 'SPECIAL') && (<>
-                                <Title title='OVA/ONA/Special' />
-                                <div className='flex flex-wrap'>
-                                    { displayMedias() }
-                                </div>
-                            </>)
-                        }                        
-                    </div>
-                </>
+                : <PageWrapper>
+                    <ViewModes />
+                    {
+                        medias.some(media => media.format === 'TV') && (<>
+                            <Title title='TV' />
+                            <div className='flex flex-wrap mb-5'>
+                                { displayMedias('TV') }
+                            </div>
+                        </>)
+                    }
+                    {
+                        medias.some(media => media.format === 'TV_SHORT') && (<>
+                            <Title title='TV Short' />
+                            <div className='flex flex-wrap mb-5'>
+                                { displayMedias('TV_SHORT') }
+                            </div>
+                        </>)
+                    }
+                    {
+                        medias.some(media => media.format === 'MOVIE') && (<>
+                            <Title title='Movie' />
+                            <div className='flex flex-wrap mb-5'>
+                                { displayMedias('MOVIE') }
+                            </div>
+                        </>)
+                    }
+                    {
+                        medias.some(media => media.format === 'OVA' || media.format === 'ONA' || media.format === 'SPECIAL') && (<>
+                            <Title title='OVA/ONA/Special' />
+                            <div className='flex flex-wrap'>
+                                { displayMedias() }
+                            </div>
+                        </>)
+                    }                        
+                </PageWrapper>
             }             
         </>
     )

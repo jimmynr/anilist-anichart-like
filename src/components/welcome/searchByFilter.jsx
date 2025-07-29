@@ -1,19 +1,32 @@
-import { useEffect, useState, useCallback, useRef } from "react"
+import { useEffect, useState, useCallback, useRef, useContext } from "react"
 
 import MinInfoCard from "../commonComponents/displays/minInfoCard"
 
 import { fetchMediasWithPageInfo } from "../../anilist-api/api"
 
-import { getCurrentSeason, getNextSeason } from "../../anilist-api/fonctionsUtil"
+import { getCurrentSeason, getNextSeason, fillMissingCards } from "../../anilist-api/fonctionsUtil"
 
-import MinCardsLoader from "../commonComponents/loaders/minCardsLoader"
+import CardsLoaderView from "../commonComponents/loaders/viewCardsLoader"
 import SingleMinCardsLoader from "../commonComponents/loaders/singleMinCardLoader"
 import Title from "../commonComponents/headers/title"
 
 import useInfiniteScroll from 'react-infinite-scroll-hook'
 import Alert from "../commonComponents/alert"
 
+import PageWrapper from "../commonComponents/displays/wrapper"
+
+import ViewModes from "../commonComponents/displays/view"
+import CardsView from "../commonComponents/displays/viewInfoCard"
+
+import { displayContext } from "../../context/displayContext"
+
 const SearchByFilter = ({ title, filteredBy }) => {
+    /* Context */
+    const { type, setType } = useContext(displayContext)
+    useEffect(() => {
+        setType("MIN")
+    }, [])
+    /* Context */
 
     /* Ref for loader */
     //state 
@@ -30,7 +43,7 @@ const SearchByFilter = ({ title, filteredBy }) => {
     /* main states */
 
     useEffect(() => {    
-        fetchData()
+        fetchData(page)
         .catch(handleError)
     }, [])
 
@@ -89,13 +102,15 @@ const SearchByFilter = ({ title, filteredBy }) => {
     /* fetch Medias per filter */
 
     const loadMore = useCallback(() => {
+        setMissingCards(fillMissingCards(medias, containerRef, cardRef))
 
         setLoading(true)
         setError(null)
 
         fetchData(page)
-        .catch(handleError)
+        .catch(handleError) 
         
+        console.log(type)
     }, [page])
 
     const [infiniteRef] = useInfiniteScroll({
@@ -128,7 +143,7 @@ const SearchByFilter = ({ title, filteredBy }) => {
                     medias.map((anime, index) => {
 
                         const rank = withRanking && index < 100 ? index + 1 : null
-                        return <MinInfoCard ref={cardRef} key={index} media={anime} rank={rank} />
+                        return <CardsView ref={cardRef} key={index} media={anime} rank={rank} />
                     }) 
                 }
 
@@ -141,30 +156,21 @@ const SearchByFilter = ({ title, filteredBy }) => {
     }
     /* Display medias' cards */
 
-    useEffect(() => {
-        const totalCards = medias.length
-
-        const containerWidth = containerRef.current?.getBoundingClientRect().width
-        const cardWidth = cardRef.current?.getBoundingClientRect().width
-        const cardsPerRow = Math.floor(containerWidth / cardWidth)
-
-        const cardsOnLastRow = totalCards % cardsPerRow
-        setMissingCards(cardsPerRow - cardsOnLastRow)
-    }, [loading])
-
     return(
         <>
             {
-                isLoading ? <MinCardsLoader />
-                : <div 
-                    ref={containerRef}
-                    className="flex flex-col mx-auto mt-10 w-full sm:w-[calc(100vw-10%)] md:w-[calc(100vw-5%)] lg:w-3/4 xl:w-3/4">
-                    <Title title={title} />
+                isLoading ? <CardsLoaderView />
+                : <PageWrapper 
+                    ref={containerRef}>
+                    <div className="flex justify-between items-center">
+                        <Title title={title} />
+                        <ViewModes />
+                    </div>
                     { filteredBy === "TOP_100" ? displayMedias(medias, true) : displayMedias(medias) }
-                    {loading && <MinCardsLoader main = {false} />}
+                    {loading && <CardsLoaderView main = {false} />}
                     {error && <Alert message={error.message} />}
                     {hasNextPage && !loading && <div ref={infiniteRef}></div>}
-                </div>
+                </PageWrapper>
             }
         </>
     )

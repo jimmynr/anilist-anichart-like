@@ -6,9 +6,13 @@ import { highScoreIcon, averageScoreIcon, lowScoreIcon } from "../icons"
 
 import { Link } from "react-router-dom"
 
-import { useMemo } from "react"
+import { forwardRef, useMemo } from "react"
 
-const MaxInfoCard = ({ media }) => {
+import { useMediaQuery } from "react-responsive"
+
+const MaxInfoCard = forwardRef(({ media, rank = null }, ref) => {
+
+    const customMediaQuerie = useMediaQuery({ minWidth: 920 })
 
     const studios = getMainStudioName(media).join(", ")
 
@@ -32,9 +36,12 @@ const MaxInfoCard = ({ media }) => {
     : media.status === 'FINISHED' ? `${ media.episodes || '?' } eps`
     : ''
 
+    const cardWidth = customMediaQuerie ? "w-1/2" : "w-full"
+
     return (
         <div
-            className='w-full md:w-full lg:w-1/2 xl:w-1/3'
+            ref={ref}
+            className={cardWidth}
         >            
             <div className='flex h-64 max-h-64 m-4 rounded-md'>
                 <div 
@@ -78,7 +85,7 @@ const MaxInfoCard = ({ media }) => {
                             </div>
 
                             <div className="flex justify-between items-center">
-                                <div className='text-xs py-1'>{ episodes }</div>
+                                <div className='text-xs py-1 md:truncate'>{ episodes }</div>
                                 {
                                     media.averageScore && <div
                                         className='font-bold py-1 px-4 flex gap-1 items-center'
@@ -91,6 +98,7 @@ const MaxInfoCard = ({ media }) => {
                                         <span className="text-xs">{ media.averageScore } %</span>
                                     </div>
                                 }
+
                             </div>
 
                         </div>
@@ -116,6 +124,6 @@ const MaxInfoCard = ({ media }) => {
             </div>
         </div>
     )
-}
+})
 
 export default MaxInfoCard

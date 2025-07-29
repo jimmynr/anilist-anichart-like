@@ -1,23 +1,34 @@
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useCallback, useRef } from "react"
+
+import useInfiniteScroll from "react-infinite-scroll-hook"
 
 import { Link, useSearchParams } from "react-router-dom"
 
-import { fetchMedias } from "../../anilist-api/api"
+import { fetchMedias, fetchMediasWithPageInfo } from "../../anilist-api/api"
 
-import { getCurrentSeason, getNextSeason } from "../../anilist-api/fonctionsUtil"
+import { getCurrentSeason, getNextSeason, fillMissingCards } from "../../anilist-api/fonctionsUtil"
 
 import { useMediaQuery } from 'react-responsive'
 
-import { fetchFilteredMedias } from "../../anilist-api/helpers"
-
 import MinCardsLoader from "../commonComponents/loaders/minCardsLoader"
+import SingleMinCardsLoader from "../commonComponents/loaders/singleMinCardLoader"
 import Title from "../commonComponents/headers/title"
 
 import MinInfoCard from "../commonComponents/displays/minInfoCard"
 import AvgInfoCard from "../commonComponents/displays/avgInfoCard"
 
+import PageWrapper from "../commonComponents/displays/wrapper"
+
 const Search = () => {
+    /* Ref for loader */
+    //state 
+    const [missingCards, setMissingCards] = useState(0)
+
+    const containerRef = useRef(null)
+    const cardRef = useRef(null)
+    /* Ref for loader */
+
     /* Screen size */
     const isMobile = useMediaQuery({ maxWidth: 640 })
     const isTablet = useMediaQuery({ maxWidth: 768 })
@@ -41,11 +52,64 @@ const Search = () => {
     const [searchParam] = useSearchParams()
     /* url */
 
+    /* infinite scroll states */
+    const [page, setPage] = useState(1)
+    const [hasNextPage, setHasNextPage] = useState(true)
+    // infinite scroll loader
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
+    /* infinite scroll states */  
+
+    const handleError = (err) => {
+        setError(err)
+        setLoading(false)
+    }
+
+    const fetchData = async (page, name, genres, year, season, status, formats) => {
+        let data = []
+        data = await fetchMediasWithPageInfo(page, 50, undefined, name, genres, year, season, status, formats, ["POPULARITY_DESC"], false)       
+        
+        if (page === 1) {
+            setFilteredMedias(data.medias)
+        } else {
+            setFilteredMedias(prev => [...prev, ...data.medias])
+            setHasNextPage(data.pageInfo.hasNextPage)
+            setLoading(false)
+        }
+        setPage(prev => prev + 1)
+    }
+
+    const loadMore = useCallback(() => {
+        setMissingCards(fillMissingCards(filteredMedias, containerRef, cardRef))
+
+        setLoading(true)
+        setError(null)
+
+        fetchData(page)
+        .catch(handleError)
+        
+    }, [page])
+
+    const [infiniteRef] = useInfiniteScroll({
+        loading,
+        hasNextPage,
+        onLoadMore: loadMore,
+        // When there is an error, we stop infinite loading.
+        // It can be reactivated by setting "error" state as undefined.
+        disabled: Boolean(error),
+        // `rootMargin` is passed to `IntersectionObserver`.
+        // We can use it to trigger 'onLoadMore' when the sentry comes near to become
+        // visible, instead of becoming fully visible on the screen.
+        rootMargin: '0px 0px 400px 0px',
+    })
+    /* infinite scroll */
+
     useEffect(() => {
 
         const mode = searchParam.get("mode")
 
         if (mode === "filter") {
+            setIsLoading(true)
             setFilterMode(true)
 
             const name = searchParam.get("name")
@@ -61,13 +125,8 @@ const Search = () => {
 
             const status = searchParam.get("status")
     
-            const fetchData = async () => {
-                const res = await fetchFilteredMedias(1, 10, name, genres, year, season, status, formats)
-    
-                setFilteredMedias(res)
-            }
-    
-            fetchData()
+            fetchData(page, name, genres, year, season, status, formats)
+            .catch(setError)
         } else {
             setFilterMode(false)
 
@@ -110,7 +169,7 @@ const Search = () => {
             
             fetchAll()
         }
-    }, [])
+    }, [searchParam])
 
     useEffect(() => {
         if ((trendingNow && trendingNow.length > 0 
@@ -131,7 +190,7 @@ const Search = () => {
         else return medias
     }
 
-    const displayMedias = (medias, title, path, withRanking = false) => {
+    const displayMedias = (medias, title = "", path = "", withRanking = false) => {
 
         return <div className="mt-10">
             {
@@ -144,8 +203,12 @@ const Search = () => {
                 { medias.map((anime, index) => {
 
                     const rank = withRanking ? index + 1 : null
-                    return <MinInfoCard key={index} media={anime} rank={rank} />
+                    return <MinInfoCard ref={cardRef} key={index} media={anime} rank={rank} />
                 }) }
+                {
+                    loading && missingCards !== 0 && Array.from({ length: missingCards })
+                    .map((_, index) => (<SingleMinCardsLoader key={index} />))
+                }
             </div>
         </div>
     }
@@ -173,19 +236,15 @@ const Search = () => {
         <>
             {
                 isLoading ? <MinCardsLoader />
-                : filterMode ?
-                <>
-                    <div className='p-10 md:p-20 lg:p-4 xl:p-10 flex flex-col gap-5 md:gap-5 lg:gap-3 xl:gap-5'>
-                        <div className='flex flex-col sm:flex-row md:flex-row lg:flex-row xl:flex-row
-                                    sm:flex-wrap md:flex-wrap lg:flex-wrap xl:flex-wrap p-4'>
-                            { displayMedias(filteredMedias, "", "") }
-                        </div>
-                    </div>
-                    {/* {loading && <p className="text-center my-5">Chargement...</p>}
-                    {error && <p className="text-center my-5">Erreur : {error.message}</p>}
-                    {hasNextPage && !loading && <div ref={infiniteRef}></div>} */}
-                </>
-                : <div className="flex flex-col mx-auto w-full sm:w-[calc(100vw-10%)] md:w-[calc(100vw-5%)] lg:w-3/4 xl:w-3/4">
+                : filterMode ? <PageWrapper 
+                    ref={containerRef}>
+
+                    { displayMedias(filteredMedias) }
+                    {loading && <MinCardsLoader main = {false} />}
+                    {error && <Alert message={error.message} />}
+                    {hasNextPage && !loading && <div ref={infiniteRef}></div>}
+                </PageWrapper>
+                : <PageWrapper>
                     
                     { displayMedias(displayResponsiveMedias(trendingNow), "Trending now", "/search/trending-now") }
 
@@ -197,7 +256,7 @@ const Search = () => {
 
                     { isXLarge ? displayTop100(true) : displayMedias(top100, "Top 100 Anime", "/search/top-100", true)  }
                     
-                </div>
+                </PageWrapper>
             }
         </>
     )

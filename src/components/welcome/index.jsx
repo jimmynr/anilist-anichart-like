@@ -9,6 +9,8 @@ import { genreOptions, yearOptions, seasonOptions, formatsOptions, statusOptions
 
 import Label from "../commonComponents/headers/label"
 
+import PageWrapper from "../commonComponents/displays/wrapper"
+
 const Welcome = () => {  
     
     /* States */
@@ -55,7 +57,7 @@ const Welcome = () => {
 
     return(
         <div className='bg-[#EDF1F5] text-[#6e859e] flex flex-col items-center'>
-            <div className="flex flex-col mx-auto px-2 w-full sm:w-[calc(100vw-10%)] md:w-[calc(100vw-5%)] lg:w-3/4 xl:w-3/4">
+            <PageWrapper>
                 <div>
                     <div className="relative">
                         <div
@@ -103,7 +105,7 @@ const Welcome = () => {
                         <FilterDropdown state={filters} setState={setFilters} property="status" collection={statusOptions} allowsManyChoices={false} />
                     </div>
                 </div>
-            </div>
+            </PageWrapper>
 
             <Outlet />
 

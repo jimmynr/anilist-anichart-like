@@ -5,9 +5,10 @@ import { getRandomInt, customMediaInfos, customAiringTimeText  } from "../../../
 import { Link } from "react-router-dom"
 
 import { lowScoreIcon, averageScoreIcon, highScoreIcon } from "../icons"
+import { useMemo } from "react"
 
 const AvgInfoCard = ({ media, rank = null }) => {
-    const color = colorsCollection[getRandomInt(colorsCollection.length - 1)]
+    const color = useMemo(() => colorsCollection[getRandomInt(colorsCollection.length - 1)], [])
 
     const format = formatsOptions.filter(f => f.value === media.format)[0].label === "TV" 
     ? "TV Show" : formatsOptions.filter(f => f.value === media.format)[0].label
@@ -29,7 +30,7 @@ const AvgInfoCard = ({ media, rank = null }) => {
 
             <div className="flex flex-col md:flex-row md:gap-x-4 px-4 w-full">
                 <div className="flex flex-col gap-y-2 md:gap-y-4 w-full md:w-2/5 lg:1/2">
-                    <div className="font-bold">{ media.title.romaji }</div>
+                    <div className="font-bold text-[#6e859e]">{ media.title.romaji }</div>
                     <div className="flex gap-2 flex-wrap">
                         {
                             media.genres.map((genre, index) => {
@@ -54,20 +55,20 @@ const AvgInfoCard = ({ media, rank = null }) => {
                                 : media.averageScore >= 60 && media.averageScore < 75 ? averageScoreIcon
                                 : lowScoreIcon
                             }</span>
-                            <span>{ media.averageScore } %</span>
+                            <span className="text-[#6e859e]">{ media.averageScore } %</span>
                         </div>
                     }
-                    <div className="flex gap-x-2 md:flex-col items-center mr-2 md:mr-0 md:w-2/5">
+                    <div className="flex gap-x-2 md:flex-col items-center mr-2 md:mr-0 md:w-2/5 text-[#6e859e]">
                         <div>{ format }</div>
                         <div>{moreInfo !== null && moreInfo.slice(3)}</div>
                     </div>
                     {
-                        media.nextAiringEpisode !== null ? <div className="flex gap-x-2 md:flex-col items-center mr-2 md:mr-0 md:w-2/5">
+                        media.nextAiringEpisode !== null ? <div className="flex gap-x-2 md:flex-col items-center mr-2 md:mr-0 md:w-2/5 text-[#6e859e]">
                             <div>Airing</div>
                             <div>Ep {media.nextAiringEpisode.episode} in {timeText}</div>
                         </div>
                         : media.season !== null && media.seasonYear !== null ?
-                        <div className="flex gap-x-2 md:flex-col items-center mr-2 md:mr-0 md:w-2/5">
+                        <div className="flex gap-x-2 md:flex-col items-center mr-2 md:mr-0 md:w-2/5 text-[#6e859e]">
                             <div className="capitalize">{ media.season.toLowerCase() } { media.seasonYear }</div>
                             <div 
                                 style={{ color: `${ statusCollection[media.status].color }` }}

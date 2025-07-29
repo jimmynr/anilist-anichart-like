@@ -10,6 +10,7 @@ const Info = () => {
             <li>https://css-loaders.com/</li>
             <li>https://www.npmjs.com/package/react-tooltip</li>
             <li>https://freefrontend.com/css-skeleton-loadings/</li>
+            <li>https://docs.anilist.co/reference/</li>
         </ul>
         </div>
     )

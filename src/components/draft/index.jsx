@@ -1,5 +1,8 @@
-import "./index.css"
-import SingleMinCardsLoader from "../commonComponents/loaders/singleMinCardLoader"
+// import "./index.css"
+// import SingleMinCardsLoader from "../commonComponents/loaders/singleMinCardLoader"
+import AvgCardsLoader from "../commonComponents/loaders/avgCardsLoader"
+import MaxCardsLoader from "../commonComponents/loaders/maxCardsLoader"
+import MinCardsLoader from "../commonComponents/loaders/minCardsLoader"
 
 const Draft = () => {
 
@@ -27,7 +30,11 @@ const Draft = () => {
     //     </div>
     // )
 
-    return <SingleMinCardsLoader />
+    return <div>
+        <AvgCardsLoader />
+        <MinCardsLoader />
+        <MaxCardsLoader />
+    </div>
 }
 
 export default Draft

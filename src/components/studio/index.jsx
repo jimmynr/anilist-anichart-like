@@ -1,7 +1,7 @@
 
 import { useEffect, useState, useRef } from "react"
 
-import { fetchAllStudios } from "../../anilist-api/constants"
+import { fetchAllStudios } from "../../anilist-api/fonctionsUtil"
 
 import { IoIosClose } from "react-icons/io"
 
@@ -9,6 +9,10 @@ import { Link } from "react-router-dom"
 
 import { HashLink } from 'react-router-hash-link'
 import Loader from "../commonComponents/loaders/loader"
+
+import PageWrapper from "../commonComponents/displays/wrapper"
+
+import Title from "../commonComponents/headers/title"
 
 const Studio = () => {
 
@@ -53,10 +57,10 @@ const Studio = () => {
             return <Link 
                 key={index} 
                 to={`/studio/${ studio.id }/${ studio.name }`}
-                className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-5 py-2 hover:px-0 hover:py-0 cursor-pointer"
+                className="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/4 xl:w-1/5 px-5 py-2 hover:px-0 hover:py-0 cursor-pointer"
             >
                 <div 
-                    className="bg-white rounded-sm h-full p-2 hover:bg-gray-700 hover:text-[#41B1EA]"
+                    className="text-sm truncate bg-white rounded-sm h-full p-2 hover:bg-gray-700 hover:text-[#41B1EA]"
                 >{studio.name}</div>
             </Link>
         })
@@ -70,10 +74,10 @@ const Studio = () => {
             <Link 
                 key={index}
                 to={`/studio/${ studio.id }/${ studio.name }`}
-                className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-5 py-2 hover:px-0 hover:py-0 cursor-pointer"
+                className="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/4 xl:w-1/5 px-5 py-2 hover:px-0 hover:py-0 cursor-pointer"
             >
                 <div 
-                    className="bg-white rounded-sm h-full p-2 hover:bg-gray-700 hover:text-[#41B1EA]"
+                    className="text-sm truncate bg-white rounded-sm h-full p-2 hover:bg-gray-700 hover:text-[#41B1EA]"
                 >{studio.name}</div>
             </Link>
         )
@@ -93,13 +97,13 @@ const Studio = () => {
     return (
         <div className="flex flex-col flex-grow bg-[#EDF1F5] text-[#6e859e] px-10 pt-30 lg:pt-20 pb-10 relative">
             {
-                isLoading ? <Loader header={`de la liste des studios d'animation`}/>
+                isLoading ? <Loader />
                 :
                 <>
                     <div className="flex justify-center">
                         <div
                             className='fixed top-30 lg:top-25 p-2 hover:bg-[#41B1EA] hover:text-white
-                            rounded-sm shadow-lg z-50 font-bold text-xs flex flex-col lg:flex-row'
+                            rounded-sm shadow-lg z-50 font-bold text-xs flex flex-col xl:flex-row'
                         >
                             <div className="relative">
                                 <input
@@ -125,26 +129,30 @@ const Studio = () => {
                             </div>
                         </div>
                     </div>
-                    {
-                        alphabet.map((letter, index) => (
-                            <div key={index}>
-                                {
-                                    displayStudios(studios, letter).length > 0 && <>
-                                        <div className="p-5 text-5xl font-bold" id={`section${ letter }`}>{letter}</div>
-                                        <div className="flex flex-row flex-wrap text-center">
-                                            { displayStudios(studios, letter) }
-                                        </div>
-                                    </>
-                                }
-                            </div>
-                        ))
-                    }
-                    {
-                        displayStudiosStartingWithSpecialChara(studios).length > 0 && <>
-                            <div className="p-5 text-5xl font-bold" id="sectionSpecial">&</div>
-                            <div className="flex flex-row flex-wrap text-center">{ displayStudiosStartingWithSpecialChara(studios) }</div>
-                        </>
-                    }
+                    <PageWrapper>
+                        {
+                            alphabet.map((letter, index) => (
+                                <div key={index}>
+                                    {
+                                        displayStudios(studios, letter).length > 0 && <>
+                                            <div className="p-2 ml-5" id={`section${ letter }`}>
+                                                <Title title={letter} /> 
+                                            </div>
+                                            <div className="flex flex-row flex-wrap text-center">
+                                                { displayStudios(studios, letter) }
+                                            </div>
+                                        </>
+                                    }
+                                </div>
+                            ))
+                        }
+                        {
+                            displayStudiosStartingWithSpecialChara(studios).length > 0 && <>
+                                <div className="p-2 ml-5" id="sectionSpecial"><Title title="&" /></div>
+                                <div className="flex flex-row flex-wrap text-center">{ displayStudiosStartingWithSpecialChara(studios) }</div>
+                            </>
+                        }
+                    </PageWrapper>
                 </>                   
             }
 

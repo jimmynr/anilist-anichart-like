@@ -162,3 +162,28 @@ export const capitalize = str => {
   return str[0].toUpperCase() + str.slice(1).toLowerCase()
 }
 /* Fetching home's data */
+
+/* loader behavior */
+export const fillMissingCards = (medias, containerRef, cardRef) => {
+  const totalCards = medias.length
+
+  const containerWidth = containerRef.current?.getBoundingClientRect().width
+  const cardWidth = cardRef.current?.getBoundingClientRect().width
+  const cardsPerRow = Math.floor(containerWidth / cardWidth)
+
+  return totalCards - (totalCards % cardsPerRow)
+}
+/* loader behavior */
+
+// => array of all studios from anilist as file.json
+export const fetchAllStudios = async () => {
+  try {
+    const res = await fetch('/dataFromAnilist/studios.json')
+    const studios = await res.json()
+    return studios.filter(studio => studio.isAnimationStudio)
+      .sort((a, b) => a.name.localeCompare(b.name))
+  } catch (err) {
+    console.error('Error :', err.message)
+    return []
+  }
+}
