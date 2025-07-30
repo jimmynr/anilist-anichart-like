@@ -17,20 +17,20 @@ const AvgInfoCard = ({ media, rank = null }) => {
 
     let timeText = customAiringTimeText(media)
 
-    return <div className="w-full mt-3 flex items-center gap-x-6">
+    return <div className="w-full mt-3 flex items-center gap-x-6 min-w-0">
         { rank !==  null && <div className="text-2xl font-extrabold w-10 flex items-center">
             <div className="text-sm">#</div>
             <div>{`${ rank }`}</div>
         </div> }
         <Link 
             to={`/media/${ media.id }/${ media.title.romaji }`} 
-            className="flex items-center w-full bg-white rounded-md p-2"
+            className="flex items-center w-full bg-white rounded-md p-2 min-w-0"
         >
             <img src={ media.coverImage.medium } alt="Cover Image" className="w-16 h-24 md:w-18 md:h-26" />
 
-            <div className="flex flex-col md:flex-row md:gap-x-4 px-4 w-full">
-                <div className="flex flex-col gap-y-2 md:gap-y-4 w-full md:w-2/5 lg:1/2">
-                    <div className="font-bold text-[#6e859e]">{ media.title.romaji }</div>
+            <div className="flex flex-col md:flex-row md:gap-x-4 px-4 w-full min-w-0">
+                <div className="flex flex-col gap-y-2 md:gap-y-4 w-full md:w-2/5 lg:1/2 min-w-0">
+                    <div className="font-bold text-[#6e859e] truncate overflow-hidden whitespace-nowrap">{ media.title.romaji }</div>
                     <div className="flex gap-2 flex-wrap">
                         {
                             media.genres.map((genre, index) => {
