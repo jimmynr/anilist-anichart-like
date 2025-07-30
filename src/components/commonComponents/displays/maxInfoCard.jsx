@@ -10,7 +10,12 @@ import { forwardRef, useMemo } from "react"
 
 import { useMediaQuery } from "react-responsive"
 
-const MaxInfoCard = forwardRef(({ media, rank = null }, ref) => {
+import { useLocation } from "react-router-dom"
+
+const MaxInfoCard = forwardRef(({ media, rank = null, airingInfo = null }, ref) => {
+
+    const location = useLocation()
+    const isAiringPage = location.pathname === "/airing"
 
     const customMediaQuerie = useMediaQuery({ minWidth: 920 })
 
@@ -43,7 +48,12 @@ const MaxInfoCard = forwardRef(({ media, rank = null }, ref) => {
             ref={ref}
             className={cardWidth}
         >            
-            <div className='flex h-64 max-h-64 m-4 rounded-md'>
+            <div className='flex h-64 max-h-64 m-4 rounded-md relative'>
+                { rank !== null && <div
+                    className="absolute -top-2 -left-1.5 md:-top-3 md:-left-3 lg:-top-3 lg:-left-3 
+                    font-bold text-white p-2 size-10 rounded-full flex justify-center items-center"
+                    style={{ backgroundColor: color }}
+                ><span className="text-xs">#</span><span className="text-lg">{rank}</span></div> }
                 <div 
                     className='min-w-[185px]'
                     style={{ 
@@ -76,16 +86,20 @@ const MaxInfoCard = forwardRef(({ media, rank = null }, ref) => {
                     <div className='p-5 text-[#6e859e]'>
                         <div className='flex flex-col'>
 
-                            <div 
-                                className='text-white text-xs font-medium me-2 px-2.5 py-0.5 rounded-full w-fit' 
-                                style={{ backgroundColor: `${ statusCollection[media.status].color }` }}
-                                
-                            >
-                                { statusCollection[media.status].label }
-                            </div>
+                            {
+                                !isAiringPage && <div 
+                                    className='text-white text-xs font-medium me-2 px-2.5 py-0.5 rounded-full w-fit' 
+                                    style={{ backgroundColor: `${ statusCollection[media.status].color }` }}
+                                    
+                                >
+                                    { statusCollection[media.status].label }
+                                </div>
+                            }
 
                             <div className="flex justify-between items-center">
-                                <div className='text-xs py-1 md:truncate'>{ episodes }</div>
+                                <div className='text-xs py-1 md:truncate'>
+                                    { isAiringPage ? `Ep ${airingInfo.episode} at` : episodes }
+                                </div>
                                 {
                                     media.averageScore && <div
                                         className='font-bold py-1 px-4 flex gap-1 items-center'
@@ -102,7 +116,15 @@ const MaxInfoCard = forwardRef(({ media, rank = null }, ref) => {
                             </div>
 
                         </div>
-                        <div className='text-lg font-bold'>{ releaseDate }</div>
+                        <div className='text-lg font-bold'>
+                            { 
+                                isAiringPage ? new Date(airingInfo.airingAt * 1000).toLocaleString('en-EN', {
+                                            hour: '2-digit',
+                                            minute: '2-digit'
+                                        }) : 
+                                releaseDate 
+                             }
+                        </div>
                         <div className='text-xs overflow-y-auto max-h-20 mt-2 custom-scrollbar'>{ desc }</div>
                     </div>
                     <div 

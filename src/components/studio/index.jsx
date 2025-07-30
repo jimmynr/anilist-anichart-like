@@ -29,8 +29,8 @@ const Studio = () => {
     useEffect(() => {
         const fetchData = async () => {
             const result = await fetchAllStudios()
-            studiosRef.current = result
-            setStudios(result)
+            studiosRef.current = result.filter(m => m.hasMedia)
+            setStudios(result.filter(m => m.hasMedia))
         }
 
         fetchData()

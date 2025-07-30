@@ -5,10 +5,12 @@ import { fetchMediasWithPageInfo } from "../../anilist-api/api"
 import { getCurrentSeason, getNextSeason, fillMissingCards } from "../../anilist-api/fonctionsUtil"
 
 import CardsLoaderView from "../commonComponents/loaders/viewCardsLoader"
-import SingleMinCardsLoader from "../commonComponents/loaders/singleMinCardLoader"
+import ViewSingleCardsLoader from "../commonComponents/loaders/viewSingleCardsLoader"
+
 import Title from "../commonComponents/headers/title"
 
 import useInfiniteScroll from 'react-infinite-scroll-hook'
+
 import Alert from "../commonComponents/alert"
 
 import PageWrapper from "../commonComponents/displays/wrapper"
@@ -140,21 +142,21 @@ const SearchByFilter = ({ title, filteredBy }) => {
                 { 
                     medias.map((anime, index) => {
 
-                        const rank = withRanking && index < 100 ? index + 1 : null
+                        const rank = withRanking ? index + 1 : null
                         return <CardsView ref={cardRef} key={index} media={anime} rank={rank} />
                     }) 
                 }
 
                 {
                     loading && missingCards !== 0 && Array.from({ length: missingCards })
-                    .map((_, index) => (<SingleMinCardsLoader key={index} />))
+                    .map((_, index) => (<ViewSingleCardsLoader key={index} />))
                 }
             </div>
         </div>
     }
     /* Display medias' cards */
 
-    return(
+    return( 
         <>
             {
                 isLoading ? <CardsLoaderView />

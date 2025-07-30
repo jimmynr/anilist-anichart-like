@@ -270,6 +270,19 @@ export const fetchAllStudios = () => {
     })
 }
 
+const capitalizeDate = date => {
+    const part = date.split(' ')
+    let capitalizeDate = []
+    part.forEach(p => {
+        if(!/^[+-]?(\d+(\.\d+)?|\.\d+)$/.test(p)) {
+            capitalizeDate.push(p.charAt(0).toUpperCase() + p.slice(1).toLowerCase())
+        } else {
+            capitalizeDate.push(p)
+        }
+    })
+    return capitalizeDate.join(' ')
+}
+
 
 
 

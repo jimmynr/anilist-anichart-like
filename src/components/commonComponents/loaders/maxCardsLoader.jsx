@@ -5,6 +5,7 @@ import PageWrapper from "../displays/wrapper"
 import { useMediaQuery } from "react-responsive"
 
 const MaxCardsLoader = ({ main = true }) => {
+
     const customMediaQuerie = useMediaQuery({ minWidth: 920 })
 
     const cardWidth = customMediaQuerie ? "w-1/2" : "w-full"

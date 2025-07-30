@@ -260,3 +260,107 @@ export const fetchMediasWithPageInfo = async (page, perPage, mediaId, name, genr
     
     return fetchedAnimes
 }
+
+/* Airing page */
+export const fetchAiringNextWeek = async (perPage = 50) => {
+    const query = `
+      query ($page: Int = 1, $perPage: Int = 50, $start: Int!, $end: Int!) {
+        Page(page: $page, perPage: $perPage) {
+          pageInfo {
+            currentPage
+            hasNextPage
+          }
+          airingSchedules(airingAt_greater: $start, airingAt_lesser: $end) {
+            airingAt
+            timeUntilAiring
+            episode
+            media {
+              id
+              title { romaji english native }
+              type
+              isAdult
+              format
+              status
+              description(asHtml: false)
+              startDate { year month day }
+              season
+              seasonYear
+              episodes
+              trailer { id site thumbnail }
+              coverImage { medium large extraLarge }
+              bannerImage
+              genres
+              averageScore
+              popularity
+              studios {
+                edges {
+                  isMain
+                  node {
+                    id
+                    name
+                    isAnimationStudio
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `
+  
+    // from today
+    // const start = Math.floor(Date.now() / 1000)
+    const now = new Date()
+    now.setHours(0, 0, 0, 0) 
+    const start = Math.floor(now.getTime() / 1000) 
+    const end = start + 7 * 24 * 60 * 60
+  
+    //from tomorrow
+    // const now = new Date()
+    // now.setHours(0, 0, 0, 0) 
+    // const start = Math.floor(now.getTime() / 1000) + 86400 
+    
+    // const end = start + 7 * 86400
+  
+    let page = 1
+    let hasNextPage = true
+    let allSchedules = []
+  
+    while (hasNextPage) {
+      const variables = {
+        page,
+        perPage,
+        start,
+        end
+      }
+  
+      // const response = await fetch('https://graphql.anilist.co', {
+      // use of proxy from the file vite.config
+      const response = await fetch('/anilist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          query,
+          variables
+        })
+      })
+  
+      const json = await response.json()
+  
+      if (json.errors) {
+        console.error('Erreur GraphQL :', json.errors)
+        break
+      }
+  
+      const data = json.data.Page
+      allSchedules.push(...data.airingSchedules)
+      hasNextPage = data.pageInfo.hasNextPage
+      page++
+    }
+  
+    return allSchedules
+  }
+  /* Airing page */

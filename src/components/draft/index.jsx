@@ -3,6 +3,7 @@
 import AvgCardsLoader from "../commonComponents/loaders/avgCardsLoader"
 import MaxCardsLoader from "../commonComponents/loaders/maxCardsLoader"
 import MinCardsLoader from "../commonComponents/loaders/minCardsLoader"
+import SingleMaxCardsLoader from "../commonComponents/loaders/singleMaxCardsLoader"
 
 const Draft = () => {
 
@@ -31,6 +32,7 @@ const Draft = () => {
     // )
 
     return <div>
+        <SingleMaxCardsLoader />
         <AvgCardsLoader />
         <MinCardsLoader />
         <MaxCardsLoader />

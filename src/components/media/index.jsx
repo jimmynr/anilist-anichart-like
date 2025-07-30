@@ -6,17 +6,11 @@ import ReactPlayer from 'react-player'
 
 import { fetchMedias } from "../../anilist-api/api"
 
-import { fetchMediaPerMediaId, fetchMediaPerMediaTitle } from "../../anilist-api/helpers"
-
-import { formatLabels, anime_season_en_fr, getRoleLabel } from "../../anilist-api/constants"
-
 import { useMediaQuery } from 'react-responsive'
 
 import BannerImg from '../../images/BannerImg.jpg'
 
 import '../season/index.css'
-
-import { FaHeart } from "react-icons/fa"
 
 import Loader from "../commonComponents/loaders/loader"
 
@@ -164,34 +158,46 @@ const Media = () => {
                     <div className="text-sm font-bold">Format</div>
                     <div className="text-xs mb-2">{formatsOptions.filter(f => f.value === media.format)[0].label}</div>
                 </div>
-                <div>
-                    <div className="text-sm font-bold">Episodes</div>
-                    <div className="text-xs mb-2">{media.episodes || '?'}</div>
-                </div>
-                <div>
-                    <div className="text-sm font-bold">Episode Duration</div>
-                    <div className="text-xs mb-2">{media.duration || '?'} min</div>
-                </div>
+                {
+                    media.episodes && <div>
+                        <div className="text-sm font-bold">Episodes</div>
+                        <div className="text-xs mb-2">{media.episodes}</div>
+                    </div>
+                }
+                {
+                    media.duration && <div>
+                        <div className="text-sm font-bold">Episode Duration</div>
+                        <div className="text-xs mb-2">{media.duration} min</div>
+                    </div>
+                }
                 <div>
                     <div className="text-sm font-bold">Status</div>
                     <div className="text-xs mb-2">{statusOptions.filter(s => s.value === media.status)[0].label}</div>
                 </div>
-                <div>
-                    <div className="text-sm font-bold">Start Date</div>
-                    <div className="text-xs mb-2">{formatDateEn(media.startDate) !== null ? formatDateEn(media.startDate) : '?'}</div>
-                </div>
-                <div>
-                    <div className="text-sm font-bold">End Date</div>
-                    <div className="text-xs mb-2">{formatDateEn(media.endDate) !== null ? formatDateEn(media.endDate) : '?'}</div>
-                </div>
-                <div>
-                    <div className="text-sm font-bold">Season</div>
-                    <div className="text-xs mb-2 capitalize">{media.season.toLowerCase()} {media.seasonYear}</div>
-                </div>
-                <div>
-                    <div className="text-sm font-bold">Average Score</div>
-                    <div className="text-xs mb-2">{media.averageScore || '?'} %</div>
-                </div>
+                {
+                    (media.startDate.day !== null || media.startDate.month !== null || media.startDate.year !== null) && <div>
+                        <div className="text-sm font-bold">Start Date</div>
+                        <div className="text-xs mb-2">{formatDateEn(media.startDate)}</div>
+                    </div>
+                }
+                {
+                    (media.endDate.day !== null || media.endDate.month !== null || media.endDate.year !== null) && <div>
+                        <div className="text-sm font-bold">End Date</div>
+                        <div className="text-xs mb-2">{formatDateEn(media.endDate)}</div>
+                    </div>
+                }
+                {
+                    (media.season || media.seasonYear) && <div>
+                        <div className="text-sm font-bold">Season</div>
+                        <div className="text-xs mb-2 capitalize">{media.season && `${media.season.toLowerCase()} `}{media.seasonYear}</div>
+                    </div>
+                }
+                {
+                    media.averageScore && <div>
+                        <div className="text-sm font-bold">Average Score</div>
+                        <div className="text-xs mb-2">{media.averageScore} %</div>
+                    </div>
+                }
                 <div>
                     <div className="text-sm font-bold">Popularity</div>
                     <div className="text-xs mb-2">{media.popularity}</div>
@@ -235,7 +241,6 @@ const Media = () => {
                 isLoading ? <Loader />
                 : error ? <Alert message={`No information found for ${pathParam.mediaName}`} />
                 : <>
-                    { console.log(media) }
                     {
                         media.bannerImage !== null 
                         ? <div 

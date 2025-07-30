@@ -62,19 +62,19 @@ export const formatDateFr = (date) => {
     : null
 }
 
-export const formatDateEn = (date) => {
-    if (date === null) return null
+export const formatDateEn = ({ day, month, year}) => {
+    if (day === null && month === null && year === null) return null
 
     let monthName = ""
-    if ('month' in date) {
-      const temp = date.month && new Date(date.year, date.month)
-      monthName = temp.toLocaleString('en-US', { month: 'long' });
+    if (month !== null) {
+      const temp = month && new Date(year, month - 1)
+      monthName = temp.toLocaleString('en-US', { month: 'long' })
     }
 
-    return date.day && date.month
-    ? `${monthName} ${date.day}, ${date.year}`
-    : date.month ? `${monthName} ${date.year}`
-    : date.year
+    return day && month && year
+    ? `${monthName} ${day}, ${year}`
+    : month && year ? `${monthName} ${year}`
+    : year
 }
 
 
@@ -204,3 +204,5 @@ export const getTrailerUrl = (trailer) => {
   }
 }
 /* Media's page */
+
+

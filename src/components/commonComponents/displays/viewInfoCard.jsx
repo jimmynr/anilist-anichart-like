@@ -7,13 +7,25 @@ import MinInfoCard from "./minInfoCard"
 import MaxInfoCard from "./maxInfoCard"
 import AvgInfoCard from "./avgInfoCard"
 
-const CardsView = forwardRef(({ media, rank = null }, ref) => {
+import { useLocation } from "react-router-dom"
+import AiringInfoCard from "./airingInfoCard"
+
+const CardsView = forwardRef(({ media, rank = null, airingInfo = null }, ref) => {
+
+    const location = useLocation()
+    const isAiringPage = location.pathname === "/airing"
 
     const { type } = useContext(displayContext)
 
-    return type === "MIN" ? <MinInfoCard ref={ref} media={media} rank={rank} />
-        : type === "MAX" ? <MaxInfoCard ref={ref} media={media} rank={rank} />
-        : <AvgInfoCard ref={ref} media={media} rank={rank} />
+    return !isAiringPage ? (
+            type === "MIN" ? <MinInfoCard ref={ref} media={media} rank={rank} />
+            : type === "MAX" ? <MaxInfoCard ref={ref} media={media} rank={rank} airingInfo={airingInfo} />
+            : <AvgInfoCard ref={ref} media={media} rank={rank} />
+        )
+        : (
+            type === "MAX" ? <MaxInfoCard ref={ref} media={media} rank={rank} airingInfo={airingInfo} />
+            : <AiringInfoCard media={media} airingInfo={airingInfo} />
+        )
 })
 
 export default CardsView
