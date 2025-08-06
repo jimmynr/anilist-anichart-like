@@ -364,3 +364,108 @@ export const fetchAiringNextWeek = async (perPage = 50) => {
     return allSchedules
   }
   /* Airing page */
+
+  /* Medias per studio page */
+  const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms))
+  
+  export const fetchMediaByStudioId = async (studioId, perPage = 50) => {
+    // const url = 'https://graphql.anilist.co'
+    let page = 1
+    let lastPage = 1
+    const fetchedMedia = []
+  
+    do {
+      const body = {
+        query: `
+          query ($studioId: Int, $page: Int, $perPage: Int) {
+            Studio(id: $studioId) {
+              id
+              name
+              siteUrl
+              media(page: $page, perPage: $perPage, sort: POPULARITY_DESC) {
+                pageInfo {
+                  total
+                  currentPage
+                  lastPage
+                  hasNextPage
+                }
+                nodes {
+                  id
+                  title { romaji english native }
+                  format
+                  status
+                  description(asHtml: false)
+                  startDate { year month day }
+                  season
+                  seasonYear
+                  episodes
+                  trailer { id site thumbnail }
+                  coverImage { medium large extraLarge }
+                  bannerImage
+                  genres
+                  averageScore
+                  popularity
+                  studios {
+                      edges {
+                      isMain
+                      node {
+                          id
+                          name
+                          isAnimationStudio
+                      }
+                      }
+                  }
+                  nextAiringEpisode { airingAt timeUntilAiring episode }
+                  duration
+                  type
+                  isAdult
+                }
+              }
+            }
+          }
+        `,
+        variables: { studioId, page, perPage }
+      }
+  
+      let data
+      try {
+        // const res = await fetch(url, {
+        // use of proxy from the file vite.config
+        const res = await fetch('/anilist', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(body)
+        })
+  
+        data = await res.json()
+  
+        if (!data || data.errors || !data.data || !data.data.Studio) {
+          return fetchedMedia
+        }
+  
+        const mediaData = data.data.Studio.media
+  
+        if (!mediaData || !mediaData.nodes) {
+          return fetchedMedia
+        }
+  
+        fetchedMedia.push(...mediaData.nodes)
+  
+        page++
+        lastPage = mediaData.pageInfo.lastPage
+      } catch (err) {
+        return fetchedMedia
+      }
+      if ((page - 1) % 10 === 0) {
+        await sleep(10000)
+      } 
+      else {
+        await sleep(700)
+      }
+    } while (page <= lastPage)
+    return fetchedMedia
+  }
+  /* Medias per studio page */

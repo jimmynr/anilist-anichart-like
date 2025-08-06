@@ -1,4 +1,4 @@
-import { Outlet, useNavigate } from "react-router-dom"
+import { Outlet, useNavigate, useLocation, useSearchParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 
 import { searchIcon, navigationCloseIcon } from "../commonComponents/icons"
@@ -11,6 +11,10 @@ import Label from "../commonComponents/headers/label"
 
 import PageWrapper from "../commonComponents/displays/wrapper"
 
+import ViewModes from "../commonComponents/displays/view"
+
+import { FaTags } from "react-icons/fa6"
+
 const Welcome = () => {  
     
     /* States */
@@ -22,6 +26,8 @@ const Welcome = () => {
         formats: [],
         status: ""
     })
+
+    const [clearTags, setClearTags] = useState(false)
     /* States */
 
     const navigateTo = useNavigate()
@@ -49,11 +55,144 @@ const Welcome = () => {
         if (status) queryParams.append("status", status)
         else queryParams.delete("status")
 
-        if (name || genres.length > 0 || year || season || formats.length > 0 || status) {
+        if (name || (Array.isArray(genres) && genres.length > 0) || year || season || (Array.isArray(formats) && formats.length) > 0 || status) {
             queryParams.append("mode", "filter")
             navigateTo(`/search/anime?${queryParams.toString()}`, { replace: true })
+        } else {
+            navigateTo("/search/anime")
         }
+
+        console.log(filters)
     }, [filters])
+
+    /* url */
+    const location = useLocation()
+    const [searchParam] = useSearchParams()
+
+    const mode = searchParam.get("mode")
+    /* url */
+
+    let delay
+
+    const startDelay = () => {
+        delay = setTimeout(() => {
+            setClearTags(false)
+        }, 2000)
+    }
+
+    const cancelDelay = () => {
+        clearTimeout(delay)
+    }
+
+    const addCloseIcon = e => {
+        e.currentTarget.lastElementChild.classList.remove("hidden")
+        cancelDelay()
+        setClearTags(true)
+    }
+
+    const removeCloseIcon = e => {
+        e.currentTarget.lastElementChild.classList.add("hidden")
+        startDelay()
+    }
+
+    const clearAllTags = () => {
+        setFilters({
+            name: "",
+            genres: [],
+            year: "",
+            season: "",
+            formats: [],
+            status: ""
+        })
+    }
+
+    const displayTags = () => {
+        const { name, year, season, status, formats, genres } = filters
+        
+        return <div className="flex flex-wrap gap-2 text-xs text-white font-semibold">
+            {
+                name && name !== "" && 
+                <div 
+                    onMouseEnter={e => addCloseIcon(e)}
+                    onMouseLeave={e => removeCloseIcon(e)}
+                    onClick={() => setFilters(prev => ({...prev, name: ""}))}
+                    className="bg-[#41B1EA] rounded-sm pb-1 px-2 cursor-pointer">
+                    Search: <span className="capitalize">{name.toLowerCase()}</span>
+                    <span className="ml-2 hidden">x</span>
+                </div>}
+            {
+                year && year !== "" && 
+                <div 
+                    onMouseEnter={e => addCloseIcon(e)}
+                    onMouseLeave={e => removeCloseIcon(e)}
+                    onClick={() => setFilters(prev => ({...prev, year: ""}))}
+                    className="bg-[#41B1EA] rounded-sm pb-1 px-2 cursor-pointer">
+                    {year}
+                    <span className="ml-2 hidden">x</span>
+                </div>
+            }
+            {
+                season && season !== "" && 
+                <div 
+                    onMouseEnter={e => addCloseIcon(e)}
+                    onMouseLeave={e => removeCloseIcon(e)}
+                    onClick={() => setFilters(prev => ({...prev, season: ""}))}
+                    className="capitalize bg-[#41B1EA] rounded-sm pb-1 px-2 cursor-pointer">
+                    {season.toLowerCase()}
+                    <span className="ml-2 hidden">x</span>
+                </div>
+            }
+            {
+                status && status !== "" && 
+                <div 
+                    onMouseEnter={e => addCloseIcon(e)}
+                    onMouseLeave={e => removeCloseIcon(e)}
+                    onClick={() => setFilters(prev => ({...prev, status: ""}))}
+                    className="bg-[#41B1EA] rounded-sm pb-1 px-2 cursor-pointer">
+                    {statusOptions.filter(s => s.value === status)[0].label}
+                    <span className="ml-2 hidden">x</span>
+                </div>}
+            {
+                Array.isArray(formats) && formats.length > 0 && formats.map((format, index) => (
+                    <div 
+                        onMouseEnter={e => addCloseIcon(e)}
+                        onMouseLeave={e => removeCloseIcon(e)}
+                        onClick={() => setFilters(prev => ({...prev, formats: prev.formats.filter(f => f !== format)}))}
+                        key={index} 
+                        className="bg-[#41B1EA] rounded-sm pb-1 px-2 cursor-pointer">
+                        {formatsOptions.filter(f => f.value === format)[0].label}
+                        <span className="ml-2 hidden">x</span>
+                    </div>
+                ))
+            }
+            {
+                Array.isArray(genres) && genres.length > 0 && genres.map((genre, index) => (
+                    <div 
+                        onMouseEnter={e => addCloseIcon(e)}
+                        onMouseLeave={e => removeCloseIcon(e)}
+                        onClick={() => setFilters(prev => ({...prev, genres: prev.genres.filter(f => f !== genre)}))}
+                        key={index} 
+                        className="bg-[#41B1EA] rounded-sm pb-1 px-2 cursor-pointer">
+                        {genreOptions.filter(g => g.value === genre)[0].label}
+                        <span className="ml-2 hidden">x</span>
+                    </div>
+                ))
+            }
+            {
+                clearTags && <div 
+                    onMouseEnter={() => {
+                        setClearTags(true)
+                        cancelDelay()
+                    }}
+                    onMouseLeave={() => startDelay()}
+                    onClick={() => clearAllTags()}
+                    className="bg-[#6e859e] rounded-sm pb-1 px-2 cursor-pointer">
+                    Clear All
+                    <span className="ml-2">x</span>
+                </div>
+            }
+        </div>
+    }
 
     return(
         <div className='bg-[#EDF1F5] text-[#6e859e] flex flex-col items-center'>
@@ -105,9 +244,19 @@ const Welcome = () => {
                         <FilterDropdown state={filters} setState={setFilters} property="status" collection={statusOptions} allowsManyChoices={false} />
                     </div>
                 </div>
+
+                {
+                    location.pathname === "/search/anime" && mode === "filter" && <div className="flex items-center justify-between mt-10">
+                        <div className="flex items-center gap-2 ml-5">
+                            <FaTags color="#BCBEDC" size={18} />
+                            { displayTags() }
+                        </div>
+                        <ViewModes />
+                    </div>
+                }
             </PageWrapper>
 
-            <Outlet />
+            <Outlet context={[filters, setFilters]} />
 
         </div>
     )

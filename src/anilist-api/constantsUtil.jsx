@@ -67,7 +67,7 @@ export const genreOptions = genreCollection.map(genre => ({
 }))
 
 export const formatsOptions = [
-  { value: "TV", label: "TV" },
+  { value: "TV", label: "TV Show" },
   { value: "MOVIE", label: "Movie" },
   { value: "TV_SHORT", label: "TV Short" },
   { value: "SPECIAL", label: "Special" },
@@ -84,14 +84,14 @@ export const yearOptions = yearsCollection.map(year => ({
 
 export const seasonOptions = seasonsEn.map(season => ({
   value: season,
-  label: season[0].toLocaleLowerCase() + season.slice(1).toLocaleLowerCase()
+  label: season[0].toLowerCase() + season.slice(1).toLowerCase()
 }))
 
 
 export const statusOptions = [
   { value: "FINISHED", label: "Finished" },
-  { value: "RELEASING", label: "Releasing" },
-  { value: "NOT_YET_RELEASED", label: "Not Yet Released" },
+  { value: "RELEASING", label: "Airing" },
+  { value: "NOT_YET_RELEASED", label: "Not Yet Aired" },
   { value: "CANCELLED", label: "Cancelled" }
 ]
 

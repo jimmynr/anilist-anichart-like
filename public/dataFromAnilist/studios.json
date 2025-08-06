@@ -123,7 +123,7 @@
     "id": 25,
     "name": "Milky Animation Label",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 27,
@@ -207,7 +207,7 @@
     "id": 40,
     "name": "m.o.e.",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 41,
@@ -237,7 +237,7 @@
     "id": 45,
     "name": "Pink Pineapple",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 47,
@@ -261,7 +261,7 @@
     "id": 50,
     "name": "KSS",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 51,
@@ -285,7 +285,7 @@
     "id": 54,
     "name": "Mook Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 55,
@@ -309,7 +309,7 @@
     "id": 59,
     "name": "Beat Frog",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 60,
@@ -333,7 +333,7 @@
     "id": 63,
     "name": "Trinet Entertainment",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 64,
@@ -357,7 +357,7 @@
     "id": 67,
     "name": "OB Planning",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 68,
@@ -369,7 +369,7 @@
     "id": 69,
     "name": "Front Line",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 70,
@@ -381,13 +381,13 @@
     "id": 71,
     "name": "Mellow Head",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 72,
     "name": "Artmic",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 73,
@@ -411,7 +411,7 @@
     "id": 77,
     "name": "APPP",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 78,
@@ -435,7 +435,7 @@
     "id": 81,
     "name": "Radix",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 82,
@@ -519,19 +519,19 @@
     "id": 97,
     "name": "ADV Films",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 98,
     "name": "Sav! The World Productions",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 99,
     "name": "Kitty Film",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 100,
@@ -585,7 +585,7 @@
     "id": 110,
     "name": "Triangle Staff",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 111,
@@ -609,7 +609,7 @@
     "id": 114,
     "name": "Studio Matrix",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 116,
@@ -645,13 +645,13 @@
     "id": 121,
     "name": "Active",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 122,
     "name": "Tokyo Kids",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 123,
@@ -663,7 +663,7 @@
     "id": 124,
     "name": "Animac",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 126,
@@ -681,13 +681,13 @@
     "id": 129,
     "name": "Silky’s",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 130,
     "name": "CherryLips",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 131,
@@ -705,7 +705,7 @@
     "id": 133,
     "name": "Shinyusha",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 134,
@@ -735,7 +735,7 @@
     "id": 138,
     "name": "Himajin Planning",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 139,
@@ -801,7 +801,7 @@
     "id": 149,
     "name": "SME Visual Works",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 150,
@@ -813,19 +813,19 @@
     "id": 152,
     "name": "Green Bunny",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 153,
     "name": "SoftX",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 154,
     "name": "E&G Films",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 155,
@@ -837,13 +837,13 @@
     "id": 156,
     "name": "Polygram Japan",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 157,
     "name": "BMG Japan",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 158,
@@ -873,7 +873,7 @@
     "id": 162,
     "name": "Character and Anime Dot Com",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 163,
@@ -891,7 +891,7 @@
     "id": 165,
     "name": "Marubeni",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 166,
@@ -909,7 +909,7 @@
     "id": 168,
     "name": "Shelty",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 169,
@@ -933,13 +933,13 @@
     "id": 172,
     "name": "Alchemist",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 173,
     "name": "Alice Soft",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 175,
@@ -951,7 +951,7 @@
     "id": 176,
     "name": "Ginga Ya",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 177,
@@ -975,13 +975,13 @@
     "id": 182,
     "name": "Age",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 184,
     "name": "Ai ga areba Daijobu",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 185,
@@ -993,13 +993,13 @@
     "id": 189,
     "name": "GEN Productions",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 190,
     "name": "RCC Chugoku Broadcasting",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 191,
@@ -1029,7 +1029,7 @@
     "id": 195,
     "name": "Pixy",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 196,
@@ -1041,7 +1041,7 @@
     "id": 197,
     "name": "Blue Bread",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 198,
@@ -1053,7 +1053,7 @@
     "id": 199,
     "name": "Studio Nue",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 200,
@@ -1071,7 +1071,7 @@
     "id": 204,
     "name": "Pioneer LDC",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 205,
@@ -1095,13 +1095,13 @@
     "id": 208,
     "name": "Three Fat Samurai",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 209,
     "name": "Sol Blade",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 210,
@@ -1119,7 +1119,7 @@
     "id": 212,
     "name": "Venus Vangard",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 213,
@@ -1131,13 +1131,13 @@
     "id": 214,
     "name": "BS-i",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 216,
     "name": "Studio Tron",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 217,
@@ -1155,7 +1155,7 @@
     "id": 220,
     "name": "Youmex",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 222,
@@ -1167,13 +1167,13 @@
     "id": 224,
     "name": "Toshiba EMI",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 226,
     "name": "Panmedia",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 228,
@@ -1227,7 +1227,7 @@
     "id": 239,
     "name": "Y.O.U.C",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 240,
@@ -1263,7 +1263,7 @@
     "id": 248,
     "name": "Tin House",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 249,
@@ -1281,7 +1281,7 @@
     "id": 253,
     "name": "Rikuentai",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 254,
@@ -1293,7 +1293,7 @@
     "id": 255,
     "name": "Imagi",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 256,
@@ -1305,13 +1305,13 @@
     "id": 257,
     "name": "Jam",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 258,
     "name": "Echo",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 259,
@@ -1323,7 +1323,7 @@
     "id": 260,
     "name": "ICHIZIKU",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 261,
@@ -1341,37 +1341,37 @@
     "id": 265,
     "name": "Valkyria",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 266,
     "name": "Natural High",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 267,
     "name": "Five Ways",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 268,
     "name": "Hot Bear",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 269,
     "name": "DiC Entertainment",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 270,
     "name": "NuTech Digital",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 271,
@@ -1383,7 +1383,7 @@
     "id": 272,
     "name": "Studio Kajino",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 273,
@@ -1395,13 +1395,13 @@
     "id": 274,
     "name": "Suzuki Mirano",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 275,
     "name": "Kojiro Shishido Animation Works",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 276,
@@ -1413,37 +1413,37 @@
     "id": 277,
     "name": "Anime Midstream",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 278,
     "name": "Daiei",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 279,
     "name": "Skouras",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 280,
     "name": "Studio Junio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 281,
     "name": "Kokusai Eigasha",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 282,
     "name": "Gentosha Comics",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 283,
@@ -1455,7 +1455,7 @@
     "id": 284,
     "name": "Central Park Media",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 285,
@@ -1473,13 +1473,13 @@
     "id": 288,
     "name": "Kaname Production",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 289,
     "name": "ACiD FiLM",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 290,
@@ -1509,19 +1509,19 @@
     "id": 294,
     "name": "Discovery",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 296,
     "name": "Critical Mass",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 297,
     "name": "Armor",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 298,
@@ -1545,13 +1545,13 @@
     "id": 301,
     "name": "Langmaor",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 302,
     "name": "GODxDOG Production",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 304,
@@ -1569,13 +1569,13 @@
     "id": 307,
     "name": "Sunwoo Entertainment",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 308,
     "name": "Yellow Film",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 309,
@@ -1587,13 +1587,13 @@
     "id": 310,
     "name": "AnimEigo",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 311,
     "name": "Enoki Films",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 313,
@@ -1635,19 +1635,19 @@
     "id": 319,
     "name": "MS Pictures",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 320,
     "name": "Maru Production",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 321,
     "name": "Kitty Media",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 322,
@@ -1689,7 +1689,7 @@
     "id": 329,
     "name": "Phoenix Entertainment",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 330,
@@ -1719,7 +1719,7 @@
     "id": 335,
     "name": "Seta Corporation",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 336,
@@ -1731,13 +1731,13 @@
     "id": 338,
     "name": "Studio Bogey",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 339,
     "name": "Rankin/Bass",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 340,
@@ -1749,19 +1749,19 @@
     "id": 341,
     "name": "SamBakZa",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 342,
     "name": "Japan Home Video",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 343,
     "name": "Puzzle Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 344,
@@ -1791,19 +1791,19 @@
     "id": 348,
     "name": "Kawamoto Productions",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 349,
     "name": "Itasca Studio",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 350,
     "name": "The Village of Marchen",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 351,
@@ -1821,7 +1821,7 @@
     "id": 353,
     "name": "Chungeorahm Film",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 354,
@@ -1833,19 +1833,19 @@
     "id": 356,
     "name": "Cranberry",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 357,
     "name": "Innocent Grey",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 358,
     "name": "Telescreen BV",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 361,
@@ -1857,13 +1857,13 @@
     "id": 362,
     "name": "Film Workshop",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 363,
     "name": "Topcraft",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 364,
@@ -1875,7 +1875,7 @@
     "id": 365,
     "name": "PoRO",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 366,
@@ -1893,7 +1893,7 @@
     "id": 368,
     "name": "UM Productions",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 370,
@@ -1905,7 +1905,7 @@
     "id": 371,
     "name": "Union Cho",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 372,
@@ -1923,7 +1923,7 @@
     "id": 374,
     "name": "Plus Heads",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 375,
@@ -1941,19 +1941,19 @@
     "id": 377,
     "name": "Kuri Jikken Manga Kobo",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 378,
     "name": "Grasshoppa!",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 379,
     "name": "Avaco Creative Studios",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 380,
@@ -1983,43 +1983,43 @@
     "id": 385,
     "name": "Tele-Cartoon Japan",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 386,
     "name": "Animaruya",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 387,
     "name": "Blue Eyes",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 388,
     "name": "Tamura Shigeru Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 389,
     "name": "I-move",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 390,
     "name": "Tsuchida Productions",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 391,
     "name": "Grouper Production",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 392,
@@ -2037,19 +2037,19 @@
     "id": 394,
     "name": "Misseri Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 395,
     "name": "OZ Inc.",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 396,
     "name": "Wind Under the Wings",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 397,
@@ -2085,25 +2085,25 @@
     "id": 402,
     "name": "ChiChinoya",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 403,
     "name": "Tokyo Media Connections",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 404,
     "name": "Studio Unicorn",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 405,
     "name": "T-REX",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 406,
@@ -2115,19 +2115,19 @@
     "id": 408,
     "name": "Amino",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 409,
     "name": "Studio Egg",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 410,
     "name": "Adult Source Media",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 411,
@@ -2139,7 +2139,7 @@
     "id": 412,
     "name": "Studio Wombat",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 413,
@@ -2151,7 +2151,7 @@
     "id": 414,
     "name": "Lemon Heart",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 415,
@@ -2187,7 +2187,7 @@
     "id": 420,
     "name": "ACC Production",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 421,
@@ -2199,19 +2199,19 @@
     "id": 422,
     "name": "Schoolzone",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 423,
     "name": "Studio Eromatick",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 424,
     "name": "Mary Jane",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 425,
@@ -2223,31 +2223,25 @@
     "id": 426,
     "name": "Filmlink International",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 428,
     "name": "Nichiei Agency",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 429,
     "name": "Office AO",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 430,
     "name": "Mad Box",
     "isAnimationStudio": true,
-    "hasMedia": true
-  },
-  {
-    "id": 431,
-    "name": "Procidis",
-    "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 432,
@@ -2259,19 +2253,13 @@
     "id": 433,
     "name": "View Works",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 434,
     "name": "Synergy Japan",
     "isAnimationStudio": true,
-    "hasMedia": true
-  },
-  {
-    "id": 435,
-    "name": "Studio Zero",
-    "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 436,
@@ -2289,19 +2277,19 @@
     "id": 438,
     "name": "Studio Signal",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 440,
     "name": "Studio Kuma",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 442,
     "name": "Minami Machi Bugyousho",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 443,
@@ -2325,19 +2313,19 @@
     "id": 446,
     "name": "RTHK",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 447,
     "name": "Hero Communication",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 448,
     "name": "Postgal Workshop",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 449,
@@ -2349,7 +2337,7 @@
     "id": 450,
     "name": "Wako Production",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 451,
@@ -2361,7 +2349,7 @@
     "id": 452,
     "name": "Knack Productions",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 453,
@@ -2373,7 +2361,7 @@
     "id": 455,
     "name": "Palm Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 456,
@@ -2391,7 +2379,7 @@
     "id": 458,
     "name": "Beijing Sharaku Art",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 459,
@@ -2409,7 +2397,7 @@
     "id": 461,
     "name": "OLE-M",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 462,
@@ -2457,7 +2445,7 @@
     "id": 469,
     "name": "ING",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 470,
@@ -2505,7 +2493,7 @@
     "id": 477,
     "name": "Kino Production",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 478,
@@ -2517,13 +2505,13 @@
     "id": 479,
     "name": "DOGA Productions",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 481,
     "name": "Office Take Off",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 482,
@@ -2541,13 +2529,13 @@
     "id": 484,
     "name": "TOKYOPOP",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 485,
     "name": "Shinwon Productions",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 486,
@@ -2559,7 +2547,7 @@
     "id": 487,
     "name": "Studio MWP",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 488,
@@ -2571,7 +2559,7 @@
     "id": 489,
     "name": "TCJ",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 490,
@@ -2583,13 +2571,13 @@
     "id": 491,
     "name": "Byakuya Shobo",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 492,
     "name": "Horannabi",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 493,
@@ -2601,13 +2589,13 @@
     "id": 494,
     "name": "Studio Take Off",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 495,
     "name": "Moonstone Cherry",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 497,
@@ -2625,7 +2613,7 @@
     "id": 501,
     "name": "Miramax Films",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 503,
@@ -2649,13 +2637,13 @@
     "id": 509,
     "name": "Fuji Video",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 511,
     "name": "Wonder Kids",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 513,
@@ -2667,7 +2655,7 @@
     "id": 515,
     "name": "Fairy Dust",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 517,
@@ -2679,7 +2667,7 @@
     "id": 519,
     "name": "Collaboration Works",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 521,
@@ -2691,7 +2679,7 @@
     "id": 523,
     "name": "SBS TV Production",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 525,
@@ -2703,7 +2691,7 @@
     "id": 527,
     "name": "Higa Brothers Production",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 529,
@@ -2721,13 +2709,13 @@
     "id": 533,
     "name": "N&G Production",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 535,
     "name": "Knack Animation",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 537,
@@ -2757,7 +2745,7 @@
     "id": 545,
     "name": "Studio Deva Loka",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 547,
@@ -2793,7 +2781,7 @@
     "id": 557,
     "name": "Zyc",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 559,
@@ -2823,7 +2811,7 @@
     "id": 567,
     "name": "Ether Kitten",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 569,
@@ -2835,13 +2823,13 @@
     "id": 571,
     "name": "Obtain Future",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 573,
     "name": "JapanAnime",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 575,
@@ -2865,7 +2853,7 @@
     "id": 583,
     "name": "Annapuru",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 585,
@@ -2883,13 +2871,13 @@
     "id": 589,
     "name": "Academy Productions",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 591,
     "name": "Romanov Films",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 593,
@@ -2913,7 +2901,7 @@
     "id": 607,
     "name": "RAMS",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 609,
@@ -2925,7 +2913,7 @@
     "id": 611,
     "name": "Sakura Production",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 613,
@@ -3051,7 +3039,7 @@
     "id": 657,
     "name": "Lucky Paradise",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 661,
@@ -3099,7 +3087,7 @@
     "id": 679,
     "name": "Soyuzmultfilm",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 681,
@@ -3171,7 +3159,7 @@
     "id": 707,
     "name": "TMS-Kyokuchi",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 709,
@@ -3261,7 +3249,7 @@
     "id": 741,
     "name": "Toshiba Entertainment",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 743,
@@ -3273,13 +3261,13 @@
     "id": 745,
     "name": "Cosmic Ray",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 747,
     "name": "Apollon",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 749,
@@ -3315,7 +3303,7 @@
     "id": 759,
     "name": "Eye Move",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 761,
@@ -3339,7 +3327,7 @@
     "id": 767,
     "name": "Majin",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 769,
@@ -3351,7 +3339,7 @@
     "id": 771,
     "name": "Kyokuichi Tokyo Movie Shinsha",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 773,
@@ -3417,7 +3405,7 @@
     "id": 793,
     "name": "Glams",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 795,
@@ -3441,7 +3429,7 @@
     "id": 801,
     "name": "Nihikime no Dozeu",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 803,
@@ -3459,25 +3447,25 @@
     "id": 809,
     "name": "AKOM",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 811,
     "name": "Hangzhou Shimei Pictures",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 813,
     "name": "SoftCel Pictures",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 815,
     "name": "EMI",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 817,
@@ -3495,13 +3483,13 @@
     "id": 821,
     "name": "Cotton Doll",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 823,
     "name": "Lune Pictures",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 825,
@@ -3519,13 +3507,13 @@
     "id": 829,
     "name": "Studio Jack",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 831,
     "name": "Otogi Production",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 833,
@@ -3555,7 +3543,7 @@
     "id": 841,
     "name": "Saban Entertainment",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 843,
@@ -3615,13 +3603,13 @@
     "id": 860,
     "name": "Triple X",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 862,
     "name": "Pashmina",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 866,
@@ -3681,13 +3669,13 @@
     "id": 886,
     "name": "Cinema Tohoku",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 890,
     "name": "Karaku",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 892,
@@ -3717,7 +3705,7 @@
     "id": 899,
     "name": "Tokyo Animation Film",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 901,
@@ -3729,7 +3717,7 @@
     "id": 903,
     "name": "Studio Zealot",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 905,
@@ -3741,7 +3729,7 @@
     "id": 907,
     "name": "AYCO",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 909,
@@ -3765,7 +3753,7 @@
     "id": 917,
     "name": "Takahashi Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 919,
@@ -3813,19 +3801,19 @@
     "id": 933,
     "name": "Carp Studio",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 937,
     "name": "Studio Kaab",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 939,
     "name": "Tama Production",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 941,
@@ -3837,13 +3825,13 @@
     "id": 943,
     "name": "Marine ENTERTAINMENT Inc.",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 945,
     "name": "Vasoon Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 949,
@@ -3861,7 +3849,7 @@
     "id": 953,
     "name": "Soft on Demand",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 955,
@@ -3879,7 +3867,7 @@
     "id": 959,
     "name": "Studio Compile",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 961,
@@ -3897,7 +3885,7 @@
     "id": 965,
     "name": "Crimson Star Media",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 967,
@@ -3915,7 +3903,7 @@
     "id": 971,
     "name": "Anime R",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 2312,
@@ -3927,7 +3915,7 @@
     "id": 2443,
     "name": "D3",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 2524,
@@ -3945,7 +3933,7 @@
     "id": 4079,
     "name": "Studio 9 Maiami",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 4271,
@@ -3981,7 +3969,7 @@
     "id": 5792,
     "name": "AT-2",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6052,
@@ -4155,19 +4143,19 @@
     "id": 6083,
     "name": "HiLLS",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6084,
     "name": "Mitsu",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6085,
     "name": "BOOTLEG",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6086,
@@ -4179,7 +4167,7 @@
     "id": 6087,
     "name": "AniMan",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6088,
@@ -4191,67 +4179,67 @@
     "id": 6089,
     "name": "VANILLA",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6090,
     "name": "Aubec",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6091,
     "name": "WHITE BEAR",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6092,
     "name": "GOLD BEAR",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6093,
     "name": "Queen Bee",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6094,
     "name": "King Bee",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6095,
     "name": "ZIZ Entertainment",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6096,
     "name": "Slash",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6097,
     "name": "Angelfish",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6098,
     "name": "Mediabank",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6099,
     "name": "CHIPPAI",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6100,
@@ -4281,7 +4269,7 @@
     "id": 6104,
     "name": "Symphonium",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6105,
@@ -4293,7 +4281,7 @@
     "id": 6106,
     "name": "EDGE",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6107,
@@ -4317,13 +4305,13 @@
     "id": 6110,
     "name": "Agent 21",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6111,
     "name": "Animation 21",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6112,
@@ -4419,7 +4407,7 @@
     "id": 6128,
     "name": "Bunny Walker",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6129,
@@ -4431,7 +4419,7 @@
     "id": 6130,
     "name": "G.CMay Animation & Film",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6131,
@@ -4455,7 +4443,7 @@
     "id": 6134,
     "name": "PoRO petit",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6135,
@@ -4515,7 +4503,7 @@
     "id": 6144,
     "name": "Selfish",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6145,
@@ -4569,7 +4557,7 @@
     "id": 6153,
     "name": "Show-Ten",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6154,
@@ -4581,7 +4569,7 @@
     "id": 6155,
     "name": "Collaboration Works petit",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6156,
@@ -4623,13 +4611,13 @@
     "id": 6162,
     "name": "Foch",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6163,
     "name": "Studio Jam",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6164,
@@ -4683,19 +4671,19 @@
     "id": 6172,
     "name": "Yaoqi",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6173,
     "name": "EBS",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6174,
     "name": "Penta Show Studios",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6175,
@@ -4707,19 +4695,19 @@
     "id": 6176,
     "name": "L² Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6177,
     "name": "B&T",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6178,
     "name": "Enlight Pictures",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6179,
@@ -4737,7 +4725,7 @@
     "id": 6181,
     "name": "Juicy Mango",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6182,
@@ -4851,7 +4839,7 @@
     "id": 6200,
     "name": "Studio Dadashow",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6201,
@@ -4875,13 +4863,13 @@
     "id": 6204,
     "name": "Space Shower Music",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6205,
     "name": "KJJ Animation",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6206,
@@ -4893,7 +4881,7 @@
     "id": 6207,
     "name": "2:10 Animation",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6208,
@@ -4905,13 +4893,13 @@
     "id": 6209,
     "name": "RX-RECORDS",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6210,
     "name": "UK.PROJECT INC.",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6211,
@@ -4923,7 +4911,7 @@
     "id": 6212,
     "name": "Big Firebird Cultural Media",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6213,
@@ -4971,13 +4959,13 @@
     "id": 6220,
     "name": "erozuki",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6221,
     "name": "GRIZZLY",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6222,
@@ -5007,25 +4995,25 @@
     "id": 6226,
     "name": "ark",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6227,
     "name": "Minakata Laboratory",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6228,
     "name": "Boyan Pictures",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6229,
     "name": "The National Film Center Japan",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6230,
@@ -5037,7 +5025,7 @@
     "id": 6232,
     "name": "CCTV Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6233,
@@ -5049,13 +5037,13 @@
     "id": 6234,
     "name": "Coastline Animation Studio",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6236,
     "name": "An♥Tekinus",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6237,
@@ -5091,13 +5079,13 @@
     "id": 6242,
     "name": "Majin petit",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6243,
     "name": "Kyoto Seika University",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6244,
@@ -5121,7 +5109,7 @@
     "id": 6247,
     "name": "Nice Boat Animation",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6248,
@@ -5139,7 +5127,7 @@
     "id": 6250,
     "name": "Fancy Realize Media",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6251,
@@ -5163,19 +5151,19 @@
     "id": 6254,
     "name": "Soei Shinsha",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6255,
     "name": "D.A.S.T. Corporation",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6256,
     "name": "Studio 88",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6257,
@@ -5217,7 +5205,7 @@
     "id": 6263,
     "name": "Samsara Studio",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6264,
@@ -5229,31 +5217,31 @@
     "id": 6265,
     "name": "Wawayu Animation",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6266,
     "name": "Light Chaser Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6267,
     "name": "Jacom",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6268,
     "name": "Visual 80",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6269,
     "name": "Maro Studio",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6270,
@@ -5277,7 +5265,7 @@
     "id": 6273,
     "name": "Sei Young Animation",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6274,
@@ -5307,19 +5295,19 @@
     "id": 6278,
     "name": "Suzuki Mirano petit",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6279,
     "name": "Zero G Room",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6280,
     "name": "Warpstar Inc.",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6281,
@@ -5331,7 +5319,7 @@
     "id": 6282,
     "name": "Mippei Eigeki Kiryuukan",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6283,
@@ -5343,25 +5331,25 @@
     "id": 6284,
     "name": "Nur",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6285,
     "name": "Bomb! Cute! Bomb!",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6286,
     "name": "storyriders",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6287,
     "name": "sankaku",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6288,
@@ -5397,13 +5385,13 @@
     "id": 6293,
     "name": "Wolf Smoke",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6294,
     "name": "Wolf Smoke Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6295,
@@ -5415,7 +5403,7 @@
     "id": 6296,
     "name": "Ishimori Entertainment",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6297,
@@ -5427,13 +5415,13 @@
     "id": 6298,
     "name": "Studio Houkiboshi",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6299,
     "name": "Cosmos",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6300,
@@ -5463,13 +5451,13 @@
     "id": 6304,
     "name": "LICO",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6305,
     "name": "Animation Staff Room",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6306,
@@ -5529,7 +5517,7 @@
     "id": 6315,
     "name": "SUSPENDERS",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6316,
@@ -5541,7 +5529,7 @@
     "id": 6317,
     "name": "Office Takeout",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6318,
@@ -5559,13 +5547,13 @@
     "id": 6320,
     "name": "Chongzhuo Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6321,
     "name": "Colored Pencil Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6322,
@@ -5583,25 +5571,25 @@
     "id": 6324,
     "name": "Maten Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6325,
     "name": "One & All Animation Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6326,
     "name": "Gudong Animation Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6327,
     "name": "YHKT Entertainment",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6328,
@@ -5637,7 +5625,7 @@
     "id": 6333,
     "name": "Sharefun Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6334,
@@ -5649,13 +5637,13 @@
     "id": 6335,
     "name": "Coloroom Pictures",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6336,
     "name": "The National Film Center Japan",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6337,
@@ -5667,7 +5655,7 @@
     "id": 6338,
     "name": "Coco Cartoon",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6339,
@@ -5691,25 +5679,25 @@
     "id": 6342,
     "name": "Cloud Art",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6343,
     "name": "Rastar",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6344,
     "name": "Mili Pictures",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6345,
     "name": "Public & Basic",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6346,
@@ -5727,7 +5715,7 @@
     "id": 6348,
     "name": "iDRAGONS Creative Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6349,
@@ -5751,7 +5739,7 @@
     "id": 6352,
     "name": "SAKURAPRIN Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6353,
@@ -5763,7 +5751,7 @@
     "id": 6354,
     "name": "Office TWO - ONE",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6355,
@@ -5787,13 +5775,13 @@
     "id": 6358,
     "name": "Studio Goindol",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6359,
     "name": "eigoMANGA",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6360,
@@ -5817,7 +5805,7 @@
     "id": 6363,
     "name": "FILMONY",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6364,
@@ -5871,7 +5859,7 @@
     "id": 6372,
     "name": "happyproject",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6373,
@@ -5889,7 +5877,7 @@
     "id": 6375,
     "name": "DAX International",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6376,
@@ -5907,25 +5895,25 @@
     "id": 6378,
     "name": "TrioPen Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6379,
     "name": "Djinn Power",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6380,
     "name": "BigBigSun",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6381,
     "name": "FENZ",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6382,
@@ -5937,37 +5925,37 @@
     "id": 6383,
     "name": "LX Animation Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6384,
     "name": "Taikong Works",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6385,
     "name": "Yi Chen Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6386,
     "name": "Green Monster Team",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6387,
     "name": "Alpha Animation",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6388,
     "name": "7doc",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6389,
@@ -5991,19 +5979,19 @@
     "id": 6392,
     "name": "Shengying Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6393,
     "name": "Sparkly Key Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6394,
     "name": "Magilm Pictures",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6395,
@@ -6015,7 +6003,7 @@
     "id": 6396,
     "name": "TRCARTOON",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6397,
@@ -6057,13 +6045,13 @@
     "id": 6403,
     "name": "Nihon Eizou",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6404,
     "name": "Creative Bridge",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6405,
@@ -6093,7 +6081,7 @@
     "id": 6409,
     "name": "Studio Magara",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6410,
@@ -6147,7 +6135,7 @@
     "id": 6418,
     "name": "Cheerland",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6419,
@@ -6177,7 +6165,7 @@
     "id": 6423,
     "name": "Beijing Boyichuangwei Digital Media",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6424,
@@ -6189,13 +6177,13 @@
     "id": 6425,
     "name": "Tianwen Kadokawa",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6426,
     "name": "HMCH",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6427,
@@ -6249,7 +6237,7 @@
     "id": 6435,
     "name": "Year Young Culture",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6436,
@@ -6273,7 +6261,7 @@
     "id": 6439,
     "name": "Media Notes",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6440,
@@ -6285,13 +6273,13 @@
     "id": 6441,
     "name": "Nippon Kagaku Miraikan",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6442,
     "name": "New People Entertainment",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6443,
@@ -6309,25 +6297,25 @@
     "id": 6445,
     "name": "Vistec Entertainment",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6446,
     "name": "Durufix",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6447,
     "name": "Ripple Film",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6448,
     "name": "Build Dream",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6449,
@@ -6381,13 +6369,13 @@
     "id": 6457,
     "name": "Meditation With a Pencil",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6458,
     "name": "Grimae Animation Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6459,
@@ -6405,19 +6393,19 @@
     "id": 6461,
     "name": "Seoul Movie",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6462,
     "name": "Tooniverse",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6463,
     "name": "L.",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6464,
@@ -6429,7 +6417,7 @@
     "id": 6465,
     "name": "JCF",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6466,
@@ -6453,19 +6441,19 @@
     "id": 6469,
     "name": "China Literature",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6470,
     "name": "Motion Magic",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6471,
     "name": "D.ROCK-ART",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6472,
@@ -6477,109 +6465,109 @@
     "id": 6473,
     "name": "TMX Art",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6474,
     "name": "Zhongce Picture",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6475,
     "name": "Ruo Hong Culture",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6476,
     "name": "Oriental Creative Color",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6477,
     "name": "ACGMAN",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6478,
     "name": "Soyep",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6479,
     "name": "Rocen",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6480,
     "name": "Zhangyue Pictures",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6481,
     "name": "CG Year",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6482,
     "name": "Painting Dream",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6483,
     "name": "Mote Stop-Motion Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6484,
     "name": "Original Force",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6485,
     "name": "B.CMAY PICTURES",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6486,
     "name": "K.PICTURES",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6487,
     "name": "Wanda Film",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6488,
     "name": "Sunac Pictures",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6489,
     "name": "Aisi Animation Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6490,
     "name": "China South Angel",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6491,
@@ -6591,25 +6579,25 @@
     "id": 6492,
     "name": "Hanna Pictures",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6493,
     "name": "JJJoy Animation Studios",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6494,
     "name": "Aqua Entertainment",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6495,
     "name": "MAKING ANIMATION",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6496,
@@ -6651,55 +6639,55 @@
     "id": 6502,
     "name": "Shinano Kikaku",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6503,
     "name": "Hangil Production",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6504,
     "name": "Dazzling Star",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6505,
     "name": "DC Impression Vision",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6506,
     "name": "Kuaikan Manhua",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6507,
     "name": "Joicy Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6508,
     "name": "Yudubai Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6509,
     "name": "SYOK Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6510,
     "name": "Phoenix Entertainment China",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6511,
@@ -6711,31 +6699,31 @@
     "id": 6512,
     "name": "STANDTOWER",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6513,
     "name": "Seasun Pictures",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6514,
     "name": "Dreambox Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6515,
     "name": "Sakura Eiga",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6516,
     "name": "Puppet Arts Production",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6517,
@@ -6747,19 +6735,19 @@
     "id": 6518,
     "name": "Peak Hunt",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6519,
     "name": "BYMENT",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6520,
     "name": "Tencent Pictures",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6521,
@@ -6771,7 +6759,7 @@
     "id": 6522,
     "name": "Great Dreams Cartoon",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6523,
@@ -6789,13 +6777,13 @@
     "id": 6525,
     "name": "IDEOMOTOR",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6526,
     "name": "Studio Tumble",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6527,
@@ -6813,7 +6801,7 @@
     "id": 6529,
     "name": "Visual Persistence",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6530,
@@ -6837,91 +6825,91 @@
     "id": 6533,
     "name": "Pandanium",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6534,
     "name": "Joy Pictures",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6535,
     "name": "Realwood Studios",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6536,
     "name": "Transcendence Picture",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6537,
     "name": "Dancing CG Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6538,
     "name": "Xiron Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6539,
     "name": "Yofox Culture",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6540,
     "name": "Mifan Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6541,
     "name": "BONEDD",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6542,
     "name": "Axis Studios",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6543,
     "name": "IDREAM Entertainment",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6544,
     "name": "Soda Bear Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6545,
     "name": "WinSing Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6546,
     "name": "GARDEN",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6547,
     "name": "Qiyuan Yinghua",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6548,
@@ -6933,13 +6921,13 @@
     "id": 6549,
     "name": "Zoland Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6550,
     "name": "Korean Academy of Film Arts",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6551,
@@ -6951,31 +6939,31 @@
     "id": 6552,
     "name": "Toonmax Media",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6553,
     "name": "SFA Pictures",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6554,
     "name": "One Punch",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6555,
     "name": "Vie Vision Pictures",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6556,
     "name": "Boruntong",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6557,
@@ -6999,7 +6987,7 @@
     "id": 6560,
     "name": "Hong Ying Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6561,
@@ -7029,7 +7017,7 @@
     "id": 6565,
     "name": "T-UP",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6566,
@@ -7047,7 +7035,7 @@
     "id": 6568,
     "name": "Studio Gohan",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6569,
@@ -7083,31 +7071,31 @@
     "id": 6574,
     "name": "Central Motion Picture",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6575,
     "name": "Gold Valley Films",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6576,
     "name": "Zhujiang Film",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6577,
     "name": "Red Whale Studios",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6578,
     "name": "Hong Li Animation Studios",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6579,
@@ -7119,19 +7107,19 @@
     "id": 6580,
     "name": "Suiseisha",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6581,
     "name": "Gokuusha",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6582,
     "name": "Fatchi Moxie Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6583,
@@ -7149,25 +7137,25 @@
     "id": 6585,
     "name": "Lingsanwu Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6586,
     "name": "Saiji",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6587,
     "name": "Tyhoo CG",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6588,
     "name": "Fast Snail",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6589,
@@ -7179,19 +7167,19 @@
     "id": 6590,
     "name": "Stellar",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6591,
     "name": "Friends",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6592,
     "name": "Media Station",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6593,
@@ -7203,13 +7191,13 @@
     "id": 6594,
     "name": "Kuro Game",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6595,
     "name": "Sai Enterprise",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6596,
@@ -7221,13 +7209,13 @@
     "id": 6597,
     "name": "Orange Video House",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6598,
     "name": "Charming Fox Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6599,
@@ -7317,7 +7305,7 @@
     "id": 6613,
     "name": "Creators Dot Com",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6614,
@@ -7389,7 +7377,7 @@
     "id": 6625,
     "name": "Design Factory",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6626,
@@ -7413,7 +7401,7 @@
     "id": 6629,
     "name": "CGCG",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6630,
@@ -7485,7 +7473,7 @@
     "id": 6641,
     "name": "Asaka Animation",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6642,
@@ -7497,121 +7485,121 @@
     "id": 6643,
     "name": "White Paper Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6644,
     "name": "Linksure Literature",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6645,
     "name": "HM Heros",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6646,
     "name": "Entertainment Evolution",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6647,
     "name": "Xinglü Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6648,
     "name": "Comic Studio",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6649,
     "name": "Liyu Culture",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6650,
     "name": "People's China",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6651,
     "name": "Unity of Knowledge and Action Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6652,
     "name": "New Star Press",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6653,
     "name": "CHOSEN",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6654,
     "name": "Xuni Pictures",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6655,
     "name": "BeDream",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6656,
     "name": "Delight Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6657,
     "name": "Painted Edge",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6658,
     "name": "Nakamura Production",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6659,
     "name": "SJYNEXCUS",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6660,
     "name": "Original Dream",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6661,
     "name": "KIO STUDIO",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6662,
     "name": "717 Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6663,
@@ -7671,13 +7659,13 @@
     "id": 6672,
     "name": "Production Reed",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6673,
     "name": "Audio Tanaka",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6674,
@@ -7755,7 +7743,7 @@
     "id": 6686,
     "name": "Take-Y Inc.",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6687,
@@ -7791,7 +7779,7 @@
     "id": 6692,
     "name": "Hyoin Entertainment",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6693,
@@ -7809,7 +7797,7 @@
     "id": 6695,
     "name": "Brave Group",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6696,
@@ -7821,7 +7809,7 @@
     "id": 6697,
     "name": "Aha Entertainment",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6698,
@@ -7839,7 +7827,7 @@
     "id": 6700,
     "name": "Mango TV",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6701,
@@ -7857,19 +7845,19 @@
     "id": 6703,
     "name": "Ginga Teikoku",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6704,
     "name": "White Lily",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6705,
     "name": "Studio Gazelle",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6706,
@@ -7899,7 +7887,7 @@
     "id": 6710,
     "name": "E-DEHI Animation Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6711,
@@ -7923,7 +7911,7 @@
     "id": 6714,
     "name": "OTOIRO",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6715,
@@ -7941,19 +7929,19 @@
     "id": 6717,
     "name": "Guangdong Sublime Media",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6718,
     "name": "Qianqi Cartoon",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6719,
     "name": "1IN",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6720,
@@ -7965,43 +7953,43 @@
     "id": 6721,
     "name": "Arc Anime",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6722,
     "name": "ITS CARTOON",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6723,
     "name": "Creative Power Entertaining",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6724,
     "name": "SMG Pictures",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6725,
     "name": "Taomee",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6726,
     "name": "Tiantai Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6727,
     "name": "Golden Eagle Cartoon",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6728,
@@ -8019,7 +8007,7 @@
     "id": 6730,
     "name": "wonderium",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6731,
@@ -8031,7 +8019,7 @@
     "id": 6732,
     "name": "Escape Velocity Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6733,
@@ -8049,13 +8037,13 @@
     "id": 6735,
     "name": "Infinity Animation",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6736,
     "name": "Transistor Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6737,
@@ -8103,7 +8091,7 @@
     "id": 6744,
     "name": "Alibaba Pictures",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6745,
@@ -8121,7 +8109,7 @@
     "id": 6747,
     "name": "Cocktail Media",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6748,
@@ -8139,7 +8127,7 @@
     "id": 6750,
     "name": "Image Stream",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6751,
@@ -8151,7 +8139,7 @@
     "id": 6752,
     "name": "Mousou Senka",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6753,
@@ -8175,13 +8163,13 @@
     "id": 6756,
     "name": "Coyote",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6757,
     "name": "Yinhe Changxing Culture",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6758,
@@ -8199,7 +8187,7 @@
     "id": 6760,
     "name": "October Media",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6761,
@@ -8211,7 +8199,7 @@
     "id": 6762,
     "name": "Tsubasa Production",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6763,
@@ -8247,13 +8235,13 @@
     "id": 6768,
     "name": "LHL Culture",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6769,
     "name": "U17",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6770,
@@ -8271,55 +8259,55 @@
     "id": 6772,
     "name": "Studio Ten Carat",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6773,
     "name": "Unimedia",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6774,
     "name": "Xiyang Culture",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6775,
     "name": "TThunDer Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6776,
     "name": "Doumu Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6777,
     "name": "MORIE Inc.",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6778,
     "name": "Wonder Cat Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6779,
     "name": "Mopi",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6780,
     "name": "Reike Eyes Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6781,
@@ -8367,13 +8355,13 @@
     "id": 6788,
     "name": "Ten Tails Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6789,
     "name": "Yi Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6790,
@@ -8391,7 +8379,7 @@
     "id": 6792,
     "name": "SAMG Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6793,
@@ -8403,13 +8391,13 @@
     "id": 6794,
     "name": "ManHoo Culture",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6795,
     "name": "MMT",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6796,
@@ -8433,13 +8421,13 @@
     "id": 6799,
     "name": "GWAVE",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6800,
     "name": "Cosmic Record",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6801,
@@ -8451,25 +8439,25 @@
     "id": 6802,
     "name": "One Animation",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6803,
     "name": "Yue Dong Culture",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6804,
     "name": "TUBAn",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6805,
     "name": "Atoonz",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6806,
@@ -8613,25 +8601,25 @@
     "id": 6829,
     "name": "studio TNT",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6830,
     "name": "Atelier Giga",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6831,
     "name": "Sanfu Interactive Entertainment",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6832,
     "name": "Qiying Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6833,
@@ -8643,43 +8631,43 @@
     "id": 6834,
     "name": "Xing Yi Kai Chen",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6835,
     "name": "Star Hunter Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6836,
     "name": "Energy Studio",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6837,
     "name": "Liu Bai Entertainment",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6838,
     "name": "BETOBE",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6839,
     "name": "Fujian Ziyan Animation Technology",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6840,
     "name": "studio hb",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6841,
@@ -8697,7 +8685,7 @@
     "id": 6843,
     "name": "Kun Animation & Comic",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6844,
@@ -8709,13 +8697,13 @@
     "id": 6845,
     "name": "Xiaoying Feiyang Pictures",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6846,
     "name": "Wulifang Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6847,
@@ -8733,7 +8721,7 @@
     "id": 6849,
     "name": "Cinepix",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6850,
@@ -8745,25 +8733,25 @@
     "id": 6851,
     "name": "Tablier Communications",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6852,
     "name": "Studio 1st",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6853,
     "name": "TWR Entertainment",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6854,
     "name": "NewGeneration",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6855,
@@ -8775,7 +8763,7 @@
     "id": 6856,
     "name": "SOHBI Corporation",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6857,
@@ -8787,7 +8775,7 @@
     "id": 6858,
     "name": "BREAKBOTTLE",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6859,
@@ -8799,19 +8787,19 @@
     "id": 6860,
     "name": "KAMITSUBAKI RECORD",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6861,
     "name": "Youliao Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6862,
     "name": "Shandong Radio & TV Media Group",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6863,
@@ -8823,19 +8811,19 @@
     "id": 6864,
     "name": "Rise Spirit",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6865,
     "name": "Japan Taps",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6866,
     "name": "G-lam",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6867,
@@ -8859,43 +8847,43 @@
     "id": 6870,
     "name": "Ezaki Glico",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6871,
     "name": "Sonokong",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6872,
     "name": "Choirock",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6873,
     "name": "SPE Visual Works",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6874,
     "name": "Children's Corner",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6875,
     "name": "Anime Room",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6876,
     "name": "Anime Friend",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6877,
@@ -8943,25 +8931,25 @@
     "id": 6884,
     "name": "Sansan Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6885,
     "name": "Polydor Records",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6886,
     "name": "Seiyou",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6887,
     "name": "Nippon Victor",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6888,
@@ -8973,7 +8961,7 @@
     "id": 6889,
     "name": "VCRWORKS",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6890,
@@ -8997,43 +8985,55 @@
     "id": 6893,
     "name": "Oakla Publishing",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6894,
     "name": "Video Project",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
+  },
+  {
+    "id": 6893,
+    "name": "Oakla Publishing",
+    "isAnimationStudio": false,
+    "hasMedia": false
+  },
+  {
+    "id": 6894,
+    "name": "Video Project",
+    "isAnimationStudio": false,
+    "hasMedia": false
   },
   {
     "id": 6895,
     "name": "Super BBC",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6896,
     "name": "Animate Film",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6897,
     "name": "CBS Sony Group",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6898,
     "name": "Toho Towa",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6899,
     "name": "Daiko",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6900,
@@ -9045,55 +9045,55 @@
     "id": 6901,
     "name": "entity",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6902,
     "name": "44℃ Baidoku",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6903,
     "name": "Tauros Film",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6904,
     "name": "Zuiyou Eizou",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6905,
     "name": "NEC Avenue",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6906,
     "name": "Sofix",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6907,
     "name": "Flavors Soft",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6908,
     "name": "Unlimited Records",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6909,
     "name": "kidsland",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6910,
@@ -9105,13 +9105,13 @@
     "id": 6911,
     "name": "Dawn Picture",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6912,
     "name": "OUTLINE",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6913,
@@ -9129,91 +9129,91 @@
     "id": 6915,
     "name": "Base Media",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6916,
     "name": "Smart Dragon",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6917,
     "name": "Story Culture",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6918,
     "name": "BlueArc Animation Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6919,
     "name": "Hyper Dimension Interactive Entertainment",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6920,
     "name": "Wangyuan Shengtang",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6921,
     "name": "Pai Naodai Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6922,
     "name": "WinFuture Media",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6923,
     "name": "Medo",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6924,
     "name": "Aurora",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6925,
     "name": "Yixiang Culture",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6926,
     "name": "Red Dragon Pictures",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6927,
     "name": "Jiang Toon Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6928,
     "name": "BooKong Culture",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6929,
     "name": "Paintfree",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6930,
@@ -9225,55 +9225,55 @@
     "id": 6931,
     "name": "Max-World",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6932,
     "name": "Original Heart",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6933,
     "name": "Skyfire",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6934,
     "name": "Burning Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6935,
     "name": "Chirying Culture",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6936,
     "name": "RED Company",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6937,
     "name": "WEIDAO",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6938,
     "name": "Boundary Apocalypse",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6939,
     "name": "Tama Art University",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6940,
@@ -9285,19 +9285,19 @@
     "id": 6941,
     "name": "HuaMei Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6942,
     "name": "Panda Studio",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6943,
     "name": "Poly Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6944,
@@ -9309,31 +9309,31 @@
     "id": 6945,
     "name": "Picante Circus",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6946,
     "name": "Rabbit Gate",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6947,
     "name": "Mitsubishi Corporation",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6948,
     "name": "Studio Mindo",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6949,
     "name": "Studio OX",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6950,
@@ -9345,25 +9345,25 @@
     "id": 6951,
     "name": "ASATSU",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6952,
     "name": "Kobe Design University",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6953,
     "name": "Laftel",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6954,
     "name": "MagiDian",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6955,
@@ -9387,13 +9387,13 @@
     "id": 6958,
     "name": "Sanctuary",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6959,
     "name": "Feng Donghua Culture",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6960,
@@ -9405,7 +9405,7 @@
     "id": 6961,
     "name": "Global Digital Creations",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6962,
@@ -9417,25 +9417,25 @@
     "id": 6963,
     "name": "Sony Magazines",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6964,
     "name": "Nippon Broadcasting System",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6965,
     "name": "Far Sun Film",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6966,
     "name": "Lifework",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6967,
@@ -9453,7 +9453,7 @@
     "id": 6969,
     "name": "Black Flag",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6970,
@@ -9465,7 +9465,7 @@
     "id": 6971,
     "name": "Chongliyuhua",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6972,
@@ -9489,43 +9489,43 @@
     "id": 6975,
     "name": "KeroQ",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6976,
     "name": "N43 Project",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6977,
     "name": "Ruichen Pictures",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6978,
     "name": "Hehe Pictures",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6979,
     "name": "Coco Legends",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6980,
     "name": "Coco Games",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6981,
     "name": "Village Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6982,
@@ -9537,31 +9537,31 @@
     "id": 6983,
     "name": "Studio Look",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6984,
     "name": "RAI",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6985,
     "name": "GritWorld",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6986,
     "name": "Kourin Mitsuzou Koubou",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6987,
     "name": "Golden Scene",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6988,
@@ -9573,25 +9573,25 @@
     "id": 6989,
     "name": "Observatory Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6990,
     "name": "Azure Sea Studios",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6991,
     "name": "Yuewen Animation & Comics",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6992,
     "name": "Jihou Eigasha",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 6993,
@@ -9639,13 +9639,13 @@
     "id": 7000,
     "name": "NEW SELECT",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7001,
     "name": "Tsuburaya Eizou",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7002,
@@ -9663,7 +9663,7 @@
     "id": 7004,
     "name": "Arts Pro",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7005,
@@ -9681,7 +9681,7 @@
     "id": 7007,
     "name": "Studio Pasa",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7008,
@@ -9705,7 +9705,7 @@
     "id": 7011,
     "name": "Nippon Herald Eiga",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7012,
@@ -9717,7 +9717,7 @@
     "id": 7013,
     "name": "Wu Zhi Guanying Dongman",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7014,
@@ -9735,13 +9735,13 @@
     "id": 7016,
     "name": "China Film Group",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7017,
     "name": "Fairy Tale Co.",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7018,
@@ -9759,7 +9759,7 @@
     "id": 7020,
     "name": "eFrontier",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7021,
@@ -9771,7 +9771,7 @@
     "id": 7022,
     "name": "TEATRO Nishi Tokyo Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7023,
@@ -9783,7 +9783,7 @@
     "id": 7024,
     "name": "Kasakura Publishing",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7025,
@@ -9801,7 +9801,7 @@
     "id": 7027,
     "name": "TiMi Studio Group",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7028,
@@ -9819,13 +9819,13 @@
     "id": 7030,
     "name": "Promotal",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7031,
     "name": "Hero",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7032,
@@ -9837,7 +9837,7 @@
     "id": 7033,
     "name": "Pass Media",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7034,
@@ -9873,13 +9873,13 @@
     "id": 7039,
     "name": "Jupiter Films",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7040,
     "name": "Mu Animation Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7041,
@@ -9891,145 +9891,145 @@
     "id": 7042,
     "name": "Fantasy Westward Journey",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7043,
     "name": "Passion Paint Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7044,
     "name": "Thunder River",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7045,
     "name": "Maple Toon",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7046,
     "name": "MOJO",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7047,
     "name": "Shenfan Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7048,
     "name": "He Zhou Culture",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7049,
     "name": "CMC Media",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7050,
     "name": "Red Dog Culture House",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7051,
     "name": "Xuanyuan",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7052,
     "name": "Origin Chasing",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7053,
     "name": "Wenzhou Mengbu Anime Design",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7054,
     "name": "Hui Guang Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7055,
     "name": "Man Man",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7056,
     "name": "Magilm Comic",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7057,
     "name": "Kungfufrog Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7058,
     "name": "Shitu Pictures",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7059,
     "name": "APEX VISION",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7060,
     "name": "Shi Meng Mao",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7061,
     "name": "Hua Dream",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7062,
     "name": "Golden Shield Television Center",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7063,
     "name": "iDreamSky",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7064,
     "name": "Flint Sugar",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7065,
     "name": "ZET",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7066,
@@ -10047,13 +10047,13 @@
     "id": 7068,
     "name": "Staff 21",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7069,
     "name": "Kaohsiung Film Fund",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7070,
@@ -10065,19 +10065,19 @@
     "id": 7071,
     "name": "Nextart",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7072,
     "name": "Soeishinsha",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7073,
     "name": "UOU Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7074,
@@ -10107,7 +10107,7 @@
     "id": 7078,
     "name": "Omega Pictures",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7079,
@@ -10119,7 +10119,7 @@
     "id": 7080,
     "name": "Omnibus Promotion",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7081,
@@ -10137,7 +10137,7 @@
     "id": 7083,
     "name": "Sheng Guang Qishi Tuan",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7084,
@@ -10149,19 +10149,19 @@
     "id": 7085,
     "name": "kitsutsuki",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7086,
     "name": "Jaggard",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7087,
     "name": "Media Rings",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7088,
@@ -10227,31 +10227,31 @@
     "id": 7098,
     "name": "Universal Star Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7099,
     "name": "China Youth New Power Pictures",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7100,
     "name": "Soular Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7101,
     "name": "Tapir Animation",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7102,
     "name": "Seenewtall Animation Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7103,
@@ -10305,13 +10305,13 @@
     "id": 7111,
     "name": "Fantasier Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7112,
     "name": "Character Plan",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7113,
@@ -10335,79 +10335,67 @@
     "id": 7116,
     "name": "Shenman Entertainment",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7117,
     "name": "Xuanshi Tangmen",
     "isAnimationStudio": false,
-    "hasMedia": true
-  },
-  {
-    "id": 7118,
-    "name": "Aoni Production",
-    "isAnimationStudio": false,
-    "hasMedia": true
-  },
-  {
-    "id": 7119,
-    "name": "MontBlanc Pictures",
-    "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7120,
     "name": "SIDO",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7121,
     "name": "Wanhe Huyu",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7122,
     "name": "Benlai Pictures",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7123,
     "name": "Kaishu Story",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7124,
     "name": "UYoung",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7125,
     "name": "Spiritual Wealth Club",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7126,
     "name": "Sanwuchu Education",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7127,
     "name": "Ronga Movie Art",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7128,
     "name": "Contrail",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7129,
@@ -10431,31 +10419,31 @@
     "id": 7132,
     "name": "Joy Works",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7133,
     "name": "Block 12",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7134,
     "name": "Lilith Games",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7135,
     "name": "Duoling Cartoon",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7136,
     "name": "d00r works",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7137,
@@ -10497,7 +10485,7 @@
     "id": 7143,
     "name": "Xin Manhua",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7144,
@@ -10539,7 +10527,7 @@
     "id": 7150,
     "name": "Omega Project",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7151,
@@ -10587,7 +10575,7 @@
     "id": 7158,
     "name": "ARCUS",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7159,
@@ -10629,7 +10617,7 @@
     "id": 7165,
     "name": "Rainbridge Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7166,
@@ -10701,7 +10689,7 @@
     "id": 7177,
     "name": "YURUPPE inc.",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7178,
@@ -10713,25 +10701,25 @@
     "id": 7179,
     "name": "Chaos Union",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7180,
     "name": "ONIRO",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7181,
     "name": "Rex Entertainment ",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7182,
     "name": "Animation 501",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7183,
@@ -10749,7 +10737,7 @@
     "id": 7185,
     "name": "Frontier One",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7186,
@@ -10761,13 +10749,13 @@
     "id": 7187,
     "name": "Warner Vision Japan",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7188,
     "name": "Edit 90",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7189,
@@ -10779,19 +10767,19 @@
     "id": 7190,
     "name": "Reona",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7191,
     "name": "Visual House Egg",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7192,
     "name": "PACK-IN-VIDEO",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7193,
@@ -10815,19 +10803,19 @@
     "id": 7196,
     "name": "Fantawild Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7197,
     "name": "CMC Pictures",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7198,
     "name": "Jintu Pictures",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7199,
@@ -10839,7 +10827,7 @@
     "id": 7200,
     "name": "Studio 8 Dogs",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7201,
@@ -10851,7 +10839,7 @@
     "id": 7202,
     "name": "No Side",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7203,
@@ -10875,13 +10863,13 @@
     "id": 7206,
     "name": "Project Team Argos",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7207,
     "name": "Aquatone",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7208,
@@ -10899,13 +10887,13 @@
     "id": 7210,
     "name": "China Science Daily",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7211,
     "name": "ScienceNet.cn",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7212,
@@ -10917,25 +10905,25 @@
     "id": 7213,
     "name": "Shion",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7214,
     "name": "KORAD",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7215,
     "name": "Heart & Soul Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7216,
     "name": "MLB",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7217,
@@ -10947,13 +10935,13 @@
     "id": 7218,
     "name": "Daybreak",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7219,
     "name": "Riot Games",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7220,
@@ -10965,13 +10953,13 @@
     "id": 7221,
     "name": "Cloud Culture",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7222,
     "name": "SPRiNG",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7223,
@@ -11001,13 +10989,13 @@
     "id": 7227,
     "name": "Bilibili Comics",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7228,
     "name": "Da Yu",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7229,
@@ -11025,7 +11013,7 @@
     "id": 7231,
     "name": "HG Entertainment",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7232,
@@ -11163,7 +11151,7 @@
     "id": 7254,
     "name": "Studio N",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7255,
@@ -11187,25 +11175,25 @@
     "id": 7258,
     "name": "Circus Production",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7259,
     "name": "STARUPCC",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7260,
     "name": "Minovate",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7261,
     "name": "Gravity Well",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7262,
@@ -11223,13 +11211,13 @@
     "id": 7264,
     "name": "P Productions",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7265,
     "name": "Vooz Character System",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7266,
@@ -11247,97 +11235,97 @@
     "id": 7268,
     "name": "Dejavu Media",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7269,
     "name": "j-cube",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7270,
     "name": "Skyloong",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7271,
     "name": "Yokaverse",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7272,
     "name": "Fengyun Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7273,
     "name": "Fafudie Animation",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7274,
     "name": "COL Digital Publishing",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7275,
     "name": "PAPA ",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7276,
     "name": "Firecat Pictures",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7277,
     "name": "Number 19 Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7278,
     "name": "Steam Works",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7279,
     "name": "Tide Boy",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7280,
     "name": "Mind Wind Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7281,
     "name": "adamsluo",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7282,
     "name": "Wuhu Studio",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7283,
     "name": "Daysview Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7284,
@@ -11367,13 +11355,13 @@
     "id": 7288,
     "name": "Gale",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7289,
     "name": "BRB Internacional",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7290,
@@ -11397,7 +11385,7 @@
     "id": 7293,
     "name": "Fun Age Pictures",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7294,
@@ -11409,13 +11397,13 @@
     "id": 7295,
     "name": "Xiaolan Friends",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7296,
     "name": "LINE FRIENDS",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7297,
@@ -11427,7 +11415,7 @@
     "id": 7298,
     "name": "Shangshui Original",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7299,
@@ -11445,37 +11433,37 @@
     "id": 7301,
     "name": "Honglu Technology",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7302,
     "name": "Xiaoming Taiji",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7303,
     "name": "Kunjing culture",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7304,
     "name": "Bytehoo",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7305,
     "name": "Qingxiang",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7306,
     "name": "Qu Yue Technology",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7307,
@@ -11553,7 +11541,7 @@
     "id": 7319,
     "name": "Ijigen TOKYO",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7320,
@@ -11565,55 +11553,55 @@
     "id": 7321,
     "name": "Sound Cadence",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7322,
     "name": "Gen Long Culture",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7323,
     "name": "Space Shell",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7324,
     "name": "B.Cool Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7325,
     "name": "Green Planet Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7326,
     "name": "Shanghai Phantom Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7327,
     "name": "Soul Stone Animation Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7328,
     "name": "Shi Qi Yu Mo",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7329,
     "name": "Mili Digital",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7330,
@@ -11631,19 +11619,19 @@
     "id": 7332,
     "name": "Good Hill Vision",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7333,
     "name": "Bebow",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7334,
     "name": "Watanabe Promotion",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7335,
@@ -11655,7 +11643,7 @@
     "id": 7336,
     "name": "Soda Communications",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7337,
@@ -11667,13 +11655,13 @@
     "id": 7338,
     "name": "Aquastar",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7339,
     "name": "Pingo Entertainment",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7340,
@@ -11685,19 +11673,19 @@
     "id": 7341,
     "name": "Studio Mir",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7342,
     "name": "SIGNIF",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7343,
     "name": "Yinhang Media",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7344,
@@ -11715,7 +11703,7 @@
     "id": 7346,
     "name": "Boundary",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7347,
@@ -11745,13 +11733,13 @@
     "id": 7351,
     "name": "Kayou",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7352,
     "name": "Elite Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7353,
@@ -11817,7 +11805,7 @@
     "id": 7363,
     "name": "Kaca Entertainment",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7364,
@@ -11859,7 +11847,7 @@
     "id": 7370,
     "name": "Marvelous Interactive",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7371,
@@ -11883,25 +11871,25 @@
     "id": 7374,
     "name": "mobanimation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7375,
     "name": "Square Pictures",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7376,
     "name": "DNA",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7377,
     "name": "Next Media Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7378,
@@ -11919,13 +11907,13 @@
     "id": 7380,
     "name": "Torudaya",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7381,
     "name": "KIKO",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7382,
@@ -11997,13 +11985,13 @@
     "id": 7393,
     "name": "K-Factory",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7394,
     "name": "T.P.O",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7395,
@@ -12033,13 +12021,13 @@
     "id": 7399,
     "name": "Xtorm",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7400,
     "name": "Studio W.Baba",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7401,
@@ -12051,37 +12039,37 @@
     "id": 7402,
     "name": "SPO Entertainment Inc.",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7403,
     "name": "CULTURE PUBLISHERS",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7404,
     "name": "D-Create",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7405,
     "name": "Tang Kirin Culture",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7406,
     "name": "Thymos Media",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7407,
     "name": "SoulCreative",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7408,
@@ -12093,7 +12081,7 @@
     "id": 7409,
     "name": "SUPER SUPER",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7410,
@@ -12105,7 +12093,7 @@
     "id": 7411,
     "name": "No Future",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7412,
@@ -12117,91 +12105,91 @@
     "id": 7413,
     "name": "G.S. Pictures Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7414,
     "name": "Younuo Animation & Comics",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7415,
     "name": "Chuangqi Studio",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7416,
     "name": "G.H.Y. Culture & Media",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7417,
     "name": "Bright Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7418,
     "name": "Dashen Entertainment",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7419,
     "name": "XMOV",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7420,
     "name": "Quantum Entertainment",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7421,
     "name": "Xiaoxiang Pictures",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7422,
     "name": "Mandrill Picture Corp",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7423,
     "name": "Orcen",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7424,
     "name": "Pure Arts",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7425,
     "name": "Fishing Cat Culture",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7426,
     "name": "Bianyue Culture",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7427,
     "name": "Beelzebufo",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7428,
@@ -12267,7 +12255,7 @@
     "id": 7438,
     "name": "INTERFACEDOGS",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7439,
@@ -12309,37 +12297,37 @@
     "id": 7445,
     "name": "Fanqie",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7446,
     "name": "Liliyabi",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7447,
     "name": "KUAIYING",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7448,
     "name": "Fun Media",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7449,
     "name": "I.O.I.",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7450,
     "name": "Anyzac",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7451,
@@ -12351,7 +12339,7 @@
     "id": 7452,
     "name": "PPURI",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7453,
@@ -12363,13 +12351,13 @@
     "id": 7454,
     "name": "Anime Antenna Group",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7455,
     "name": "Anime Antenna Iinkai",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7456,
@@ -12381,7 +12369,7 @@
     "id": 7457,
     "name": "Ocon Studios",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7458,
@@ -12447,19 +12435,19 @@
     "id": 7468,
     "name": "Seoul Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7469,
     "name": "Zhuo Hua Network",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7470,
     "name": "MI",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7471,
@@ -12477,7 +12465,7 @@
     "id": 7473,
     "name": "ASTROBROS.",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7474,
@@ -12501,7 +12489,7 @@
     "id": 7477,
     "name": "Campfire Aniworks",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7478,
@@ -12597,7 +12585,7 @@
     "id": 7493,
     "name": "Daekwang Planning",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7494,
@@ -12609,7 +12597,7 @@
     "id": 7495,
     "name": "Chuangpu Animation Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7496,
@@ -12621,19 +12609,19 @@
     "id": 7497,
     "name": "Creator's Power Spot Harajuku",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7498,
     "name": "Shanghai Longcang Cultural Creative Company",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7499,
     "name": "Ke Yue Xue Zi",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7500,
@@ -12663,7 +12651,7 @@
     "id": 7504,
     "name": "REILS",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7505,
@@ -12723,7 +12711,7 @@
     "id": 7514,
     "name": "GEAR STUDIO",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7515,
@@ -12747,19 +12735,19 @@
     "id": 7518,
     "name": "Magic Lantern Film",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7519,
     "name": "matlity",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7520,
     "name": "studio ALBLE",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7521,
@@ -12771,7 +12759,7 @@
     "id": 7522,
     "name": "3D Co.",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7523,
@@ -12789,7 +12777,7 @@
     "id": 7525,
     "name": "JOEN",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7526,
@@ -12873,7 +12861,7 @@
     "id": 7539,
     "name": "Rouseact",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7540,
@@ -12885,7 +12873,7 @@
     "id": 7541,
     "name": "Tonari Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7542,
@@ -12903,7 +12891,7 @@
     "id": 7544,
     "name": "C&S Production",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7545,
@@ -12921,7 +12909,7 @@
     "id": 7547,
     "name": "mimoid",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7548,
@@ -12945,7 +12933,7 @@
     "id": 7551,
     "name": "Rejet",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7552,
@@ -13053,13 +13041,13 @@
     "id": 7569,
     "name": "Studio Giants",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7570,
     "name": "D & D Pictures",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7571,
@@ -13071,7 +13059,7 @@
     "id": 7572,
     "name": "LOCUS Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7573,
@@ -13083,13 +13071,13 @@
     "id": 7574,
     "name": "Point Five Creations",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7575,
     "name": "studio LEO",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7576,
@@ -13101,13 +13089,13 @@
     "id": 7577,
     "name": "studio Stellation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7578,
     "name": "Sunlight Entertainment",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7579,
@@ -13137,13 +13125,13 @@
     "id": 7583,
     "name": "ANYCOLOR Inc.",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7584,
     "name": "Studio Mangosteen",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7585,
@@ -13161,7 +13149,7 @@
     "id": 7587,
     "name": "Meltdown",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7588,
@@ -13173,7 +13161,7 @@
     "id": 7589,
     "name": "Miota Studio",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7590,
@@ -13245,25 +13233,25 @@
     "id": 7601,
     "name": "OutSide Directors Company",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7602,
     "name": "Perfect Kunpeng",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7603,
     "name": "Youngsilup",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7604,
     "name": "Pierce Visual Works",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7605,
@@ -13293,7 +13281,7 @@
     "id": 7609,
     "name": "geechs",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7610,
@@ -13311,7 +13299,7 @@
     "id": 7612,
     "name": "A4works",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7613,
@@ -13323,7 +13311,7 @@
     "id": 7614,
     "name": "Nagomi",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7615,
@@ -13341,7 +13329,7 @@
     "id": 7617,
     "name": "Dyna Method",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7618,
@@ -13353,19 +13341,19 @@
     "id": 7619,
     "name": "Itouchuu Shouji",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7620,
     "name": "Ryuu M's",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7621,
     "name": "animation studio42",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7622,
@@ -13377,31 +13365,31 @@
     "id": 7623,
     "name": "KADOKAWA QINGYU",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7624,
     "name": "Studio MAGICPOT",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7625,
     "name": "Lingke Culture",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7626,
     "name": "Ensak Entertainment",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7627,
     "name": "Aurora World",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7628,
@@ -13413,19 +13401,19 @@
     "id": 7629,
     "name": "MARU animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7630,
     "name": "Keyring",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7631,
     "name": "Iconix Entertainment",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7632,
@@ -13467,13 +13455,13 @@
     "id": 7638,
     "name": "Production Kai",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7639,
     "name": "Greenleaf Animation",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7640,
@@ -13545,25 +13533,25 @@
     "id": 7651,
     "name": "ame pippin",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7652,
     "name": "R11R Pictures",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7653,
     "name": "Kyowa Film",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7654,
     "name": "SOUL CREATIVE",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7655,
@@ -13575,25 +13563,25 @@
     "id": 7656,
     "name": "Apples",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7657,
     "name": "Office Academy",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7658,
     "name": "KOKO ENTERPRISE",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7659,
     "name": "Tokyo Douga",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7660,
@@ -13605,13 +13593,13 @@
     "id": 7661,
     "name": "Nur edel",
     "isAnimationStudio": false,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7662,
     "name": "Fun Flux Entertainment",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7663,
@@ -13623,25 +13611,25 @@
     "id": 7664,
     "name": "Green Box",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7665,
     "name": "Kagokan",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7666,
     "name": "5BRICKS",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7667,
     "name": "Raiose",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7668,
@@ -13659,19 +13647,19 @@
     "id": 7670,
     "name": "VIGORE",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7671,
     "name": "STUDIO PPURI",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7672,
     "name": "Nishiko Production",
     "isAnimationStudio": true,
-    "hasMedia": true
+    "hasMedia": false
   },
   {
     "id": 7673,

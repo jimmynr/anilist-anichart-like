@@ -1,5 +1,7 @@
 
-import { useEffect, useState, useCallback, useRef } from "react"
+import { useEffect, useState, useCallback, useRef, useContext } from "react"
+
+import { displayContext } from "../../context/displayContext"
 
 import useInfiniteScroll from "react-infinite-scroll-hook"
 
@@ -11,16 +13,24 @@ import { getCurrentSeason, getNextSeason, fillMissingCards } from "../../anilist
 
 import { useMediaQuery } from 'react-responsive'
 
-import MinCardsLoader from "../commonComponents/loaders/minCardsLoader"
-import SingleMinCardsLoader from "../commonComponents/loaders/singleMinCardLoader"
+import ViewSingleCardsLoader from "../commonComponents/loaders/viewSingleCardsLoader"
+import CardsLoaderView from "../commonComponents/loaders/viewCardsLoader"
+
 import Title from "../commonComponents/headers/title"
 
 import MinInfoCard from "../commonComponents/displays/minInfoCard"
 import AvgInfoCard from "../commonComponents/displays/avgInfoCard"
 
+import CardsInfo from "../commonComponents/displays/viewInfoCard"
+
 import PageWrapper from "../commonComponents/displays/wrapper"
 
 const Search = () => {
+    /* Context */
+    const { setType } = useContext(displayContext)
+    /* Context */
+
+
     /* Ref for loader */
     //state 
     const [missingCards, setMissingCards] = useState(0)
@@ -65,18 +75,37 @@ const Search = () => {
         setLoading(false)
     }
 
+    const getURLParams = () => {
+        const name = searchParam.get("name")
+
+        const genresParam = searchParam.get("genres")
+        const genres = genresParam && genresParam.split(",")
+
+        const year = searchParam.get("year")
+        const season = searchParam.get("season")
+
+        const formatsParam = searchParam.get("formats")
+        const formats = formatsParam && formatsParam.split(",")
+
+        const status = searchParam.get("status")
+
+        return { name, genres, year, season, formats, status }
+    }
+
     const fetchData = async (page, name, genres, year, season, status, formats) => {
+
         let data = []
         data = await fetchMediasWithPageInfo(page, 50, undefined, name, genres, year, season, status, formats, ["POPULARITY_DESC"], false)       
         
         if (page === 1) {
+            console.log("Page 1")
             setFilteredMedias(data.medias)
         } else {
+            console.log("Other page, page : " + page)
             setFilteredMedias(prev => [...prev, ...data.medias])
             setHasNextPage(data.pageInfo.hasNextPage)
             setLoading(false)
         }
-        setPage(prev => prev + 1)
     }
 
     const loadMore = useCallback(() => {
@@ -85,8 +114,20 @@ const Search = () => {
         setLoading(true)
         setError(null)
 
-        fetchData(page)
-        .catch(handleError)
+        const fetchMoreData = async () => {
+
+            const { name, genres, year, season, formats, status } = getURLParams()
+
+            let data = []
+            data = await fetchMediasWithPageInfo(page, 50, undefined, name, genres, year, season, status, formats, ["POPULARITY_DESC"], false)
+
+            setFilteredMedias(prev => [...prev, ...data.medias])
+            setHasNextPage(data.pageInfo.hasNextPage)
+            setLoading(false)
+            setPage(prev => prev + 1)
+        }
+
+        fetchMoreData()
         
     }, [page])
 
@@ -112,21 +153,23 @@ const Search = () => {
             setIsLoading(true)
             setFilterMode(true)
 
-            const name = searchParam.get("name")
+            const fetchData = async () => {
+                const { name, genres, year, season, formats, status } = getURLParams()
 
-            const genresParam = searchParam.get("genres")
-            const genres = genresParam && genresParam.split(",")
+                setFilteredMedias([]) // reset medias
+                setPage(2)
+                setHasNextPage(true)
+                setLoading(false)
+                setError(null)
 
-            const year = searchParam.get("year")
-            const season = searchParam.get("season")
+                let data = []
+                data = await fetchMediasWithPageInfo(1, 50, undefined, name, genres, year, season, status, formats, ["POPULARITY_DESC"], false)
 
-            const formatsParam = searchParam.get("formats")
-            const formats = formatsParam && formatsParam.split(",")
+                setFilteredMedias(data.medias)
+                setHasNextPage(data.pageInfo.hasNextPage)
+            }
 
-            const status = searchParam.get("status")
-    
-            fetchData(page, name, genres, year, season, status, formats)
-            .catch(setError)
+            fetchData()
         } else {
             setFilterMode(false)
 
@@ -161,7 +204,7 @@ const Search = () => {
 
                   setIsLoading(false)
                 } catch (err) {
-                  console.error("Erreur lors de la récupération des animes :", err.message)
+                  console.error(err.message)
                   
                   setIsLoading(false)
                 }
@@ -184,31 +227,47 @@ const Search = () => {
         }
     }, [trendingNow, popularThisSeason, upcoming, allTimePopular, top100, filteredMedias])
 
+    useEffect(() => {
+        setType("MIN")
+    }, [])
+
     const displayResponsiveMedias = (medias) => {
         if (isMobile || isTablet) return medias.slice(0, 3)
         else if (isLarge) return medias.slice(0, 4)
         else return medias
     }
 
+    const displayMediasWithCriteria = medias => {
+
+        return <div className="mt-10">
+            <div className="flex flex-wrap justify-start">
+                { medias.map((anime, index) => (<CardsInfo ref={cardRef} key={index} media={anime} />)) }
+                {
+                    loading && missingCards !== 0 && Array.from({ length: missingCards })
+                    .map((_, index) => (<ViewSingleCardsLoader key={index} />))
+                }
+            </div>
+        </div>
+    }
+
     const displayMedias = (medias, title = "", path = "", withRanking = false) => {
 
         return <div className="mt-10">
-            {
-                !filterMode && <div className="flex justify-between items-end">
-                    <Title title={title} isLink={true} path={path} />
-                    <Link to={path} className="text-xs">View All</Link>
-                </div>
-            }
+            <div className="flex justify-between items-end">
+                <Title title={title} isLink={true} path={path} />
+                <Link to={path} className="text-xs">View All</Link>
+            </div>
+
             <div className="flex flex-wrap justify-start">
                 { medias.map((anime, index) => {
 
                     const rank = withRanking ? index + 1 : null
                     return <MinInfoCard ref={cardRef} key={index} media={anime} rank={rank} />
                 }) }
-                {
+                {/* {
                     loading && missingCards !== 0 && Array.from({ length: missingCards })
-                    .map((_, index) => (<SingleMinCardsLoader key={index} />))
-                }
+                    .map((_, index) => (<ViewSingleCardsLoader key={index} />))
+                } */}
             </div>
         </div>
     }
@@ -235,12 +294,12 @@ const Search = () => {
     return(
         <>
             {
-                isLoading ? <MinCardsLoader />
+                isLoading ? <CardsLoaderView />
                 : filterMode ? <PageWrapper 
                     ref={containerRef}>
 
-                    { displayMedias(filteredMedias) }
-                    {loading && <MinCardsLoader main = {false} />}
+                    { displayMediasWithCriteria(filteredMedias) }
+                    {loading && <CardsLoaderView main = {false} />}
                     {error && <Alert message={error.message} />}
                     {hasNextPage && !loading && <div ref={infiniteRef}></div>}
                 </PageWrapper>

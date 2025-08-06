@@ -2,6 +2,8 @@ import { useRef, useEffect, useState } from "react"
 
 import { navigationCloseIcon, drowpDownIcon, checkedIcon } from "../icons"
 
+import { statusOptions, formatsOptions } from "../../../anilist-api/constantsUtil"
+
 const FilterDropdown = ({ state, setState, property, collection, allowsManyChoices }) => {
     const [open, setOpen] = useState(false)
     const [isTyping, setIsTyping] = useState(false)
@@ -35,11 +37,12 @@ const FilterDropdown = ({ state, setState, property, collection, allowsManyChoic
           item => {
             setKeyword("")
             setIsTyping(false)
+
             if (allowsManyChoices) {
               setState(prev => {
-                  const alreadySelected = prev[property].includes(item.value)
+                  const alreadySelected = Array.isArray(prev[property]) && prev[property].includes(item.value)
                   const newItem = alreadySelected
-                      ? prev[property].filter(p => p !== item.value)
+                      ? Array.isArray(prev[property]) && prev[property].filter(p => p !== item.value)
                       : [...prev[property], item.value]
               
                   return {
@@ -76,26 +79,41 @@ const FilterDropdown = ({ state, setState, property, collection, allowsManyChoic
          * Add an icon checked near the selected elements
          */
         checkFilter : item => (
-          allowsManyChoices ? state[property].includes(item.value) && <div>{checkedIcon}</div>
-          : state[property].toString().trim().toLocaleLowerCase() === item.value.toString().toLocaleLowerCase() && <div>{checkedIcon}</div>),
+          allowsManyChoices ? Array.isArray(state[property]) && state[property].includes(item.value) && <div>{checkedIcon}</div>
+          : typeof state[property] === "string" && state[property].trim().toLowerCase() === item.value.toString().toLowerCase() && <div>{checkedIcon}</div>),
         /**
          * Display the user' choices into the input
          * Else, show "Any"
          */
         displaySelectedFilter : () => {
           if (allowsManyChoices)
-            return state[property] && state[property].length > 0 ? <div 
+            return state[property] && Array.isArray(state[property]) && state[property].length > 0 ? <div 
                     className="absolute left-3 top-1/2 -translate-y-2/3 lg:-translate-y-1/2 flex"
                 >
-                <div className="text-xs font-semibold text-[#2B2D42] bg-[#6e859e] rounded-full px-2">{state[property][0]}</div>
-                { state[property].length > 1 && 
+                <div className="text-xs font-semibold text-[#2B2D42] bg-[#6e859e] rounded-full px-2">
+                  {
+                    property === "formats" ? formatsOptions.filter(f => f.value === state[property][0])[0].label 
+                    : state[property][0]
+                  }
+                </div>
+                { Array.isArray(state[property]) && state[property].length > 1 && 
                 <div className="ms-2 text-xs font-semibold text-[#2B2D42] bg-[#6e859e] rounded-full px-2">+{state[property].length - 1}</div> }
             </div>
-            : state[property].length === 1 ? <div className="absolute left-3 top-1/2 -translate-y-2/3 lg:-translate-y-1/2 text-xs font-semibold text-[#2B2D42] bg-[#6e859e] rounded-full px-2">{state[property][0]}</div>
+            : Array.isArray(state[property]) && state[property].length === 1 ? <div className="absolute left-3 top-1/2 -translate-y-2/3 lg:-translate-y-1/2 text-xs font-semibold text-[#2B2D42] bg-[#6e859e] rounded-full px-2">
+              {
+                property === "formats" ? formatsOptions.filter(f => f.value === state[property][0])[0].label 
+                : state[property][0]
+              }
+            </div>
             : <div className="absolute left-3 top-1/2 -translate-y-2/3 lg:-translate-y-1/2 text-xs font-semibold px-2">Any</div>
           else 
             return state[property] && state[property].toString() !== "" 
-            ? <div className="absolute left-3 top-1/2 -translate-y-2/3 lg:-translate-y-1/2 text-xs font-semibold text-[#2B2D42] bg-[#6e859e] rounded-full px-2">{state[property]}</div>
+            ? <div className="absolute left-3 top-1/2 -translate-y-2/3 lg:-translate-y-1/2 text-xs font-semibold text-[#2B2D42] bg-[#6e859e] rounded-full px-2">
+              {
+                property === "status" ? statusOptions.filter(s => s.value === state[property])[0].label
+                : state[property]
+              }
+            </div>
             : <div className="absolute left-3 top-1/2 -translate-y-2/3 lg:-translate-y-1/2 text-xs font-semibold px-2">Any</div>
         },
         /**
@@ -116,7 +134,7 @@ const FilterDropdown = ({ state, setState, property, collection, allowsManyChoic
     /* dropdown constuctor */
     const displayDropdown = () => {
 
-      return collection.filter(item => item.value.toString().toLocaleLowerCase().includes(keyword.toLocaleLowerCase())).map((item, index) => {
+      return collection.filter(item => item.value.toString().toLowerCase().includes(keyword.toLowerCase())).map((item, index) => {
           return <div 
               key={index} 
               className="text-sm p-2 font-semibold cursor-pointer hover:text-white hover:bg-[#2B2D42] hover:rounded-md
@@ -141,14 +159,14 @@ const FilterDropdown = ({ state, setState, property, collection, allowsManyChoic
                 onChange={e => handler(property).handleTyping(e)}
             />
 
-            {((!allowsManyChoices && !state[property]) || (allowsManyChoices && state[property].length === 0)) && <div 
+            {((!allowsManyChoices && !state[property]) || (allowsManyChoices && Array.isArray(state[property]) && state[property].length === 0)) && <div 
                 className="text-xl text-[#6e859e] absolute top-1/2 -translate-y-2/3 lg:-translate-y-1/2 right-1
                 hover:border hover:rounded-sm cursor-pointer"
                 onClick={() => setOpen(true)}
             >{drowpDownIcon}</div>
             }   
 
-            {((!allowsManyChoices && state[property]) || (allowsManyChoices && state[property].length > 0)) && <>
+            {((!allowsManyChoices && state[property]) || (allowsManyChoices && Array.isArray(state[property]) && state[property].length > 0)) && <>
                   <div 
                       className="text-xl text-[#6e859e] absolute top-1/2 -translate-y-2/3 lg:-translate-y-1/2 right-1
                       hover:border hover:rounded-sm cursor-pointer"

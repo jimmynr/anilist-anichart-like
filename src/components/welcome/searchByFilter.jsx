@@ -95,8 +95,6 @@ const SearchByFilter = ({ title, filteredBy }) => {
             setMedias(prev => [...prev, ...data.medias])
             setHasNextPage(data.pageInfo.hasNextPage)
             setLoading(false)
-        
-            console.log("Type reçu via contexte :", type)
         }
         setPage(prev => prev + 1)
     }

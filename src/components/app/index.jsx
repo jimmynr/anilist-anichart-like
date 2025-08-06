@@ -19,8 +19,7 @@ import AiringSchedule from "../airing/airingSchedule"
 
 import { seasonsCombination } from '../../anilist-api/constantsUtil'
 
-import Info from "../info"
-import Draft from "../draft"
+import DocumentationPage from "../info"
 
 const App = () => {
 
@@ -60,8 +59,7 @@ const App = () => {
                 <Route path="/studio" element={ <Studio /> } />
                 <Route path="/studio/:studioId/:studioName" element={ <MediaPerStudio /> } />
                 <Route path="/airing" element={ <AiringSchedule />} />
-                <Route path="/doc" element={ <Info />} />
-                <Route path="/draft" element={ <Draft />} />
+                <Route path="/doc" element={ <DocumentationPage />} />
                 <Route path="*" element={ <ErrorPage /> } />
               </Routes>
             </div>

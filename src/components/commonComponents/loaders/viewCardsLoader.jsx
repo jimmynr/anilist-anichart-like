@@ -7,7 +7,7 @@ import MinCardsLoader from "./minCardsLoader"
 import MaxCardsLoader from "./maxCardsLoader"
 import AvgCardsLoader from "./avgCardsLoader"
 
-const CardsLoaderView = ({ main }) => {
+const CardsLoaderView = ({ main = true }) => {
 
     const { type } = useContext(displayContext)
 
