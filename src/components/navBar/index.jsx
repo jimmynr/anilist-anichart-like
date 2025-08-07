@@ -39,6 +39,7 @@ const NavBar = () => {
     /* info/doc button */
     const infoBtn = <motion.button
             whileHover={{ scale: 1.2 }}
+            className="mr-10"
         >
             <Link 
                 to="/doc" 

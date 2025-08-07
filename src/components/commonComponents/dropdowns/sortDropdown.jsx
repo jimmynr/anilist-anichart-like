@@ -52,9 +52,8 @@ const Sort = ({ sortMediasBy }) => {
             <svg
                 version="1.1"
                 viewBox="0 0 12 19"
-                className="icon svg-icon svg-fill cursor-pointer outline-none focus:outline-non"
+                className="fill-[#2B2D42] hover:fill-[#2B2D42] icon svg-icon svg-fill cursor-pointer outline-none focus:outline-non"
                 style={{ height: '24px' }}
-                fill="#fff"
                 stroke="none"
                 id='sortIcon'
                 onClick={() => setHideSelect(!hideSelect)}
@@ -75,7 +74,7 @@ const Sort = ({ sortMediasBy }) => {
             />
 
             {
-                !hideSelect && <div className='bg-white rounded-md py-1 text-sm mt-1 absolute z-10'>
+                !hideSelect && <div className='bg-white dark:bg-[#151F2E] rounded-md py-1 text-sm mt-1 absolute z-10'>
                     <div 
                         className='flex flex-col text-[#BCBEDC]'
                         ref={selectRef}

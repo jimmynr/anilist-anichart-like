@@ -61,8 +61,6 @@ const Welcome = () => {
         } else {
             navigateTo("/search/anime")
         }
-
-        console.log(filters)
     }, [filters])
 
     /* url */
@@ -195,7 +193,7 @@ const Welcome = () => {
     }
 
     return(
-        <div className='bg-[#EDF1F5] text-[#6e859e] flex flex-col items-center'>
+        <div className='bg-[#EDF1F5] dark:bg-[#0B1622] text-[#6e859e] flex flex-col items-center'>
             <PageWrapper>
                 <div>
                     <div className="relative">
@@ -204,7 +202,7 @@ const Welcome = () => {
                         >{searchIcon}</div>
                         <input
                             type="text"
-                            className="text-[#6e859e] bg-white px-10 rounded-sm w-full h-10 mb-2 lg:mb-0 shadow-lg"
+                            className="text-[#6e859e] bg-white dark:bg-[#151F2E] px-10 rounded-sm w-full h-10 mb-2 lg:mb-0 shadow-lg"
                             placeholder="Search..."
                             value={filters.name}
                             onChange={e => setFilters(prev => ({...prev, name: e.target.value}))}

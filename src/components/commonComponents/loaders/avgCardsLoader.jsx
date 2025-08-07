@@ -15,10 +15,10 @@ const AvgCardsLoader = ({ main = true }) => {
 
         return <div key={index} className="w-full mt-3 flex items-center gap-x-6">
             { withRanking && <div className="text-2xl font-extrabold w-10 flex items-center">
-                <div className="text-[#E0E8EF]">#</div>
+                <div className="text-[#E0E8EF] dark:text-[#192A3C]">#</div>
                 <div className="animated py-1 h-5 w-10 rounded-full"></div>
             </div> }
-            <div className="media--isloading flex items-center w-full mt-3 bg-white rounded-md p-2">
+            <div className="media--isloading flex items-center w-full mt-3 bg-white dark:bg-[#151F2E] rounded-md p-2">
                 <div className="loading-image w-16 h-24 md:w-18 md:h-26"></div>
                 <div className="flex flex-col md:flex-row md:gap-x-4 px-4 w-full">
                     <div className="flex flex-col gap-y-2 md:gap-y-4 w-full md:w-2/5 lg:1/2">
@@ -26,7 +26,7 @@ const AvgCardsLoader = ({ main = true }) => {
                         <div className="flex gap-2 flex-wrap">
                             {
                                 Array.from({ length: 3 }).map((_, index) => (
-                                    <div key={index} className="animated text-[#E0E8EF] text-xs py-0.5 px-4 rounded-4xl">
+                                    <div key={index} className="animated text-[#E0E8EF] dark:text-[#192A3C] text-xs py-0.5 px-4 rounded-4xl">
                                         Genre
                                     </div>
                                 ))

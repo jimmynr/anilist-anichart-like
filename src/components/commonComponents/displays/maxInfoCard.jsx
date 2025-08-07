@@ -82,7 +82,7 @@ const MaxInfoCard = forwardRef(({ media, rank = null, airingInfo = null }, ref) 
                     </div>  
                 </div>
 
-                <div className='relative w-full bg-white min-w-44'>
+                <div className='relative w-full bg-white dark:bg-[#151F2E] min-w-44'>
                     <div className='p-5 text-[#6e859e]'>
                         <div className='flex flex-col'>
 
@@ -128,7 +128,7 @@ const MaxInfoCard = forwardRef(({ media, rank = null, airingInfo = null }, ref) 
                         <div className='text-xs overflow-y-auto max-h-20 mt-2 custom-scrollbar'>{ desc }</div>
                     </div>
                     <div 
-                        className='mt-4 p-2 bg-[#EFF7FB] absolute bottom-0 w-full flex flex-wrap justify-center gap-2'
+                        className='mt-4 p-2 bg-[#EFF7FB] dark:bg-[#0B1622] absolute bottom-0 w-full flex flex-wrap justify-center gap-2'
                     >
                         {
                             media.genres.map((genre, index) => {

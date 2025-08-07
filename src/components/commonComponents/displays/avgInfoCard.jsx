@@ -24,7 +24,7 @@ const AvgInfoCard = ({ media, rank = null }) => {
         </div> }
         <Link 
             to={`/media/${ media.id }/${ media.title.romaji }`} 
-            className="flex items-center w-full bg-white rounded-md p-2 min-w-0"
+            className="flex items-center w-full bg-white dark:bg-[#151F2E] rounded-md p-2 min-w-0"
         >
             <img src={ media.coverImage.medium } alt="Cover Image" className="w-16 h-24 md:w-18 md:h-26" />
 

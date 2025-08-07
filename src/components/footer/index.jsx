@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
-import DarkMode from './darkMode'
+// import DarkMode from '../commonComponents/darkMode'
 
 const Footer = () => {
     return(
-        <footer className="bg-[#11161D] px-25 py-10 text-[#BCBEDC]">
-            <div className='flex flex-row justify-between mb-6'>
+        <footer className="bg-[#11161D] px-25 py-5 text-[#BCBEDC]">
+            {/* <div className='flex flex-row justify-between mb-6'>
                 <div className='flex flex-row gap-4'>
                     <span className='underline font-bold'>Theme : </span>
                     <DarkMode />
@@ -18,7 +18,7 @@ const Footer = () => {
                         <Link to='http://anichart.net' target='_blank'>anichart.net</Link>
                     </p>
                 </div>
-            </div>
+            </div> */}
             <p className='text-center font-bold'>&copy; neməsɪs 2025</p>
         </footer>
     )

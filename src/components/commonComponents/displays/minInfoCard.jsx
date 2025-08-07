@@ -51,7 +51,7 @@ const MinInfoCard = forwardRef(({media, rank = null}, ref) => {
                         }}
                     ></div>
                     <div
-                        className='text-sm font-semibold w-full'
+                        className='text-sm font-semibold w-full text-[#6e859e]'
                         onMouseEnter={e => e.target.style.color = color}
                         onMouseLeave={e => e.target.style.color = '#6e859e'}
                     >{ media.title.romaji }</div>

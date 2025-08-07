@@ -86,21 +86,24 @@ const Media = () => {
         return navTo === 'CHARACTERS' ? media.characters.edges.length === 0 ? <Alert message="No information found about the characters" /> 
         : media.characters.edges.map((chara, index) => {
 
-            return <div key={index} className="flex flex-row justify-between bg-white w-screen lg:min-w-1/2 mr-4">
-                <div className="flex flex-row">
-                    <div
+            return <div 
+                key={index} 
+                className="flex bg-white dark:bg-[#151F2E] w-full lg:w-2/5 min-w-[320px] max-h-20">
+                <div className="flex justify-start w-full">
+                    {/* <div
                         style={{
                             backgroundImage: `url(${ chara.node.image.medium })`,
                             backgroundRepeat: 'no-repeat',
                             backgroundSize: 'cover',
                             backgroundPosition: '50%'
                         }}
-                        className="h-28 w-24"
+                        className="h-20 aspect-[16/20]"
                     >
-                    </div>
-                    <div className="flex flex-col justify-between p-4">
+                    </div> */}
+                    <img src={ chara.node.image.medium } alt="CharaImg" className="full aspect-[16/20]" />
+                    <div className="flex flex-col p-4">
                         <div
-                            className="text-sm font-bold"
+                            className="text-sm font-semibold"
                         >{chara.node.name.full}</div>
                         <div
                             className="text-xs capitalize"
@@ -108,20 +111,21 @@ const Media = () => {
                     </div>
                 </div>
                 {
-                    chara.voiceActors.length > 0 && <div className="flex">
+                    chara.voiceActors.length > 0 && <div className="flex justify-end w-full">
                         <div
-                            className="text-sm p-4"
+                            className="text-sm text-right p-4"
                         >{chara.voiceActors[0].name.full}</div>
-                        <div
+                        {/* <div
                             style={{
                                 backgroundImage: `url(${ chara.voiceActors[0].image.medium })`,
                                 backgroundRepeat: 'no-repeat',
                                 backgroundSize: 'cover',
                                 backgroundPosition: '50%'
                             }}
-                            className="h-28 w-24"
+                            className="h-20 aspect-[16/20]"
                         > 
-                        </div>
+                        </div> */}
+                        <img src={ chara.voiceActors[0].image.medium } alt="ActorImg" className="full aspect-[16/20]" />
                     </div>
                 }                
             </div>
@@ -134,7 +138,7 @@ const Media = () => {
         return <div className="w-screen lg:w-[215px]">
             {
                 media.rankings.length > 0 && media.rankings.some(ranking => ranking.allTime && ranking.type === 'RATED') && 
-                    <div className="text-xs bg-[#EDF1F5] lg:bg-white rounded-sm px-4 py-2 mb-2">
+                    <div className="text-xs bg-[#EDF1F5]  dark:bg-[#0B1622] lg:dark:bg-[#151F2E] lg:bg-white rounded-sm px-4 py-2 mb-2">
                         <span className="font-bold">
                             {`#${media.rankings.filter(ranking => ranking.allTime && ranking.type === 'RATED')[0].rank}`}
                         </span>                                    
@@ -144,7 +148,7 @@ const Media = () => {
 
             {
                 media.rankings.length > 0 && media.rankings.some(ranking => ranking.allTime && ranking.type === 'POPULAR') &&
-                    <div className="text-xs bg-[#EDF1F5] lg:bg-white rounded-sm px-4 py-2 mb-2">
+                    <div className="text-xs bg-[#EDF1F5]  dark:bg-[#0B1622] lg:dark:bg-[#151F2E] lg:bg-white rounded-sm px-4 py-2 mb-2">
                         <span className="font-bold">
                             {`#${media.rankings.filter(ranking => ranking.allTime && ranking.type === 'POPULAR')[0].rank}`}
                         </span>                                    
@@ -152,7 +156,7 @@ const Media = () => {
                     </div>
             }  
 
-            <div className="bg-[#EDF1F5] lg:bg-white rounded-sm p-4 flex flex-row lg:flex-col gap-5 text-nowrap lg:text-wrap
+            <div className="bg-[#EDF1F5]  dark:bg-[#0B1622] lg:dark:bg-[#151F2E] lg:bg-white rounded-sm p-4 flex flex-row lg:flex-col gap-5 text-nowrap lg:text-wrap
              overflow-x-scroll lg:overflow-x-auto">
                 <div>
                     <div className="text-sm font-bold">Format</div>
@@ -252,9 +256,9 @@ const Media = () => {
                             style={{ backgroundImage: `url(${BannerImg})`, backgroundRepeat: "no-repeat", backgroundSize: "cover", zIndex: -1 }}
                         ></div>
                     }
-                    <div className="flex flex-col text-[#6e859e]">
+                    <div className="flex flex-col text-[#6e859e] dark:bg-[#151F2E] -mt-20">
                         <div className="flex flex-col lg:flex-row mt-50">
-                            <div className="w-full lg:w-1/3 flex flex-row gap-5 lg:gap-2
+                            <div className="w-full lg:w-1/3 flex gap-5 lg:gap-2
                             lg:flex-col items-end lg:items-center px-5">
                                 <img 
                                     src={isMobile || isTablet ? media.coverImage.medium : media.coverImage.large} 
@@ -273,7 +277,7 @@ const Media = () => {
                                 </div> */}
                             </div>
                             <div className="w-full lg:w-2/3 flex items-end">
-                                <div className="flex flex-col">
+                                <div className="flex flex-col pr-20">
                                     <div className="text-xl font-bold px-5 lg:px-0 py-4">{media.title.romaji}</div>
                                     <div className="hidden lg:block text-sm pb-2">
                                         { 
@@ -287,19 +291,19 @@ const Media = () => {
                                         }
                                     </div>
                                     {(isMobile || isTablet) && displayMediaDetails(media)}
-                                    <div className="flex flex-row gap-10 lg:gap-20 mx-5 py-4 text-sm">
-                                        <Link onClick={() => setNavTo('BO')}>Trailer</Link>
-                                        <Link onClick={() => setNavTo('EPISODES')}>Episodes</Link>
-                                        <Link onClick={() => setNavTo('CHARACTERS')}>Characters</Link>
+                                    <div className="flex gap-10 lg:gap-20 mx-5 py-4 text-sm">
+                                        <Link className="dark:bg-[#0B1622] dark:py-2 dark:px-5 dark:rounded-lg" onClick={() => setNavTo('BO')}>Trailer</Link>
+                                        <Link className="dark:bg-[#0B1622] dark:py-2 dark:px-5 dark:rounded-lg" onClick={() => setNavTo('EPISODES')}>Episodes</Link>
+                                        <Link className="dark:bg-[#0B1622] dark:py-2 dark:px-5 dark:rounded-lg" onClick={() => setNavTo('CHARACTERS')}>Characters</Link>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="bg-[#EDF1F5] py-5 flex flex-col lg:flex-row">
+                        <div className="bg-[#EDF1F5] dark:bg-[#0B1622] py-5 flex flex-col lg:flex-row">
                             <div className="w-1/3 flex flex-col items-center">                               
                                 {!isMobile && !isTablet && displayMediaDetails(media)}
                             </div>
-                            <div className="w-screen h-fit lg:w-2/3 flex flex-wrap gap-10 px-5 lg:px-0">
+                            <div className="w-full h-fit lg:w-2/3 flex flex-wrap gap-y-5 gap-x-10 pl-5 lg:pl-0 pr-5 lg:pr-20">
                                 {displayBO(media)} 
                                 {displayEpisodes(media)}
                                 {displayCharacters(media)}

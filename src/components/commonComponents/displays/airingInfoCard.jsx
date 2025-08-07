@@ -5,7 +5,7 @@ const AiringInfoCard = ({ media, airingInfo = null }) => {
     return <div className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4">
         <Link
             to={`/media/${ media.id }/${ media.title.romaji }`}
-            className="flex items-center bg-white rounded-md m-2"
+            className="flex items-center bg-white dark:bg-[#2B2D42] rounded-md m-2"
         >
             <img src={ media.coverImage.medium } alt="Cover Image" className="w-12.5 h-16 min-w-12.5 min-h-16" />
 

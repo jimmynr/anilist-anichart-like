@@ -60,7 +60,7 @@ const Studio = () => {
                 className="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/4 xl:w-1/5 px-5 py-2 hover:px-0 hover:py-0 cursor-pointer"
             >
                 <div 
-                    className="text-sm truncate bg-white rounded-sm h-full p-2 hover:bg-gray-700 hover:text-[#41B1EA]"
+                    className="text-sm truncate bg-white dark:bg-[#2B2D42] rounded-sm h-full p-2 hover:bg-gray-700 hover:text-[#41B1EA]"
                 >{studio.name}</div>
             </Link>
         })
@@ -77,7 +77,7 @@ const Studio = () => {
                 className="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/4 xl:w-1/5 px-5 py-2 hover:px-0 hover:py-0 cursor-pointer"
             >
                 <div 
-                    className="text-sm truncate bg-white rounded-sm h-full p-2 hover:bg-gray-700 hover:text-[#41B1EA]"
+                    className="text-sm truncate bg-white dark:bg-[#2B2D42] rounded-sm h-full p-2 hover:bg-gray-700 hover:text-[#41B1EA]"
                 >{studio.name}</div>
             </Link>
         )
@@ -95,14 +95,14 @@ const Studio = () => {
     }
 
     return (
-        <div className="flex flex-col flex-grow bg-[#EDF1F5] text-[#6e859e] px-10 pt-30 lg:pt-20 pb-10 relative">
+        <div className="flex flex-col flex-grow bg-[#EDF1F5] dark:bg-[#0B1622] text-[#6e859e] px-10 pt-30 lg:pt-20 pb-10 relative">
             {
                 isLoading ? <Loader />
                 :
                 <>
                     <div className="flex justify-center">
                         <div
-                            className='fixed top-30 lg:top-25 p-2 hover:bg-[#41B1EA] hover:text-white
+                            className='fixed top-30 lg:top-25 p-2 hover:bg-[#41B1EA] dark:bg-[#2B2D42] hover:text-white
                             rounded-sm shadow-lg z-50 font-bold text-xs flex flex-col xl:flex-row'
                         >
                             <div className="relative">
@@ -111,7 +111,7 @@ const Studio = () => {
                                     name="studioSearch"
                                     type="text"
                                     placeholder="Recherchez un studio..."
-                                    className="text-[#6e859e] bg-white pl-2 pr-10 rounded-sm w-full h-8 mb-2 lg:mb-0"
+                                    className="text-[#6e859e] bg-white dark:bg-[#0B1622] pl-2 pr-10 rounded-sm w-full h-8 mb-2 lg:mb-0"
                                     value={keyword}
                                     onChange={e => setKeyword(e.target.value)}
                                 />

@@ -152,7 +152,7 @@ const FilterDropdown = ({ state, setState, property, collection, allowsManyChoic
         <div className="relative w-full">
             <input
                 type="text"
-                className="text-[#6e859e] text-sm bg-white pl-5 pb-1 pr-10 rounded-sm w-full h-10 mb-2 lg:mb-0 min-w-[172px]
+                className="text-[#6e859e] text-sm bg-white dark:bg-[#151F2E] pl-5 pb-1 pr-10 rounded-sm w-full h-10 mb-2 lg:mb-0 min-w-[172px]
                 shadow-lg"
                 value={keyword}
                 onClick={() => setOpen(true)}
@@ -180,7 +180,7 @@ const FilterDropdown = ({ state, setState, property, collection, allowsManyChoic
         { 
         open && <div 
               ref={dropdownRef} 
-              className="z-10 absolute mt-4 p-4 rounded-sm w-full bg-white max-h-80 overflow-y-auto custom-scrollbar shadow-lg">
+              className="z-10 absolute mt-4 p-4 rounded-sm w-full bg-white dark:bg-[#151F2E] max-h-80 overflow-y-auto custom-scrollbar shadow-lg">
                 {displayDropdown()}
             </div>
         }

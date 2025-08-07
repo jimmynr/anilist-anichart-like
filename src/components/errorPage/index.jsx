@@ -14,7 +14,7 @@ const ErrorPage = () => {
 
     return (
         <PageWrapper>
-            <div className="flex flex-col items-center md:flex-row p-5 bg-white rounded-xl">
+            <div className="flex flex-col items-center md:flex-row p-5 bg-white dark:bg-[#2B2D42] rounded-xl">
                 <img src={ oopsSticker } alt="Oops" className='w-1/3' />
                 <div className="w-full flex flex-col justify-center items-center text-[#BCBEDC]">
                     <div className="text-center text-9xl font-bold">404</div>

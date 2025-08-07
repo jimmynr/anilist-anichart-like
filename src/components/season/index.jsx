@@ -142,7 +142,9 @@ const Season = () => {
                 }
             </AnimatePresence>
 
-            <Outlet context={{ sortCriteria }} />
+            <div className="mt-24">
+                <Outlet context={{ sortCriteria }} />
+            </div>
         </>
     )
 }
