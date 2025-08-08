@@ -65,23 +65,23 @@ const SearchByFilter = ({ title, filteredBy }) => {
         let data = []
         switch (filteredBy) {
             case "ACTUAL_TRENDING":
-                data = await fetchMediasWithPageInfo(page, 50, undefined, undefined, undefined, undefined, undefined
+                data = await fetchMediasWithPageInfo(page, 50, undefined, undefined, undefined, undefined, undefined, undefined
                     , undefined, undefined, ["TRENDING_DESC"], false)
                 break;
             case "POPULAR_CURRENT_SEASON":
-                data = await fetchMediasWithPageInfo(page, 50, undefined, undefined, undefined, getCurrentSeason().year , getCurrentSeason().season
+                data = await fetchMediasWithPageInfo(page, 50, undefined, undefined, undefined, undefined, getCurrentSeason().year , getCurrentSeason().season
                 ,undefined, undefined, ["POPULARITY_DESC"], false)
                 break;
             case "POPULAR_NEXT_SEASON":
-                data = await fetchMediasWithPageInfo(page, 50, undefined, undefined, undefined, getNextSeason().year , getNextSeason().season
+                data = await fetchMediasWithPageInfo(page, 50, undefined, undefined, undefined, undefined, getNextSeason().year , getNextSeason().season
                 ,undefined, undefined, ["POPULARITY_DESC"], false)
                 break;
             case "POPULAR_ALL_TIME":
-                data = await fetchMediasWithPageInfo(page, 50, undefined, undefined, undefined, undefined , undefined
+                data = await fetchMediasWithPageInfo(page, 50, undefined, undefined, undefined, undefined, undefined , undefined
                     ,undefined, undefined, ["POPULARITY_DESC"], false)
                 break;
             case "TOP_100":
-                data = await fetchMediasWithPageInfo(page, 50, undefined, undefined, undefined, undefined , undefined
+                data = await fetchMediasWithPageInfo(page, 50, undefined, undefined, undefined, undefined, undefined , undefined
                     ,undefined, undefined, ["SCORE_DESC"], false)
                 break;
         

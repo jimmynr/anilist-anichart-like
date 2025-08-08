@@ -100,7 +100,7 @@ const Media = () => {
                         className="h-20 aspect-[16/20]"
                     >
                     </div> */}
-                    <img src={ chara.node.image.medium } alt="CharaImg" className="full aspect-[16/20]" />
+                    <img src={ chara.node.image.medium } alt="CharaImg" className="aspect-[16/20]" />
                     <div className="flex flex-col p-4">
                         <div
                             className="text-sm font-semibold"
@@ -125,7 +125,7 @@ const Media = () => {
                             className="h-20 aspect-[16/20]"
                         > 
                         </div> */}
-                        <img src={ chara.voiceActors[0].image.medium } alt="ActorImg" className="full aspect-[16/20]" />
+                        <img src={ chara.voiceActors[0].image.medium } alt="ActorImg" className="aspect-[16/20]" />
                     </div>
                 }                
             </div>

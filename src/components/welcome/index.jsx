@@ -5,7 +5,7 @@ import { searchIcon, navigationCloseIcon } from "../commonComponents/icons"
 
 import FilterDropdown from "../commonComponents/dropdowns/filterDropdown"
 
-import { genreOptions, yearOptions, seasonOptions, formatsOptions, statusOptions } from "../../anilist-api/constantsUtil"
+import { genreOptions, yearOptions, seasonOptions, formatsOptions, statusOptions, tagOptions } from "../../anilist-api/constantsUtil"
 
 import Label from "../commonComponents/headers/label"
 
@@ -21,6 +21,7 @@ const Welcome = () => {
     const [filters, setFilters] = useState({
         name: "",
         genres: [],
+        tags: [],
         year: "",
         season: "",
         formats: [],
@@ -35,13 +36,16 @@ const Welcome = () => {
     useEffect(() => {
         const queryParams = new URLSearchParams();
 
-        const { name, genres, year, season, formats, status } = filters
+        const { name, genres, tags, year, season, formats, status } = filters
 
         if (name) queryParams.append("name", name.trim()) 
         else queryParams.delete("name")
 
         if (genres && genres.length > 0) queryParams.append("genres", genres.join(","))
         else queryParams.delete("genres")
+
+        if (tags && tags.length > 0) queryParams.append("tags", tags.join(","))
+        else queryParams.delete("tags")
 
         if (year) queryParams.append("year", year)
         else queryParams.delete("year")
@@ -55,7 +59,7 @@ const Welcome = () => {
         if (status) queryParams.append("status", status)
         else queryParams.delete("status")
 
-        if (name || (Array.isArray(genres) && genres.length > 0) || year || season || (Array.isArray(formats) && formats.length) > 0 || status) {
+        if (name || (Array.isArray(genres) && genres.length > 0) || (Array.isArray(tags) && tags.length > 0) || year || season || (Array.isArray(formats) && formats.length) > 0 || status) {
             queryParams.append("mode", "filter")
             navigateTo(`/search/anime?${queryParams.toString()}`, { replace: true })
         } else {
@@ -97,6 +101,7 @@ const Welcome = () => {
         setFilters({
             name: "",
             genres: [],
+            tags: [],
             year: "",
             season: "",
             formats: [],
@@ -105,7 +110,7 @@ const Welcome = () => {
     }
 
     const displayTags = () => {
-        const { name, year, season, status, formats, genres } = filters
+        const { name, year, season, status, formats, genres, tags } = filters
         
         return <div className="flex flex-wrap gap-2 text-xs text-white font-semibold">
             {
@@ -168,10 +173,23 @@ const Welcome = () => {
                     <div 
                         onMouseEnter={e => addCloseIcon(e)}
                         onMouseLeave={e => removeCloseIcon(e)}
-                        onClick={() => setFilters(prev => ({...prev, genres: prev.genres.filter(f => f !== genre)}))}
+                        onClick={() => setFilters(prev => ({...prev, genres: prev.genres.filter(g => g !== genre)}))}
                         key={index} 
                         className="bg-[#41B1EA] rounded-sm pb-1 px-2 cursor-pointer">
                         {genreOptions.filter(g => g.value === genre)[0].label}
+                        <span className="ml-2 hidden">x</span>
+                    </div>
+                ))
+            }
+            {
+                Array.isArray(tags) && tags.length > 0 && tags.map((tag, index) => (
+                    <div 
+                        onMouseEnter={e => addCloseIcon(e)}
+                        onMouseLeave={e => removeCloseIcon(e)}
+                        onClick={() => setFilters(prev => ({...prev, tags: prev.tags.filter(t => t !== tag)}))}
+                        key={index} 
+                        className="bg-[#41B1EA] rounded-sm pb-1 px-2 cursor-pointer">
+                        {tagOptions.filter(t => t.value === tag)[0].label}
                         <span className="ml-2 hidden">x</span>
                     </div>
                 ))
@@ -226,7 +244,7 @@ const Welcome = () => {
                     </div>
                     <div className="relative w-[170px]">
                         <Label name="Genres" />
-                        <FilterDropdown state={filters} setState={setFilters} property="genres" collection={genreOptions} allowsManyChoices={true} />
+                        <FilterDropdown state={filters} setState={setFilters} property="genres" collection={[...genreOptions, ...tagOptions]} allowsManyChoices={true} />
                     </div>
                     <div className="relative w-[170px]">
                         <Label name="Format" />

@@ -16,8 +16,6 @@ const ViewModes = () => {
     const [iconStyle, setIconStyle] = useState("")
 
     useEffect(() => {
-        console.log(isDarkMode)
-
         if (isDarkMode) setIconStyle("text-2xl fill-[#2B2D42] hover:fill-[#BCBEDC] cursor-pointer")
         else setIconStyle("text-2xl fill-[#BCBEDC] hover:fill-[#2B2D42] cursor-pointer")
     }, [isDarkMode])

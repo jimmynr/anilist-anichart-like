@@ -146,7 +146,7 @@ export const fetchMedias = async (page, perPage, mediaId, name, genres, year, se
     return fetchedAnimes
 }
 
-export const fetchMediasWithPageInfo = async (page, perPage, mediaId, name, genres, year, season, status, formats, sort, getAllPages = true) => {
+export const fetchMediasWithPageInfo = async (page, perPage, mediaId, name, genres, tags, year, season, status, formats, sort, getAllPages = true) => {
     // const url = 'https://graphql.anilist.co'
     const fetchedAnimes = {
         pageInfo: {},
@@ -164,6 +164,7 @@ export const fetchMediasWithPageInfo = async (page, perPage, mediaId, name, genr
                     $id: Int,
                     $search: String, 
                     $genre_in: [String], 
+                    $tag_in: [String],
                     $seasonYear: Int, 
                     $season: MediaSeason, 
                     $status_in: [MediaStatus], 
@@ -182,6 +183,7 @@ export const fetchMediasWithPageInfo = async (page, perPage, mediaId, name, genr
                             id: $id,
                             search: $search,
                             genre_in: $genre_in,
+                            tag_in: $tag_in,
                             seasonYear: $seasonYear,
                             season: $season,
                             status_in: $status_in,
@@ -225,6 +227,7 @@ export const fetchMediasWithPageInfo = async (page, perPage, mediaId, name, genr
                 id: mediaId || undefined,
                 search: name || undefined,             
                 genre_in: genres?.length ? genres : undefined,
+                tag_in: tags?.length ? tags : undefined,
                 seasonYear: year || undefined,
                 season: season || undefined,
                 status_in: status?.length ? status : undefined,

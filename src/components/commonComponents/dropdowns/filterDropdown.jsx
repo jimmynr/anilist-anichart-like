@@ -2,9 +2,9 @@ import { useRef, useEffect, useState } from "react"
 
 import { navigationCloseIcon, drowpDownIcon, checkedIcon } from "../icons"
 
-import { statusOptions, formatsOptions } from "../../../anilist-api/constantsUtil"
-
 const FilterDropdown = ({ state, setState, property, collection, allowsManyChoices }) => {
+    const genresNb = state.genres.length + state.tags.length
+
     const [open, setOpen] = useState(false)
     const [isTyping, setIsTyping] = useState(false)
     const [keyword, setKeyword] = useState("")
@@ -24,6 +24,21 @@ const FilterDropdown = ({ state, setState, property, collection, allowsManyChoic
     /* Hide dropdown while clicking outside */
 
     /* return functions to handle all animation in relation with the dropdown */
+
+    const addFilterUpdateState = (property, item) => {
+      setState(prev => {
+          const alreadySelected = Array.isArray(prev[property]) && prev[property].includes(item.value)
+          const newPropertyArray = alreadySelected
+              ? Array.isArray(prev[property]) && prev[property].filter(p => p !== item.value)
+              : [...prev[property], item.value]
+      
+          return {
+              ...prev,
+              [property]: newPropertyArray
+          }
+      })
+    }
+
     const handler = property => {
       return {
         /**
@@ -34,22 +49,29 @@ const FilterDropdown = ({ state, setState, property, collection, allowsManyChoic
          * Else, change the state's value according the unique choice
          */
         addFilter :
-          item => {
+          (e, item) => {
             setKeyword("")
             setIsTyping(false)
 
             if (allowsManyChoices) {
-              setState(prev => {
-                  const alreadySelected = Array.isArray(prev[property]) && prev[property].includes(item.value)
-                  const newItem = alreadySelected
-                      ? Array.isArray(prev[property]) && prev[property].filter(p => p !== item.value)
-                      : [...prev[property], item.value]
-              
-                  return {
-                      ...prev,
-                      [property]: newItem
-                  }
-              })
+              if (property === "genres") {
+                const propertyType = e.target.dataset.type
+                propertyType === "genre" ? addFilterUpdateState("genres", item)
+                : addFilterUpdateState("tags", item)
+              } else {
+                addFilterUpdateState(property, item)
+                // setState(prev => {
+                //     const alreadySelected = Array.isArray(prev[property]) && prev[property].includes(item.value)
+                //     const updatedProperty = alreadySelected
+                //         ? Array.isArray(prev[property]) && prev[property].filter(p => p !== item.value)
+                //         : [...prev[property], item.value]
+                
+                //     return {
+                //         ...prev,
+                //         [property]: updatedProperty
+                //     }
+                // })
+              }
             } else if(property === "season") {
               if (!state.year)
                 setState(prev => ({...prev, year: new Date().getFullYear(), [property]: item.value}))
@@ -68,7 +90,8 @@ const FilterDropdown = ({ state, setState, property, collection, allowsManyChoic
         resetFilter : () => {
             setKeyword("")
             if (allowsManyChoices) {
-              setState(prev => prev = { ...prev, [property]: [] })
+              property === "genres" ? setState(prev => prev = { ...prev, genres: [], tags: [] })
+              : setState(prev => prev = { ...prev, formats: [] })
             } else if (property === "year") {
               setState(prev => ({...prev, year: prev.season !== "" ? new Date().getFullYear() : ""}))
             } else {
@@ -79,38 +102,56 @@ const FilterDropdown = ({ state, setState, property, collection, allowsManyChoic
          * Add an icon checked near the selected elements
          */
         checkFilter : item => (
-          allowsManyChoices ? Array.isArray(state[property]) && state[property].includes(item.value) && <div>{checkedIcon}</div>
+          allowsManyChoices ? (state.formats.includes(item.value) || state.genres.includes(item.value) || state.tags.includes(item.value)) && <div>{checkedIcon}</div>
           : typeof state[property] === "string" && state[property].trim().toLowerCase() === item.value.toString().toLowerCase() && <div>{checkedIcon}</div>),
         /**
          * Display the user' choices into the input
          * Else, show "Any"
          */
         displaySelectedFilter : () => {
+
           if (allowsManyChoices)
-            return state[property] && Array.isArray(state[property]) && state[property].length > 0 ? <div 
+            if (property === "formats" && state.formats.length > 0) {
+              return <div 
                     className="absolute left-3 top-1/2 -translate-y-2/3 lg:-translate-y-1/2 flex"
-                >
-                <div className="text-xs font-semibold text-[#2B2D42] bg-[#6e859e] rounded-full px-2">
-                  {
-                    property === "formats" ? formatsOptions.filter(f => f.value === state[property][0])[0].label 
-                    : state[property][0]
+                  >
+                  <div className="text-xs font-semibold text-[#2B2D42] bg-[#6e859e] rounded-full px-2">
+                    { collection.filter(f => f.value === state.formats[0])[0].label   }
+                  </div>
+                  { 
+                    state.formats.length > 1 && <div className="ms-2 text-xs font-semibold text-[#2B2D42] bg-[#6e859e] rounded-full px-2">
+                      +{state.formats.length - 1}
+                    </div> 
                   }
                 </div>
-                { Array.isArray(state[property]) && state[property].length > 1 && 
-                <div className="ms-2 text-xs font-semibold text-[#2B2D42] bg-[#6e859e] rounded-full px-2">+{state[property].length - 1}</div> }
-            </div>
-            : Array.isArray(state[property]) && state[property].length === 1 ? <div className="absolute left-3 top-1/2 -translate-y-2/3 lg:-translate-y-1/2 text-xs font-semibold text-[#2B2D42] bg-[#6e859e] rounded-full px-2">
-              {
-                property === "formats" ? formatsOptions.filter(f => f.value === state[property][0])[0].label 
-                : state[property][0]
+            } else  if (property === "genres" && (state.genres.length > 0 || state.tags.length > 0)) {
+              let displayGenres
+
+              if (state.genres.length > 0 && (state.tags.length > 0 || state.tags.length === 0)) {
+                displayGenres = state.genres[0]
+              } else if (state.genres.length === 0 && state.tags.length > 0) {
+                displayGenres = state.tags[0]
               }
-            </div>
-            : <div className="absolute left-3 top-1/2 -translate-y-2/3 lg:-translate-y-1/2 text-xs font-semibold px-2">Any</div>
+
+              return <div 
+                  className="absolute left-3 top-1/2 -translate-y-2/3 lg:-translate-y-1/2 flex"
+                >
+                <div className="text-xs font-semibold text-[#2B2D42] bg-[#6e859e] rounded-full px-2">
+                  { displayGenres }
+                </div>
+                { 
+                  genresNb > 1 && <div className="ms-2 text-xs font-semibold text-[#2B2D42] bg-[#6e859e] rounded-full px-2">
+                    +{genresNb - 1}
+                  </div> 
+                }
+              </div>
+            } else return <div className="absolute left-3 top-1/2 -translate-y-2/3 lg:-translate-y-1/2 text-xs font-semibold px-2">Any</div>
+            
           else 
             return state[property] && state[property].toString() !== "" 
             ? <div className="absolute left-3 top-1/2 -translate-y-2/3 lg:-translate-y-1/2 text-xs font-semibold text-[#2B2D42] bg-[#6e859e] rounded-full px-2">
               {
-                property === "status" ? statusOptions.filter(s => s.value === state[property])[0].label
+                property === "status" ? collection.filter(s => s.value === state[property])[0].label
                 : state[property]
               }
             </div>
@@ -121,12 +162,13 @@ const FilterDropdown = ({ state, setState, property, collection, allowsManyChoic
          * Then we can show the only options corresponding to the input
          */
         handleTyping : e => {
-            setKeyword(e.target.value.trim())
+            setKeyword(e.target.value)
             if (e.target.value.trim().length !== 0)
                 setIsTyping(true)
             else 
                 setIsTyping(false)
         }
+        
       }
     }
     /* return functions to handle all animation in relation with the dropdown */
@@ -134,19 +176,32 @@ const FilterDropdown = ({ state, setState, property, collection, allowsManyChoic
     /* dropdown constuctor */
     const displayDropdown = () => {
 
-      return collection.filter(item => item.value.toString().toLowerCase().includes(keyword.toLowerCase())).map((item, index) => {
-          return <div 
-              key={index} 
-              className="text-sm p-2 font-semibold cursor-pointer hover:text-white hover:bg-[#2B2D42] hover:rounded-md
-              flex justify-between items-center capitalize"
-              onClick={() => handler(property).addFilter(item)}
-          >
-              {item.label}
-              {handler(property).checkFilter(item)}
-          </div>
-      })
-  }
+        return collection.filter(item => item.label.toString().toLowerCase().includes(keyword.toLowerCase())).map((item, index) => {
+            return <div 
+                key={index}
+                data-type={"type" in item ? item.type : ""} 
+                className="text-sm p-2 font-semibold cursor-pointer hover:text-white hover:bg-[#2B2D42] hover:rounded-md
+                flex justify-between items-center capitalize"
+                onClick={e => handler(property).addFilter(e, item)}
+            >
+                {item.label}
+                {handler(property).checkFilter(item)}
+            </div>
+        })
+    }
     /* dropdown constuctor */
+
+    const openDropdownIcon = <div 
+        className="text-xl text-[#6e859e] absolute top-1/2 -translate-y-2/3 lg:-translate-y-1/2 right-1
+        hover:border hover:rounded-sm cursor-pointer"
+        onClick={() => setOpen(true)}
+    >{drowpDownIcon}</div>
+
+    const closeDropdownIcon = <div 
+        className="text-xl text-[#6e859e] absolute top-1/2 -translate-y-2/3 lg:-translate-y-1/2 right-1
+        hover:border hover:rounded-sm cursor-pointer"
+        onClick={() => handler(property).resetFilter()}
+    >{navigationCloseIcon}</div>
 
     return <>
         <div className="relative w-full">
@@ -157,23 +212,24 @@ const FilterDropdown = ({ state, setState, property, collection, allowsManyChoic
                 value={keyword}
                 onClick={() => setOpen(true)}
                 onChange={e => handler(property).handleTyping(e)}
+                // onBlur={() => }
             />
 
-            {((!allowsManyChoices && !state[property]) || (allowsManyChoices && Array.isArray(state[property]) && state[property].length === 0)) && <div 
-                className="text-xl text-[#6e859e] absolute top-1/2 -translate-y-2/3 lg:-translate-y-1/2 right-1
-                hover:border hover:rounded-sm cursor-pointer"
-                onClick={() => setOpen(true)}
-            >{drowpDownIcon}</div>
-            }   
+            {/* Dispplay icon for opening dropdown*/}
+            { (!allowsManyChoices && !state[property]) && openDropdownIcon }
 
-            {((!allowsManyChoices && state[property]) || (allowsManyChoices && Array.isArray(state[property]) && state[property].length > 0)) && <>
-                  <div 
-                      className="text-xl text-[#6e859e] absolute top-1/2 -translate-y-2/3 lg:-translate-y-1/2 right-1
-                      hover:border hover:rounded-sm cursor-pointer"
-                      onClick={() => handler(property).resetFilter()}
-                  >{navigationCloseIcon}</div>
-              </>
-            }       
+            { property === "formats" && allowsManyChoices && state.formats.length === 0 && openDropdownIcon }
+
+            { property === "genres" && allowsManyChoices && state.genres.length === 0 && state.tags.length === 0 && openDropdownIcon }
+            {/* Dispplay icon for opening dropdown*/}
+
+            {/* Dispplay icon for Closing dropdown*/}
+            { (!allowsManyChoices && state[property]) && closeDropdownIcon }   
+
+            { property === "formats" && allowsManyChoices && state.formats.length > 0 && closeDropdownIcon }
+
+            { property === "genres" && allowsManyChoices && (state.genres.length > 0 || state.tags.length > 0) && closeDropdownIcon }  
+            {/* Dispplay icon for Closing dropdown*/}  
 
             { !isTyping && handler(property).displaySelectedFilter() }
         </div>

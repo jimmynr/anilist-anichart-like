@@ -70,16 +70,19 @@ const Search = () => {
     const [error, setError] = useState(null)
     /* infinite scroll states */  
 
-    const handleError = (err) => {
-        setError(err)
-        setLoading(false)
-    }
+    // const handleError = (err) => {
+    //     setError(err)
+    //     setLoading(false)
+    // }
 
     const getURLParams = () => {
         const name = searchParam.get("name")
 
         const genresParam = searchParam.get("genres")
         const genres = genresParam && genresParam.split(",")
+
+        const tagsParam = searchParam.get("tags")
+        const tags = tagsParam && tagsParam.split(",")
 
         const year = searchParam.get("year")
         const season = searchParam.get("season")
@@ -89,24 +92,24 @@ const Search = () => {
 
         const status = searchParam.get("status")
 
-        return { name, genres, year, season, formats, status }
+        return { name, genres, tags, year, season, formats, status }
     }
 
-    const fetchData = async (page, name, genres, year, season, status, formats) => {
+    // const fetchData = async (page, name, genres, year, season, status, formats) => {
 
-        let data = []
-        data = await fetchMediasWithPageInfo(page, 50, undefined, name, genres, year, season, status, formats, ["POPULARITY_DESC"], false)       
+    //     let data = []
+    //     data = await fetchMediasWithPageInfo(page, 50, undefined, name, genres, year, season, status, formats, ["POPULARITY_DESC"], false)       
         
-        if (page === 1) {
-            console.log("Page 1")
-            setFilteredMedias(data.medias)
-        } else {
-            console.log("Other page, page : " + page)
-            setFilteredMedias(prev => [...prev, ...data.medias])
-            setHasNextPage(data.pageInfo.hasNextPage)
-            setLoading(false)
-        }
-    }
+    //     if (page === 1) {
+    //         console.log("Page 1")
+    //         setFilteredMedias(data.medias)
+    //     } else {
+    //         console.log("Other page, page : " + page)
+    //         setFilteredMedias(prev => [...prev, ...data.medias])
+    //         setHasNextPage(data.pageInfo.hasNextPage)
+    //         setLoading(false)
+    //     }
+    // }
 
     const loadMore = useCallback(() => {
         setMissingCards(fillMissingCards(filteredMedias, containerRef, cardRef))
@@ -116,10 +119,10 @@ const Search = () => {
 
         const fetchMoreData = async () => {
 
-            const { name, genres, year, season, formats, status } = getURLParams()
+            const { name, genres, tags, year, season, formats, status } = getURLParams()
 
             let data = []
-            data = await fetchMediasWithPageInfo(page, 50, undefined, name, genres, year, season, status, formats, ["POPULARITY_DESC"], false)
+            data = await fetchMediasWithPageInfo(page, 50, undefined, name, genres, tags, year, season, status, formats, ["POPULARITY_DESC"], false)
 
             setFilteredMedias(prev => [...prev, ...data.medias])
             setHasNextPage(data.pageInfo.hasNextPage)
@@ -154,19 +157,17 @@ const Search = () => {
             setFilterMode(true)
 
             const fetchData = async () => {
-                const { name, genres, year, season, formats, status } = getURLParams()
-
-                setFilteredMedias([]) // reset medias
-                setPage(2)
-                setHasNextPage(true)
-                setLoading(false)
+                const { name, genres, tags, year, season, formats, status } = getURLParams()
+                setFilteredMedias([])
                 setError(null)
 
                 let data = []
-                data = await fetchMediasWithPageInfo(1, 50, undefined, name, genres, year, season, status, formats, ["POPULARITY_DESC"], false)
+                data = await fetchMediasWithPageInfo(1, 50, undefined, name, genres, tags, year, season, status, formats, ["POPULARITY_DESC"], false)
 
                 setFilteredMedias(data.medias)
                 setHasNextPage(data.pageInfo.hasNextPage)
+                setLoading(false)
+                setPage(2)
             }
 
             fetchData()
