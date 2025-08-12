@@ -25,7 +25,7 @@ import CardsInfo from "../commonComponents/displays/viewInfoCard"
 
 import PageWrapper from "../commonComponents/displays/wrapper"
 
-const Search = () => {
+const Search = ({ filterState }) => {
     /* Context */
     const { setType } = useContext(displayContext)
     /* Context */
@@ -40,6 +40,8 @@ const Search = () => {
     /* Ref for loader */
 
     /* Screen size */
+    const [filters, setFilters] = filterState
+
     const isMobile = useMediaQuery({ maxWidth: 640 })
     const isTablet = useMediaQuery({ maxWidth: 768 })
     const isLarge = useMediaQuery({ maxWidth: 1024 })
@@ -124,7 +126,12 @@ const Search = () => {
             let data = []
             data = await fetchMediasWithPageInfo(page, 50, undefined, name, genres, tags, year, season, status, formats, ["POPULARITY_DESC"], false)
 
-            setFilteredMedias(prev => [...prev, ...data.medias])
+            setFilteredMedias(prev => {
+                const existingIds = new Set(prev.map(m => m.id))
+                const newMedias = data.medias.filter(m => !existingIds.has(m.id))
+                return [...prev, ...newMedias]
+            })
+              
             setHasNextPage(data.pageInfo.hasNextPage)
             setLoading(false)
             setPage(prev => prev + 1)
@@ -156,9 +163,13 @@ const Search = () => {
             setIsLoading(true)
             setFilterMode(true)
 
+            setPage(1)
+            setHasNextPage(true)
+
+            setFilteredMedias([])
+
             const fetchData = async () => {
                 const { name, genres, tags, year, season, formats, status } = getURLParams()
-                setFilteredMedias([])
                 setError(null)
 
                 let data = []
@@ -172,6 +183,17 @@ const Search = () => {
 
             fetchData()
         } else {
+
+            setFilters({
+                name: "",
+                genres: [],
+                tags: [],
+                year: "",
+                season: "",
+                formats: [],
+                status: ""
+            })
+
             setFilterMode(false)
 
             const fetchAll = async () => {

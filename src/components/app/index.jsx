@@ -1,6 +1,8 @@
 import Footer from "../footer"
 import NavBar from "../navBar"
 
+import { useState } from "react"
+
 import NavigationContext from "../../context/navigationContext"
 import DisplayContext from "../../context/displayContext"
 
@@ -24,6 +26,18 @@ import DarkModeToggle   from "../commonComponents/darkMode"
 import DarkModeContext from "../../context/darkModeContext"
 
 const App = () => {
+
+  /* States */
+  const [filters, setFilters] = useState({
+      name: "",
+      genres: [],
+      tags: [],
+      year: "",
+      season: "",
+      formats: [],
+      status: ""
+  })
+  /* States */
 
   const dispalyRoutes = seasonsCombination.map((route, index) => {
     return(
@@ -50,8 +64,8 @@ const App = () => {
               <div className="bg-[#EDF1F5] dark:bg-[#0B1622] flex-grow py-30">
                 <Routes>
                   <Route path="/" element={ <Navigate to="/search/anime" replace /> } />
-                  <Route path="/search" element={ <Welcome /> }>
-                    <Route index path="anime" element={ <Search />} />
+                  <Route path="/search" element={ <Welcome filterState = {[filters, setFilters]} /> }>
+                    <Route index path="anime" element={ <Search filterState = {[filters, setFilters]} />} />
                     <Route path="trending-now" element={ <SearchByFilter title="Trending now" filteredBy='ACTUAL_TRENDING' /> } />
                     <Route path="popular-this-season" element={ <SearchByFilter title="Popular this season" filteredBy='POPULAR_CURRENT_SEASON' /> } />
                     <Route path="upcoming" element={ <SearchByFilter title="Upcoming next season" filteredBy='POPULAR_NEXT_SEASON' /> } />

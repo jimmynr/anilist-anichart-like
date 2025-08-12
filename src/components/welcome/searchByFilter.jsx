@@ -22,7 +22,7 @@ import { displayContext } from "../../context/displayContext"
 
 const SearchByFilter = ({ title, filteredBy }) => {
     /* Context */
-    const { type, setType } = useContext(displayContext)
+    const { setType } = useContext(displayContext)
     /* Context */
 
     /* Ref for loader */

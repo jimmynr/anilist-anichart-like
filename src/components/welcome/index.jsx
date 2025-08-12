@@ -15,18 +15,19 @@ import ViewModes from "../commonComponents/displays/view"
 
 import { FaTags } from "react-icons/fa6"
 
-const Welcome = () => {  
+const Welcome = ({ filterState }) => {  
     
     /* States */
-    const [filters, setFilters] = useState({
-        name: "",
-        genres: [],
-        tags: [],
-        year: "",
-        season: "",
-        formats: [],
-        status: ""
-    })
+    const [filters, setFilters] = filterState
+    // const [filters, setFilters] = useState({
+    //     name: "",
+    //     genres: [],
+    //     tags: [],
+    //     year: "",
+    //     season: "",
+    //     formats: [],
+    //     status: ""
+    // })
 
     const [clearTags, setClearTags] = useState(false)
     /* States */
@@ -272,7 +273,7 @@ const Welcome = () => {
                 }
             </PageWrapper>
 
-            <Outlet context={[filters, setFilters]} />
+            <Outlet />
 
         </div>
     )
