@@ -52,7 +52,7 @@ export const fetchMediaPerSeasonPerYear = async (perPage, season, seasonYear) =>
   
       // const res = await fetch(url, {
       // use of proxy from the file vite.config
-      const res = await fetch('/anilist', {
+      const res = await fetch('https://graphql.anilist.co', {
         method: 'POST',
         headers: { 
             'Content-Type': 'application/json',
@@ -170,7 +170,7 @@ export const fetchMediaPerMediaId = async (mediaId) => {
 
   // const res = await fetch(url, {
   // use of proxy from the file vite.config
-  const res = await fetch('/anilist', {
+  const res = await fetch('https://graphql.anilist.co', {
     method: 'POST',
     headers: { 
         'Content-Type': 'application/json',
@@ -266,7 +266,7 @@ export const fetchMediaPerMediaTitle = async (MediaTitle) => {
   try{
       // const res = await fetch(url, {
       // use of proxy from the file vite.config
-      const res = await fetch('/anilist', {
+      const res = await fetch('https://graphql.anilist.co', {
         method: 'POST',
         headers: { 
             'Content-Type': 'application/json',
@@ -353,7 +353,7 @@ export const fetchMediaByStudioId = async (studioId, perPage = 50) => {
     try {
       // const res = await fetch(url, {
       // use of proxy from the file vite.config
-      const res = await fetch('/anilist', {
+      const res = await fetch('https://graphql.anilist.co', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -474,7 +474,7 @@ export const fetchAiringNextWeek = async (perPage = 50) => {
 
     // const response = await fetch('https://graphql.anilist.co', {
     // use of proxy from the file vite.config
-    const response = await fetch('/anilist', {
+    const response = await fetch('https://graphql.anilist.co', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -558,7 +558,7 @@ export const fetchMediaByActualTrending = async (page, perPage) => {
 
   // const res = await fetch(url, {
   // use of proxy from the file vite.config
-  const res = await fetch('/anilist', {
+  const res = await fetch('https://graphql.anilist.co', {
     method: 'POST',
     headers: { 
       'Content-Type': 'application/json',
@@ -631,7 +631,7 @@ export const fetchMediaAllTimePopular = async (page, perPage) => {
 
   // const res = await fetch(url, {
   // use of proxy from the file vite.config
-  const res = await fetch('/anilist', {
+  const res = await fetch('https://graphql.anilist.co', {
     method: 'POST',
     headers: { 
       'Content-Type': 'application/json',
@@ -707,7 +707,7 @@ export const fetchMediaTop100 = async (page, perPage) => {
 
   // const res = await fetch(url, {
   // use of proxy from the file vite.config
-  const res = await fetch('/anilist', {
+  const res = await fetch('https://graphql.anilist.co', {
     method: 'POST',
     headers: { 
       'Content-Type': 'application/json',
@@ -780,7 +780,7 @@ export const fetchMediaPopularThisSeason = async (page, perPage, season, seasonY
 
   // const res = await fetch(url, {
   // use of proxy from the file vite.config
-  const res = await fetch('/anilist', {
+  const res = await fetch('https://graphql.anilist.co', {
     method: 'POST',
     headers: { 
       'Content-Type': 'application/json',
@@ -879,7 +879,7 @@ export const fetchFilteredMedias = async (page, perPage, name, genres, year, sea
 
   // const res = await fetch(url, {
   // use of proxy from the file vite.config
-  const res = await fetch('/anilist', {
+  const res = await fetch('https://graphql.anilist.co', {
     method: 'POST',
     headers: { 
         'Content-Type': 'application/json',

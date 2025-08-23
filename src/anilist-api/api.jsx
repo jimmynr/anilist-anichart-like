@@ -124,7 +124,7 @@ export const fetchMedias = async (page, perPage, mediaId, name, genres, year, se
     
         // const res = await fetch(url, {
         // use of proxy from the file vite.config
-        const res = await fetch('/anilist', {
+        const res = await fetch('https://graphql.anilist.co', {
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json',
@@ -238,7 +238,7 @@ export const fetchMediasWithPageInfo = async (page, perPage, mediaId, name, genr
     
         // const res = await fetch(url, {
         // use of proxy from the file vite.config
-        const res = await fetch('/anilist', {
+        const res = await fetch('https://graphql.anilist.co', {
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json',
@@ -339,7 +339,7 @@ export const fetchAiringNextWeek = async (perPage = 50) => {
   
       // const response = await fetch('https://graphql.anilist.co', {
       // use of proxy from the file vite.config
-      const response = await fetch('/anilist', {
+      const response = await fetch('https://graphql.anilist.co', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -434,7 +434,7 @@ export const fetchAiringNextWeek = async (perPage = 50) => {
       try {
         // const res = await fetch(url, {
         // use of proxy from the file vite.config
-        const res = await fetch('/anilist', {
+        const res = await fetch('https://graphql.anilist.co', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -460,6 +460,7 @@ export const fetchAiringNextWeek = async (perPage = 50) => {
         page++
         lastPage = mediaData.pageInfo.lastPage
       } catch (err) {
+        console.error(err.message)
         return fetchedMedia
       }
       if ((page - 1) % 10 === 0) {
