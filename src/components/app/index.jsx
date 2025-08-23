@@ -25,6 +25,8 @@ import DocumentationPage from "../info"
 import DarkModeToggle   from "../commonComponents/darkMode"
 import DarkModeContext from "../../context/darkModeContext"
 
+import { SpeedInsights } from "@vercel/speed-insights/react"
+
 const App = () => {
 
   /* States */
@@ -53,6 +55,7 @@ const App = () => {
 
   return (
     <div className="flex flex-col min-h-screen relative">
+      <SpeedInsights />
       <DarkModeContext>
         <DisplayContext>
           <NavigationContext>
